@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard | Vantage Tennis Academy</title>
+  <meta name="description"
+    content="Student portal for booking tennis coaching and court slots, tracking UTR progress, radar speed analytics, and paying academy tuition fees.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            forest: {
+              DEFAULT: '#0B3323',
+              dark: '#072317',
+              light: '#144A34'
+            },
+            sage: {
+              DEFAULT: '#B8EB18',
+              light: '#EBF8CC'
+            },
+            cream: '#F7FAF7',
+            earth: '#B8532F',
+            sand: '#E6D5B8',
+            amberAccent: '#CCA73A'
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            display: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-[#F7FAF7] dark:bg-[#0A1410] text-[#1C2420] dark:text-[#F3F7F5] transition-colors duration-300">
+
+  <!-- Main Dashboard Wrapper -->
+  <div id="dashboard-wrapper" class="min-h-screen flex flex-col xl:flex-row">
+
+    <!-- ==============================================================
+         DASHBOARD FIXED SIDEBAR
+         ============================================================== -->
+    <aside id="dash-sidebar"
+      class="fixed inset-y-0 left-0 z-50 w-72 bg-white dark:bg-[#15221D] border-r border-stone-200 dark:border-stone-800 flex flex-col justify-between transition-transform duration-300 -translate-x-full xl:translate-x-0 shadow-xl xl:shadow-none overflow-y-auto">
+
+      <!-- Brand & User Quick Info -->
+      <div class="p-6">
+        <div class="flex items-center justify-between pb-6 border-b border-stone-100 dark:border-stone-800">
+          <a href="index.html" class="flex items-center gap-2.5 group">
+            <div class="w-9 h-9 rounded-2xl bg-forest dark:bg-emerald-800 text-white flex items-center justify-center shadow-md">
+              <i data-lucide="trophy" class="w-4 h-4 text-amberAccent"></i>
+            </div>
+            <div>
+              <span
+                class="font-serif text-xl font-bold tracking-tight text-forest dark:text-emerald-300 block leading-none">VANTAGE</span>
+              <span class="text-[9px] uppercase tracking-widest text-earth dark:text-amber-400 font-bold">Student Portal</span>
+            </div>
+          </a>
+
+          <button id="dash-sidebar-close"
+            class="xl:hidden w-8 h-8 rounded-full bg-stone-100 dark:bg-stone-800 flex items-center justify-center text-stone-600">
+            <i data-lucide="x" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+        <!-- User Quick Card -->
+        <div
+          class="flex items-center gap-3 p-3 mt-4 rounded-2xl bg-stone-50 dark:bg-stone-800/60 border border-stone-200/60 dark:border-stone-700/60">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80"
+            alt="Alex Morgan Avatar" class="w-10 h-10 rounded-xl object-cover shrink-0">
+          <div class="min-w-0">
+            <h4 id="dash-user-name" class="font-bold text-xs text-stone-900 dark:text-stone-100 truncate">Alex Morgan</h4>
+            <span class="text-[10px] text-emerald-800 dark:text-emerald-400 font-semibold block">UTR 7.4 &bull; Junior Squad</span>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="mt-6 space-y-1 text-xs font-semibold">
+          <a href="#overview" class="dash-nav-link flex items-center gap-3 px-4 py-3 rounded-2xl transition-all"
+            data-tab="overview">
+            <i data-lucide="layout-dashboard" class="w-4 h-4"></i> Overview
+          </a>
+          <a href="#book-slots" class="dash-nav-link flex items-center gap-3 px-4 py-3 rounded-2xl transition-all"
+            data-tab="book-slots">
+            <i data-lucide="calendar-plus" class="w-4 h-4"></i> Book Coaching & Courts
+          </a>
+          <a href="#bookings" class="dash-nav-link flex items-center gap-3 px-4 py-3 rounded-2xl transition-all"
+            data-tab="bookings">
+            <i data-lucide="calendar" class="w-4 h-4"></i> My Bookings
+          </a>
+          <a href="#progress" class="dash-nav-link flex items-center gap-3 px-4 py-3 rounded-2xl transition-all"
+            data-tab="progress">
+            <i data-lucide="trending-up" class="w-4 h-4"></i> Track Progress & UTR
+          </a>
+          <a href="#upcoming" class="dash-nav-link flex items-center gap-3 px-4 py-3 rounded-2xl transition-all"
+            data-tab="upcoming">
+            <i data-lucide="clock" class="w-4 h-4"></i> Upcoming Sessions
+          </a>
+          <a href="#past" class="dash-nav-link flex items-center gap-3 px-4 py-3 rounded-2xl transition-all"
+            data-tab="past">
+            <i data-lucide="history" class="w-4 h-4"></i> Match & Session History
+          </a>
+          <a href="#saved" class="dash-nav-link flex items-center gap-3 px-4 py-3 rounded-2xl transition-all"
+            data-tab="saved">
+            <i data-lucide="heart" class="w-4 h-4"></i> Saved Courts
+          </a>
+          <a href="#payments" class="dash-nav-link flex items-center gap-3 px-4 py-3 rounded-2xl transition-all"
+            data-tab="payments">
+            <i data-lucide="credit-card" class="w-4 h-4"></i> Fees & Payments
+          </a>
+          <a href="#profile" class="dash-nav-link flex items-center gap-3 px-4 py-3 rounded-2xl transition-all"
+            data-tab="profile">
+            <i data-lucide="settings" class="w-4 h-4"></i> Player Profile
+          </a>
+          <a href="#support" class="dash-nav-link flex items-center gap-3 px-4 py-3 rounded-2xl transition-all"
+            data-tab="support">
+            <i data-lucide="help-circle" class="w-4 h-4"></i> Coach Desk Support
+          </a>
+        </nav>
+      </div>
+
+      <!-- Logout & Return Home -->
+      <div class="p-6 border-t border-stone-100 dark:border-stone-800 space-y-2.5">
+        <a href="booking.html"
+          class="btn-primary w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-2xl text-xs font-semibold shadow-sm">
+          <i data-lucide="calendar-plus" class="w-4 h-4 text-amberAccent"></i> Book Slot
+        </a>
+        <a href="index.html"
+          class="flex items-center gap-2.5 px-4 py-2.5 rounded-2xl text-xs font-semibold text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors">
+          <i data-lucide="home" class="w-4 h-4"></i> Public Homepage
+        </a>
+        <a href="login.html"
+          class="btn-dash-logout w-full flex items-center gap-2.5 px-4 py-2.5 rounded-2xl text-xs font-semibold text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 transition-colors text-left cursor-pointer">
+          <i data-lucide="log-out" class="w-4 h-4"></i> Sign Out
+        </a>
+      </div>
+    </aside>
+
+    <!-- ==============================================================
+         DASHBOARD MAIN CONTENT AREA
+         ============================================================== -->
+    <div class="flex-1 xl:pl-72 flex flex-col min-h-screen">
+
+      <!-- Top Dashboard Header Bar -->
+      <header
+        class="h-20 bg-white/80 dark:bg-[#15221D]/80 backdrop-blur-md border-b border-stone-200 dark:border-stone-800 px-4 sm:px-8 flex items-center justify-between gap-2 sticky top-0 z-40">
+        <div class="flex items-center gap-2.5 sm:gap-4 min-w-0">
+          <button id="dash-sidebar-toggle"
+            class="xl:hidden w-10 h-10 shrink-0 rounded-2xl bg-stone-100 dark:bg-stone-800 flex items-center justify-center text-stone-800 dark:text-stone-200">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+          <h1 id="dash-header-title"
+            class="font-serif text-sm sm:text-2xl font-bold text-stone-900 dark:text-stone-100 truncate">
+            Student Dashboard Overview
+          </h1>
+        </div>
+
+        <div class="flex items-center gap-1.5 sm:gap-3 shrink-0">
+          <!-- Theme Toggle -->
+          <button
+            class="theme-toggle-btn w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-200 flex items-center justify-center hover:scale-105 transition-transform"
+            title="Toggle Light/Dark Theme">
+            <i data-lucide="moon" class="theme-icon-moon w-4 h-4"></i>
+            <i data-lucide="sun" class="theme-icon-sun w-4 h-4 hidden"></i>
+          </button>
+
+          <!-- RTL Toggle -->
+          <button
+            class="rtl-toggle-btn w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-200 flex items-center justify-center hover:scale-105 transition-transform"
+            title="Toggle RTL / LTR Reading Direction" aria-label="Toggle RTL / LTR Reading Direction">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+            </svg>
+          </button>
+
+          <!-- Quick Book Slot Link -->
+          <a href="booking.html" class="btn-primary text-[11px] sm:text-xs px-2.5 sm:px-4 py-1.5 sm:py-2 inline-flex items-center gap-1 sm:gap-1.5 whitespace-nowrap">
+            <i data-lucide="calendar" class="w-3.5 h-3.5 shrink-0 text-amberAccent"></i> <span>Book Slot</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- Main Content Dynamic Panels -->
+      <main class="flex-1 p-6 sm:p-8 space-y-8">
+
+        <!-- ==============================================================
+             PANEL 1: DASHBOARD OVERVIEW
+             ============================================================== -->
+        <div id="dash-panel-overview" class="dash-view-panel space-y-8">
+          <!-- Welcome Greeting Banner -->
+          <div
+            class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#15221D] border border-stone-200 dark:border-stone-800 shadow-sm">
+            <div>
+              <span class="text-xs font-semibold text-emerald-800 dark:text-emerald-400">Vantage Academy Athlete Console</span>
+              <h2 class="font-serif text-2xl sm:text-3xl font-bold text-stone-900 dark:text-stone-100 mt-1">
+                Hello, Alex! Ready for today's training?
+              </h2>
+              <p class="text-xs text-stone-500 mt-1">You have 2 confirmed court sessions, current rating UTR 7.4 (+0.6 this term), and 1 pending tuition fee invoice.
+              </p>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <button onclick="document.querySelector('[data-tab=\'book-slots\']')?.click()" class="btn-amber text-xs px-5 py-3 shadow-md shrink-0">
+                <i data-lucide="plus-circle" class="w-4 h-4"></i> Book Court Slot
+              </button>
+              <button onclick="document.querySelector('[data-tab=\'progress\']')?.click()" class="btn-secondary text-xs px-4 py-3 shrink-0">
+                <i data-lucide="trending-up" class="w-4 h-4"></i> View Progress
+              </button>
+            </div>
+          </div>
+
+          <!-- 4 Core Metric Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            <div
+              class="p-6 rounded-3xl bg-white dark:bg-[#15221D] border border-stone-200 dark:border-stone-800 shadow-sm space-y-2">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-stone-500">Current UTR Rating</span>
+              <div class="flex items-baseline gap-2">
+                <span class="font-serif text-3xl font-bold text-emerald-800 dark:text-emerald-300 block">7.42</span>
+                <span class="text-xs font-bold text-emerald-600">+0.60 this season</span>
+              </div>
+              <span class="text-[11px] text-stone-400">100% Verified Match Play</span>
+            </div>
+            <div
+              class="p-6 rounded-3xl bg-white dark:bg-[#15221D] border border-stone-200 dark:border-stone-800 shadow-sm space-y-2">
+              <span
+                class="text-[11px] font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">Upcoming
+                Sessions</span>
+              <span id="stat-upcoming-trips"
+                class="font-serif text-3xl font-bold text-emerald-800 dark:text-emerald-300 block">2</span>
+              <span class="text-[11px] text-emerald-600">Courts & Biomechanics coaching</span>
+            </div>
+            <div
+              class="p-6 rounded-3xl bg-white dark:bg-[#15221D] border border-stone-200 dark:border-stone-800 shadow-sm space-y-2">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-stone-500">Completed Sessions</span>
+              <span id="stat-completed-stays"
+                class="font-serif text-3xl font-bold text-stone-900 dark:text-stone-100 block">48</span>
+              <span class="text-[11px] text-stone-400">Hours logged this term</span>
+            </div>
+            <div
+              class="p-6 rounded-3xl bg-white dark:bg-[#15221D] border border-stone-200 dark:border-stone-800 shadow-sm space-y-2">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-stone-500">Match Record</span>
+              <span class="font-serif text-3xl font-bold text-stone-900 dark:text-stone-100 block">18W - 4L</span>
+              <span class="text-[11px] text-stone-400">81.8% Tournament win rate</span>
+            </div>
+          </div>
+
+          <!-- Featured Next Court / Coaching Session Card -->
+          <div id="overview-next-trip-card">
+            <!-- Populated via js/dashboard.js -->
+          </div>
+
+          <!-- Recent Court Bookings & Match Log Table -->
+          <div
+            class="bg-white dark:bg-[#15221D] rounded-3xl p-6 sm:p-8 border border-stone-200 dark:border-stone-800 shadow-sm space-y-4">
+            <div class="flex items-center justify-between pb-3 border-b border-stone-100 dark:border-stone-800">
+              <h3 class="font-serif font-bold text-lg text-stone-900 dark:text-stone-100">
+                Recent Court Bookings & Match Ledger
+              </h3>
+              <button class="text-xs font-semibold text-emerald-800 dark:text-emerald-400 hover:underline"
+                onclick="document.querySelector('[data-tab=\'bookings\']')?.click()">
+                View All &rarr;
+              </button>
+            </div>
+
+            <div class="overflow-x-auto -mx-6 sm:mx-0 px-6 sm:px-0">
+              <table class="w-full min-w-[620px] text-start text-xs">
+                <thead>
+                  <tr
+                    class="text-stone-400 uppercase text-[10px] tracking-wider border-b border-stone-100 dark:border-stone-800">
+                    <th class="py-3 px-4 whitespace-nowrap text-start">Slot Ref</th>
+                    <th class="py-3 px-4 whitespace-nowrap text-start">Court / Coaching Session</th>
+                    <th class="py-3 px-4 whitespace-nowrap text-start">Session Date & Time</th>
+                    <th class="py-3 px-4 whitespace-nowrap text-start">Slot Fee</th>
+                    <th class="py-3 px-4 whitespace-nowrap text-start">Status</th>
+                    <th class="py-3 px-4 text-end whitespace-nowrap">Pass / Receipt</th>
+                  </tr>
+                </thead>
+                <tbody id="overview-recent-bookings">
+                  <!-- Populated by dashboard.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==============================================================
+             PANEL 2: BOOK COACHING & COURT SLOTS (CORE USER REQUIREMENT)
+             ============================================================== -->
+        <div id="dash-panel-book-slots" class="dash-view-panel hidden space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <h2 class="font-serif font-bold text-2xl text-stone-900 dark:text-stone-100">Book Coaching & Court Slots</h2>
+              <p class="text-xs text-stone-500">Reserve Grand Slam court surfaces or private 1-on-1 coaching sessions directly from your student portal.</p>
+            </div>
+            <a href="courts.html" class="btn-secondary text-xs">View Court Catalog &rarr;</a>
+          </div>
+
+          <!-- Surface & Coach Quick Filter Pills -->
+          <div class="flex flex-wrap items-center gap-2">
+            <button class="slot-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-emerald-800 text-white" data-slot-filter="all">All Courts (8)</button>
+            <button class="slot-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-stone-700 dark:text-stone-300" data-slot-filter="Grass">Grass</button>
+            <button class="slot-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-stone-700 dark:text-stone-300" data-slot-filter="Clay">Red Clay</button>
+            <button class="slot-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-stone-700 dark:text-stone-300" data-slot-filter="Hard">Championship Hard</button>
+            <button class="slot-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-stone-700 dark:text-stone-300" data-slot-filter="Coaching">Private Coaching</button>
+          </div>
+
+          <!-- Courts & Coaching Slot Cards Grid -->
+          <div id="dash-explore-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Populated via js/dashboard.js -->
+          </div>
+        </div>
+
+        <!-- ==============================================================
+             PANEL 3: MY BOOKINGS
+             ============================================================== -->
+        <div id="dash-panel-bookings" class="dash-view-panel hidden space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <h2 class="font-serif font-bold text-2xl text-stone-900 dark:text-stone-100">All Court & Coaching Reservations</h2>
+              <p class="text-xs text-stone-500">Track and manage every court reservation, coach schedule, and gate pass.</p>
+            </div>
+
+            <!-- Filter Pills -->
+            <div class="flex items-center gap-2">
+              <button
+                class="booking-filter-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-800 text-white"
+                data-status-filter="all">
+                All
+              </button>
+              <button
+                class="booking-filter-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300"
+                data-status-filter="confirmed">
+                Confirmed
+              </button>
+              <button
+                class="booking-filter-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300"
+                data-status-filter="completed">
+                Completed
+              </button>
+              <button
+                class="booking-filter-pill px-3.5 py-1.5 rounded-full text-xs font-semibold bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300"
+                data-status-filter="cancelled">
+                Cancelled
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="bg-white dark:bg-[#15221D] rounded-3xl p-4 sm:p-6 lg:p-8 border border-stone-200 dark:border-stone-800 shadow-sm overflow-x-auto">
+            <table class="w-full min-w-[780px] text-start text-xs">
+              <thead>
+                <tr
+                  class="text-stone-400 uppercase text-[10px] tracking-wider border-b border-stone-100 dark:border-stone-800">
+                  <th class="py-3 px-4 whitespace-nowrap text-start">Booking Ref</th>
+                  <th class="py-3 px-4 whitespace-nowrap text-start">Court / Session</th>
+                  <th class="py-3 px-4 whitespace-nowrap text-start">Date & Duration</th>
+                  <th class="py-3 px-4 whitespace-nowrap text-start">Total Fee</th>
+                  <th class="py-3 px-4 whitespace-nowrap text-start">Status</th>
+                  <th class="py-3 px-4 text-end whitespace-nowrap">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="dash-bookings-table-body">
+                <!-- Rendered dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- ==============================================================
+             PANEL 4: PLAYER PROGRESS TRACKING & ANALYTICS (CORE REQUIREMENT)
+             ============================================================== -->
+        <div id="dash-panel-progress" class="dash-view-panel hidden space-y-8">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-forest dark:text-emerald-400 block mb-1">Athletic Telemetry & Rating</span>
+            <h2 class="font-serif font-bold text-2xl sm:text-3xl text-stone-900 dark:text-stone-100">Player Progress & Skill Tracking</h2>
+            <p class="text-xs text-stone-500 mt-1">Real-time biomechanics radar data, verified UTR rating progression, and Master Coach evaluations.</p>
+          </div>
+
+          <!-- UTR Rating & Radar Speed Metric Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="p-6 rounded-3xl bg-white dark:bg-[#15221D] border border-stone-200 dark:border-stone-800 shadow-sm space-y-2">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-stone-500">Universal Tennis Rating</span>
+              <div class="flex items-baseline gap-2">
+                <span class="font-serif text-3xl font-bold text-emerald-800 dark:text-emerald-300">7.42</span>
+                <span class="text-xs text-emerald-600 font-bold">+0.62 Season</span>
+              </div>
+              <div class="w-full bg-stone-100 dark:bg-stone-800 rounded-full h-2 mt-2">
+                <div class="bg-emerald-600 h-2 rounded-full" style="width: 74%"></div>
+              </div>
+              <span class="text-[10px] text-stone-400 block">Target: 8.50 for College D1 Recruitment</span>
+            </div>
+
+            <div class="p-6 rounded-3xl bg-white dark:bg-[#15221D] border border-stone-200 dark:border-stone-800 shadow-sm space-y-2">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-stone-500">Peak 1st Serve Velocity</span>
+              <div class="flex items-baseline gap-2">
+                <span class="font-serif text-3xl font-bold text-stone-900 dark:text-stone-100">104</span>
+                <span class="text-xs text-stone-500 font-bold">MPH</span>
+              </div>
+              <div class="w-full bg-stone-100 dark:bg-stone-800 rounded-full h-2 mt-2">
+                <div class="bg-amber-500 h-2 rounded-full" style="width: 82%"></div>
+              </div>
+              <span class="text-[10px] text-stone-400 block">Avg 1st Serve: 92.4 MPH &bull; In: 68%</span>
+            </div>
+
+            <div class="p-6 rounded-3xl bg-white dark:bg-[#15221D] border border-stone-200 dark:border-stone-800 shadow-sm space-y-2">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-stone-500">Forehand Topspin RPM</span>
+              <div class="flex items-baseline gap-2">
+                <span class="font-serif text-3xl font-bold text-stone-900 dark:text-stone-100">2,850</span>
+                <span class="text-xs text-stone-500 font-bold">RPM</span>
+              </div>
+              <div class="w-full bg-stone-100 dark:bg-stone-800 rounded-full h-2 mt-2">
+                <div class="bg-emerald-600 h-2 rounded-full" style="width: 88%"></div>
+              </div>
+              <span class="text-[10px] text-stone-400 block">Deep Baseline Penetration: 86%</span>
+            </div>
+
+            <div class="p-6 rounded-3xl bg-white dark:bg-[#15221D] border border-stone-200 dark:border-stone-800 shadow-sm space-y-2">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-stone-500">Footwork & Combine Speed</span>
+              <div class="flex items-baseline gap-2">
+                <span class="font-serif text-3xl font-bold text-stone-900 dark:text-stone-100">15.2s</span>
+                <span class="text-xs text-emerald-600 font-bold">Spider Run</span>
+              </div>
+              <div class="w-full bg-stone-100 dark:bg-stone-800 rounded-full h-2 mt-2">
+                <div class="bg-blue-600 h-2 rounded-full" style="width: 92%"></div>
+              </div>
+              <span class="text-[10px] text-stone-400 block">94th Percentile for U16 Category</span>
+            </div>
+          </div>
+
+          <!-- Stroke Accuracy & Consistency Telemetry -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#15221D] border border-stone-200 dark:border-stone-800 shadow-sm space-y-4">
+              <h3 class="font-serif font-bold text-lg text-stone-900 dark:text-stone-100 flex items-center justify-between">
+                <span>Shot Consistency & Target Accuracy</span>
+                <span class="text-xs font-semibold text-emerald-700 bg-emerald-100 dark:bg-emerald-950 px-2.5 py-1 rounded-full">TrackMan 240fps</span>
+              </h3>
+              
+              <div class="space-y-3 text-xs">
+                <div>
+                  <div class="flex justify-between font-bold mb-1">
+                    <span>Heavy Crosscourt Forehand</span>
+                    <span class="text-emerald-700 dark:text-emerald-400">88% In Target</span>
+                  </div>
+                  <div class="w-full bg-stone-100 dark:bg-stone-800 h-2.5 rounded-full overflow-hidden">
+                    <div class="bg-emerald-700 h-full rounded-full" style="width: 88%"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between font-bold mb-1">
+                    <span>Two-Handed Backhand Down-the-Line</span>
+                    <span class="text-emerald-700 dark:text-emerald-400">82% In Target</span>
+                  </div>
+                  <div class="w-full bg-stone-100 dark:bg-stone-800 h-2.5 rounded-full overflow-hidden">
+                    <div class="bg-emerald-700 h-full rounded-full" style="width: 82%"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between font-bold mb-1">
+                    <span>Kick Serve Wide (Ad Court)</span>
+                    <span class="text-amber-600 dark:text-amber-400">76% In Target</span>
+                  </div>
+                  <div class="w-full bg-stone-100 dark:bg-stone-800 h-2.5 rounded-full overflow-hidden">
+                    <div class="bg-amber-500 h-full rounded-full" style="width: 76%"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between font-bold mb-1">
+                    <span>Approaching Slice & Net Volley</span>
+                    <span class="text-emerald-700 dark:text-emerald-400">84% In Target</span>
+                  </div>
+                  <div class="w-full bg-stone-100 dark:bg-stone-800 h-2.5 rounded-full overflow-hidden">
+                    <div class="bg-emerald-700 h-full rounded-full" style="width: 84%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Master Coach Biomechanics Notes -->
+            <div class="p-6 sm:p-8 rounded-3xl bg-forest text-white shadow-xl space-y-4 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-3 mb-3">
+                  <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80"
+                    alt="Head Coach Marcus Sterling" class="w-12 h-12 rounded-2xl object-cover border-2 border-amberAccent">
+                  <div>
+                    <h4 class="font-serif font-bold text-base text-white">Head Coach Marcus Sterling</h4>
+                    <span class="text-xs text-amber-300">High-Performance Director &bull; Biomechanics Evaluation</span>
+                  </div>
+                </div>
+                <p class="text-xs text-stone-200 leading-relaxed italic">
+                  "Alex has developed exceptional kinetic chain sequencing on the heavy topspin forehand, generating tour-level depth. Over the next 4 weeks heading into the Vantage Summer Grand Slam, our primary technical focus is accelerating pronation on the second serve kick toss and transitioning forward inside the baseline on short returns."
+                </p>
+              </div>
+
+              <div class="pt-4 border-t border-emerald-800 flex items-center justify-between text-xs">
+                <span class="text-emerald-300">Last Telemetry Session: Oct 28, 2026</span>
+                <button onclick="document.querySelector('[data-tab=\'book-slots\']')?.click()" class="btn-amber text-xs px-4 py-2">
+                  Book Next Assessment &rarr;
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==============================================================
+             PANEL 5: UPCOMING SESSIONS
+             ============================================================== -->
+        <div id="dash-panel-upcoming" class="dash-view-panel hidden space-y-6">
+          <div>
+            <h2 class="font-serif font-bold text-2xl text-stone-900 dark:text-stone-100">Upcoming Court & Coaching Sessions</h2>
+            <p class="text-xs text-stone-500">Court check-in passes, coach contact details, and facility gate access codes.</p>
+          </div>
+
+          <div id="dash-upcoming-trips-container" class="space-y-6">
+            <!-- Populated via js/dashboard.js -->
+          </div>
+        </div>
+
+        <!-- ==============================================================
+             PANEL 6: PAST MATCH & SESSION HISTORY
+             ============================================================== -->
+        <div id="dash-panel-past" class="dash-view-panel hidden space-y-6">
+          <div>
+            <h2 class="font-serif font-bold text-2xl text-stone-900 dark:text-stone-100">Match & Session History</h2>
+            <p class="text-xs text-stone-500">Revisit past match statistics, verified UTR results, and coach post-session evaluations.</p>
+          </div>
+
+          <div id="dash-past-trips-container" class="space-y-4">
+            <!-- Populated via js/dashboard.js -->
+          </div>
+        </div>
+
+        <!-- ==============================================================
+             PANEL 7: SAVED COURTS
+             ============================================================== -->
+        <div id="dash-panel-saved" class="dash-view-panel hidden space-y-6">
+          <div class="flex items-center justify-between">
+            <div>
+              <h2 class="font-serif font-bold text-2xl text-stone-900 dark:text-stone-100">Saved Courts & Preferred Surfaces</h2>
+              <p class="text-xs text-stone-500">Bookmarked Grand Slam courts and preferred coaching practice slots.</p>
+            </div>
+            <a href="courts.html" class="btn-primary text-xs px-4 py-2">
+              Browse More Courts
+            </a>
+          </div>
+
+          <div id="dash-saved-properties-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Populated via js/dashboard.js -->
+          </div>
+        </div>
+
+        <!-- ==============================================================
+             PANEL 8: FEES & PAYMENTS (CORE USER REQUIREMENT)
+             ============================================================== -->
+        <div id="dash-panel-payments" class="dash-view-panel hidden space-y-8">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-forest dark:text-emerald-400 block mb-1">Financial Ledger</span>
+            <h2 class="font-serif font-bold text-2xl sm:text-3xl text-stone-900 dark:text-stone-100">Academy Tuition & Court Fees</h2>
+            <p class="text-xs text-stone-500 mt-1">Review monthly squad tuition, court lighting dues, tournament draw entries, and instant digital receipts.</p>
+          </div>
+
+          <div class="card-grid-3">
+            <div
+              class="p-6 rounded-3xl bg-white dark:bg-[#15221D] border border-stone-200 dark:border-stone-800 shadow-sm">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-stone-500">Total Settled Fees</span>
+              <span id="stat-total-spent"
+                class="font-serif text-3xl font-bold text-emerald-800 dark:text-emerald-300 block mt-2">$2,145.00</span>
+              <span class="text-[11px] text-stone-400">Tuition & court bookings</span>
+            </div>
+            <div
+              class="p-6 rounded-3xl bg-white dark:bg-[#15221D] border border-amber-300 dark:border-amber-800/60 shadow-sm">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400">Current Outstanding Dues</span>
+              <div class="flex items-baseline justify-between mt-2">
+                <span id="stat-pending-dues" class="font-serif text-3xl font-bold text-amber-600 block">$450.00</span>
+                <button onclick="window.showPayFeeModal('Monthly Academy Tuition', 450.00)" class="btn-amber text-xs px-3.5 py-1.5 shadow-xs">
+                  Pay Now
+                </button>
+              </div>
+              <span class="text-[11px] text-amber-700 dark:text-amber-400 font-semibold block mt-1">November Squad Training Tuition</span>
+            </div>
+            <div
+              class="p-6 rounded-3xl bg-white dark:bg-[#15221D] border border-stone-200 dark:border-stone-800 shadow-sm">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-stone-500">Tournament Credits</span>
+              <span id="stat-refunded-amount"
+                class="font-serif text-3xl font-bold text-stone-600 dark:text-stone-300 block mt-2">$85.00</span>
+              <span class="text-[11px] text-stone-400">Available tournament entry credit</span>
+            </div>
+          </div>
+
+          <!-- Pending Dues Quick Pay Banner -->
+          <div class="p-6 rounded-3xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-900/60 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-2xl bg-amber-500 text-stone-950 flex items-center justify-center font-bold">
+                <i data-lucide="receipt" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="font-serif font-bold text-sm text-stone-900 dark:text-stone-100">November Elite Squad Tuition Invoice #INV-2026-11</h4>
+                <p class="text-xs text-stone-600 dark:text-stone-400">Due date: Nov 15, 2026 &bull; Includes 4 weeks intensive training & match play telemetry</p>
+              </div>
+            </div>
+            <button onclick="window.showPayFeeModal('November Elite Squad Tuition', 450.00)" class="btn-primary text-xs px-5 py-2.5 shadow-md shrink-0">
+              <i data-lucide="credit-card" class="w-4 h-4"></i> Pay $450.00 Tuition
+            </button>
+          </div>
+
+          <!-- Transaction Ledger & Printable Invoices -->
+          <div
+            class="bg-white dark:bg-[#15221D] rounded-3xl p-6 sm:p-8 border border-stone-200 dark:border-stone-800 shadow-sm space-y-4">
+            <h3 class="font-serif font-bold text-lg text-stone-900 dark:text-stone-100">
+              Fee Transaction Ledger & Receipts
+            </h3>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs">
+                <thead>
+                  <tr
+                    class="text-stone-400 uppercase text-[10px] tracking-wider border-b border-stone-100 dark:border-stone-800">
+                    <th class="py-3 px-4">Invoice ID</th>
+                    <th class="py-3 px-4">Date</th>
+                    <th class="py-3 px-4">Description / Court</th>
+                    <th class="py-3 px-4">Payment Method</th>
+                    <th class="py-3 px-4">Amount</th>
+                    <th class="py-3 px-4">Status</th>
+                    <th class="py-3 px-4 text-right">Receipt</th>
+                  </tr>
+                </thead>
+                <tbody id="dash-transactions-body">
+                  <!-- Populated via js/dashboard.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==============================================================
+             PANEL 9: PLAYER PROFILE SETTINGS
+             ============================================================== -->
+        <div id="dash-panel-profile" class="dash-view-panel hidden space-y-8 max-w-3xl">
+          <div
+            class="bg-white dark:bg-[#15221D] p-8 rounded-3xl border border-stone-200 dark:border-stone-800 shadow-sm space-y-6">
+            <h3 class="font-serif font-bold text-xl text-stone-900 dark:text-stone-100">Player Profile & Equipment Specifications</h3>
+
+            <!-- Avatar -->
+            <div class="flex items-center gap-5">
+              <img id="profile-avatar-preview"
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80"
+                alt="Avatar" class="w-20 h-20 rounded-2xl object-cover shadow-md">
+              <div>
+                <button type="button" class="btn-secondary text-xs py-2 px-4"
+                  onclick="alert('Photo upload simulated: selected new player portrait.')">
+                  Change Photo
+                </button>
+                <p class="text-[11px] text-stone-400 mt-1">Recommended square JPG/PNG under 2MB.</p>
+              </div>
+            </div>
+
+            <!-- Profile Info Form -->
+            <form id="dash-profile-form" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">Player Full Name</label>
+                  <input type="text" id="profile-name-input"
+                    class="w-full p-3 rounded-2xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs focus:outline-hidden">
+                </div>
+                <div>
+                  <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">Email Address</label>
+                  <input type="email" id="profile-email-input"
+                    class="w-full p-3 rounded-2xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs focus:outline-hidden">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">Phone Number</label>
+                  <input type="tel" id="profile-phone-input"
+                    class="w-full p-3 rounded-2xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs focus:outline-hidden">
+                </div>
+                <div>
+                  <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">Current UTR Rating</label>
+                  <input type="text" id="profile-utr-input" value="7.42 (Verified)"
+                    class="w-full p-3 rounded-2xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs font-bold text-emerald-700 dark:text-emerald-400 focus:outline-hidden">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">Racket Model & Grip Size</label>
+                  <input type="text" value="Babolat Pure Aero 98 (Grip 4 3/8)"
+                    class="w-full p-3 rounded-2xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs focus:outline-hidden">
+                </div>
+                <div>
+                  <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">String & Tension Specs</label>
+                  <input type="text" value="Luxilon ALU Power 125 @ 52 lbs"
+                    class="w-full p-3 rounded-2xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs focus:outline-hidden">
+                </div>
+              </div>
+
+              <button type="submit" class="btn-primary text-xs px-6 py-3">
+                Save Profile Changes
+              </button>
+            </form>
+          </div>
+
+          <!-- Password Form -->
+          <div
+            class="bg-white dark:bg-[#15221D] p-8 rounded-3xl border border-stone-200 dark:border-stone-800 shadow-sm space-y-6">
+            <h3 class="font-serif font-bold text-xl text-stone-900 dark:text-stone-100">Security & Password</h3>
+
+            <form id="dash-password-form" class="space-y-4">
+              <div>
+                <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">Current Password</label>
+                <input type="password" id="pwd-current" required placeholder="••••••••"
+                  class="w-full p-3 rounded-2xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs focus:outline-hidden">
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">New Password</label>
+                  <input type="password" id="pwd-new" required placeholder="At least 8 chars"
+                    class="w-full p-3 rounded-2xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs focus:outline-hidden">
+                </div>
+                <div>
+                  <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">Confirm New Password</label>
+                  <input type="password" id="pwd-confirm" required placeholder="Repeat new password"
+                    class="w-full p-3 rounded-2xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs focus:outline-hidden">
+                </div>
+              </div>
+
+              <button type="submit" class="btn-secondary text-xs px-6 py-3">
+                Update Password
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- ==============================================================
+             PANEL 10: COACH DESK SUPPORT
+             ============================================================== -->
+        <div id="dash-panel-support" class="dash-view-panel hidden space-y-8 max-w-3xl">
+          <div
+            class="bg-white dark:bg-[#15221D] p-8 rounded-3xl border border-stone-200 dark:border-stone-800 shadow-sm space-y-4">
+            <h3 class="font-serif font-bold text-xl text-stone-900 dark:text-stone-100">Direct Coach & Pro Desk Support</h3>
+            <p class="text-xs text-stone-500 leading-relaxed">
+              Need assistance with your upcoming court slot, stringing machine request, or coach session reschedule? Submit a direct note or contact our tennis desk.
+            </p>
+
+            <form id="dash-support-form" class="space-y-4 pt-2">
+              <div>
+                <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">Topic</label>
+                <select
+                  class="w-full p-3 rounded-2xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs font-semibold focus:outline-hidden">
+                  <option>Court Slot Reschedule Request</option>
+                  <option>Private Coaching Consultation</option>
+                  <option>Racket Restringing (24-hour turnaround)</option>
+                  <option>Tournament Entry & Wildcard Inquiries</option>
+                  <option>Tuition & Billing Inquiry</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">Detailed Message</label>
+                <textarea required rows="4" placeholder="Explain your coaching or court inquiry..."
+                  class="w-full p-3 rounded-2xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs focus:outline-hidden"></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary text-xs px-6 py-3">
+                Send Support Message
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- ==============================================================
+       MODALS: Printable Invoice, Court Pass & Pay Fee Modal
+       ============================================================== -->
+
+  <!-- 1. Printable Receipt / Invoice Modal -->
+  <div id="invoice-receipt-modal"
+    class="fixed inset-0 z-50 bg-stone-950/70 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div id="printable-receipt-modal"
+      class="bg-white text-stone-900 max-w-xl w-full rounded-3xl p-8 border border-stone-200 shadow-2xl relative space-y-6">
+
+      <div class="flex items-center justify-between pb-6 border-b border-stone-200">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-2xl bg-emerald-800 text-white flex items-center justify-center">
+            <i data-lucide="trophy" class="w-5 h-5 text-amber-300"></i>
+          </div>
+          <div>
+            <span class="font-serif text-xl font-bold tracking-tight text-emerald-950 block leading-none">VANTAGE</span>
+            <span class="text-[9px] uppercase tracking-widest text-stone-500 font-bold">Official Academy Receipt</span>
+          </div>
+        </div>
+
+        <button
+          class="no-print w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center text-stone-500 hover:text-stone-800"
+          onclick="window.closeInvoiceModal()">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4 text-xs">
+        <div>
+          <span class="text-stone-400 block text-[10px] uppercase font-bold">Receipt Reference</span>
+          <span id="inv-ref-number" class="font-mono font-bold text-sm text-stone-900 block">#VAN-74892</span>
+        </div>
+        <div>
+          <span class="text-stone-400 block text-[10px] uppercase font-bold">Date Issued</span>
+          <span id="inv-date" class="font-bold text-stone-900 block">2026-11-12</span>
+        </div>
+        <div>
+          <span class="text-stone-400 block text-[10px] uppercase font-bold">Billed Athlete</span>
+          <span id="inv-guest-name" class="font-bold text-stone-900 block">Alex Morgan</span>
+          <span id="inv-guest-email" class="text-stone-500">alex.morgan@example.com</span>
+        </div>
+        <div>
+          <span class="text-stone-400 block text-[10px] uppercase font-bold">Payment Status</span>
+          <span class="text-emerald-700 font-bold block">PAID IN FULL</span>
+          <span id="inv-payment-method" class="text-stone-500">Credit Card (ending 4242)</span>
+        </div>
+      </div>
+
+      <div class="p-4 rounded-2xl bg-stone-50 border border-stone-200 text-xs space-y-2">
+        <div class="flex justify-between font-bold text-sm">
+          <span id="inv-stay-title">Centre Court Wimbledon Grass</span>
+          <span id="inv-total-paid">$280.00</span>
+        </div>
+        <p id="inv-stay-location" class="text-stone-500 text-[11px]">Vantage Championship Campus &bull; Grass Stadium 1</p>
+        <div class="flex justify-between text-stone-600 pt-2 border-t border-stone-200">
+          <span id="inv-dates">2026-11-20 (2-Hour Morning Slot)</span>
+          <span id="inv-guests">Wilson US Open Balls & Ball Machine Included</span>
+        </div>
+      </div>
+
+      <div class="no-print flex items-center justify-between pt-4 border-t border-stone-200">
+        <button class="btn-primary text-xs px-5 py-2.5" onclick="window.print()">
+          <i data-lucide="printer" class="w-4 h-4"></i> Print Receipt
+        </button>
+        <button class="text-xs text-stone-500 hover:underline font-semibold" onclick="window.closeInvoiceModal()">
+          Close Window
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Verified Court Pass Modal -->
+  <div id="trip-pass-modal"
+    class="fixed inset-0 z-50 bg-stone-950/70 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div
+      class="bg-white dark:bg-[#15221D] max-w-md w-full rounded-3xl p-6 sm:p-8 border border-stone-200 dark:border-stone-800 shadow-2xl relative space-y-4">
+      <button class="absolute top-5 right-5 text-stone-400 hover:text-stone-700" onclick="window.closeTripPassModal()">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <span
+        class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase bg-emerald-100 text-emerald-800 inline-block">
+        Verified Court Gate Pass
+      </span>
+
+      <div class="rounded-2xl overflow-hidden aspect-[16/9] shadow-sm">
+        <img id="pass-stay-img" src="" alt="Court Slot Preview" class="w-full h-full object-cover">
+      </div>
+
+      <div>
+        <span id="pass-booking-ref"
+          class="font-mono text-xs font-bold text-emerald-800 dark:text-emerald-400">#VAN-74892</span>
+        <h3 id="pass-stay-title" class="font-serif font-bold text-xl text-stone-900 dark:text-stone-100">Centre Court Grass</h3>
+        <p id="pass-stay-location" class="text-xs text-stone-500">Palm Tennis Valley, CA</p>
+      </div>
+
+      <div class="p-3 bg-stone-50 dark:bg-stone-800 rounded-2xl text-xs space-y-1">
+        <div class="flex justify-between">
+          <span class="text-stone-500">Slot Window:</span>
+          <span id="pass-checkin-time" class="font-bold text-stone-800 dark:text-stone-200">2026-11-20 (09:00 AM - 11:00 AM)</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-stone-500">Facility:</span>
+          <span id="pass-checkout-time" class="font-bold text-stone-800 dark:text-stone-200">Outdoor Grass Stadium 1</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-stone-500">Assigned Pro / Staff:</span>
+          <span id="pass-host-contact" class="font-bold text-stone-800 dark:text-stone-200">Marcus Sterling (Head Coach)</span>
+        </div>
+      </div>
+
+      <div class="p-3 bg-emerald-50 dark:bg-emerald-950/40 rounded-2xl text-xs text-emerald-900 dark:text-emerald-300">
+        <strong>Court Gate Access:</strong> Present this digital QR pass at Court Entry Gate 2 or check in at the Pro Desk.
+      </div>
+
+      <button class="w-full btn-primary text-xs py-2.5" onclick="window.closeTripPassModal()">
+        Got It
+      </button>
+    </div>
+  </div>
+
+  <!-- 3. Interactive Pay Academy Fee Modal -->
+  <div id="pay-fee-modal"
+    class="fixed inset-0 z-50 bg-stone-950/70 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div
+      class="bg-white dark:bg-[#15221D] max-w-md w-full rounded-3xl p-6 sm:p-8 border border-stone-200 dark:border-stone-800 shadow-2xl relative space-y-5">
+      <button class="absolute top-5 right-5 text-stone-400 hover:text-stone-700" onclick="window.closePayFeeModal()">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="flex items-center gap-2.5">
+        <div class="w-10 h-10 rounded-2xl bg-emerald-800 text-white flex items-center justify-center">
+          <i data-lucide="credit-card" class="w-5 h-5 text-amber-300"></i>
+        </div>
+        <div>
+          <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 block">Instant Checkout</span>
+          <h3 class="font-serif font-bold text-lg text-stone-900 dark:text-stone-100">Pay Academy Tuition Fee</h3>
+        </div>
+      </div>
+
+      <div class="p-4 rounded-2xl bg-stone-50 dark:bg-stone-800/60 border border-stone-200 dark:border-stone-700 space-y-2 text-xs">
+        <div class="flex justify-between font-bold">
+          <span id="pay-fee-title">November Squad Tuition</span>
+          <span id="pay-fee-amount" class="text-base text-emerald-800 dark:text-emerald-300">$450.00</span>
+        </div>
+        <p class="text-stone-500">Student: Alex Morgan &bull; High-Performance Squad</p>
+      </div>
+
+      <form id="dash-pay-fee-form" class="space-y-3 text-xs">
+        <div>
+          <label class="block font-bold uppercase text-[10px] text-stone-500 mb-1">Card Number</label>
+          <input type="text" value="•••• •••• •••• 4242" class="w-full p-2.5 rounded-xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 font-mono font-bold focus:outline-hidden">
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold uppercase text-[10px] text-stone-500 mb-1">Expiry</label>
+            <input type="text" value="12/28" class="w-full p-2.5 rounded-xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 font-mono font-bold focus:outline-hidden">
+          </div>
+          <div>
+            <label class="block font-bold uppercase text-[10px] text-stone-500 mb-1">CVC</label>
+            <input type="password" value="842" class="w-full p-2.5 rounded-xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 font-mono font-bold focus:outline-hidden">
+          </div>
+        </div>
+
+        <button type="submit" class="w-full btn-primary text-xs py-3 mt-2 shadow-md">
+          <i data-lucide="lock" class="w-4 h-4"></i> Confirm & Authorize Payment
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+
+</html>

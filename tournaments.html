@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Championship Tournaments & Circuits | Vantage Tennis Academy</title>
+  <meta name="description"
+    content="Compete in sanctioned UTR tournaments, ITF Junior World ranking events, adult club championships, and NCAA college tennis showcases at Vantage Tennis Academy.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            forest: {
+              DEFAULT: '#0B3323',
+              dark: '#072317',
+              light: '#144A34'
+            },
+            sage: {
+              DEFAULT: '#B8EB18',
+              light: '#EBF8CC'
+            },
+            cream: '#F7FAF7',
+            earth: '#B8532F',
+            sand: '#E6D5B8',
+            amberAccent: '#CCA73A'
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            display: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-[#F7FAF7] dark:bg-[#0A1410] text-[#1C2420] dark:text-[#F3F7F5] transition-colors duration-300">
+
+  <!-- ==============================================================
+       HEADER & NAVIGATION
+       ============================================================== -->
+  <header class="sticky top-0 z-50 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 xl:px-8 h-20 flex items-center justify-between gap-4">
+      <a href="index.html" class="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+        <div
+          class="w-10 h-10 rounded-2xl bg-forest dark:bg-emerald-800 text-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
+          <i data-lucide="trophy" class="w-5 h-5 text-amberAccent"></i>
+        </div>
+        <div>
+          <span
+            class="font-serif text-2xl font-bold tracking-tight text-forest dark:text-emerald-300 block leading-none">VANTAGE</span>
+          <span class="text-[10px] uppercase tracking-widest text-earth dark:text-amber-400 font-semibold">Tennis Academy</span>
+        </div>
+      </a>
+
+      <nav class="hidden xl:flex items-center gap-4 xl:gap-6 2xl:gap-7 text-xs xl:text-sm font-semibold text-stone-700 dark:text-stone-200">
+        <div class="relative group py-2">
+          <button class="flex items-center gap-1 hover:text-forest dark:hover:text-emerald-400 transition-colors whitespace-nowrap">
+            Home <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i>
+          </button>
+          <div
+            class="absolute top-full left-0 rtl:left-auto rtl:right-0 mt-1 w-44 bg-white dark:bg-[#15221D] rounded-2xl shadow-xl border border-stone-200 dark:border-stone-800 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <a href="index.html"
+              class="block px-4 py-2 text-xs font-semibold hover:bg-stone-50 dark:hover:bg-stone-800">Home 1</a>
+            <a href="home-2.html"
+              class="block px-4 py-2 text-xs font-semibold hover:bg-stone-50 dark:hover:bg-stone-800">Home 2</a>
+          </div>
+        </div>
+
+        <a href="coaches.html" class="hover:text-forest dark:hover:text-emerald-400 transition-colors whitespace-nowrap">Coaches</a>
+        <a href="programs.html" class="hover:text-forest dark:hover:text-emerald-400 transition-colors whitespace-nowrap">Programs</a>
+        <a href="courts.html" class="hover:text-forest dark:hover:text-emerald-400 transition-colors whitespace-nowrap">Courts</a>
+        <a href="tournaments.html" class="nav-link-active text-forest dark:text-emerald-300 font-bold whitespace-nowrap">Tournaments</a>
+        <a href="training.html" class="hover:text-forest dark:hover:text-emerald-400 transition-colors whitespace-nowrap">Training</a>
+        <a href="admissions.html" class="hover:text-forest dark:hover:text-emerald-400 transition-colors whitespace-nowrap">Admissions</a>
+        <a href="dashboard.html" class="hover:text-forest dark:hover:text-emerald-400 transition-colors whitespace-nowrap">Dashboard</a>
+      </nav>
+
+      <!-- Right Header Actions -->
+      <div class="flex items-center gap-2 xl:gap-3 shrink-0">
+        <!-- Theme Toggle (Desktop XL+) -->
+        <button
+          class="theme-toggle-btn hidden xl:flex w-9 h-9 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-200 items-center justify-center hover:scale-105 transition-transform"
+          title="Toggle Light/Dark Theme">
+          <i data-lucide="moon" class="theme-icon-moon w-4 h-4"></i>
+          <i data-lucide="sun" class="theme-icon-sun w-4 h-4 hidden"></i>
+        </button>
+
+        <!-- RTL Toggle (Desktop XL+) -->
+        <button
+          class="rtl-toggle-btn hidden xl:flex w-9 h-9 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-200 items-center justify-center hover:scale-105 transition-transform"
+          title="Toggle RTL / LTR Reading Direction" aria-label="Toggle RTL / LTR Reading Direction">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+          </svg>
+        </button>
+
+        <a href="login.html" class="hidden xl:inline-flex text-xs font-bold text-forest dark:text-emerald-300 hover:text-amberAccent px-3 py-2 transition-colors">
+          Log In
+        </a>
+
+        <!-- Primary CTA (Desktop XL+) -->
+        <div class="hidden xl:flex items-center">
+          <a href="booking.html" class="btn-primary text-xs px-5 py-2.5 shadow-sm inline-flex items-center gap-2 whitespace-nowrap">
+            <i data-lucide="calendar" class="w-3.5 h-3.5 text-amberAccent"></i>
+            <span>Book Slot</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Trigger -->
+        <button id="mobile-menu-toggle"
+          class="xl:hidden w-10 h-10 rounded-2xl bg-stone-100 dark:bg-stone-800 flex items-center justify-center text-stone-800 dark:text-stone-200">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay -->
+  <div id="mobile-drawer" class="fixed inset-0 z-[10000] bg-stone-950/60 backdrop-blur-sm hidden transition-opacity">
+    <div
+      class="drawer-content fixed top-0 right-0 w-80 max-w-full h-full bg-cream dark:bg-[#15221D] p-5 sm:p-6 shadow-2xl flex flex-col justify-between transition-transform duration-300 translate-x-full overflow-y-auto">
+      <div>
+        <div class="flex items-center justify-between pb-6 border-b border-stone-200 dark:border-stone-800">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-forest dark:bg-emerald-800 text-white flex items-center justify-center shadow-xs">
+              <i data-lucide="trophy" class="w-4 h-4 text-amberAccent"></i>
+            </div>
+            <div>
+              <span class="font-serif font-bold text-lg text-forest dark:text-emerald-300 block leading-none">VANTAGE</span>
+              <span class="text-[9px] uppercase tracking-widest text-earth dark:text-amber-400 font-semibold">Tennis Academy</span>
+            </div>
+          </div>
+          <button id="mobile-drawer-close"
+            class="w-8 h-8 rounded-full bg-stone-200 dark:bg-stone-800 flex items-center justify-center">
+            <i data-lucide="x" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+        <nav class="flex flex-col gap-2.5 mt-6 text-sm font-semibold">
+          <!-- Home Submenu matching Desktop -->
+          <div class="py-1">
+            <button type="button"
+              class="w-full flex items-center justify-between py-1.5 hover:text-forest dark:hover:text-emerald-400 transition-colors"
+              onclick="this.nextElementSibling.classList.toggle('hidden'); const icon = this.querySelector('i'); if (icon) icon.classList.toggle('rotate-180');">
+              <span class="flex items-center gap-1.5">Home</span>
+              <i data-lucide="chevron-down" class="w-4 h-4 text-stone-400 transition-transform duration-200"></i>
+            </button>
+            <div class="pl-4 flex flex-col gap-1.5 mt-1 border-l-2 border-emerald-700/40">
+              <a href="index.html" class="py-1 text-xs font-semibold hover:text-forest">Home 1</a>
+              <a href="home-2.html" class="py-1 text-xs font-semibold hover:text-forest">Home 2</a>
+            </div>
+          </div>
+
+          <a href="coaches.html" class="py-1.5 hover:text-forest dark:hover:text-emerald-400 transition-colors">Coaches</a>
+          <a href="programs.html" class="py-1.5 hover:text-forest dark:hover:text-emerald-400 transition-colors">Programs</a>
+          <a href="courts.html" class="py-1.5 hover:text-forest dark:hover:text-emerald-400 transition-colors">Courts</a>
+          <a href="tournaments.html" class="drawer-link-active py-1.5 font-bold text-forest dark:text-emerald-300 transition-colors block">Tournaments</a>
+          <a href="training.html" class="py-1.5 hover:text-forest dark:hover:text-emerald-400 transition-colors">Training</a>
+          <a href="admissions.html" class="py-1.5 hover:text-forest dark:hover:text-emerald-400 transition-colors">Admissions</a>
+          <a href="dashboard.html" class="py-1.5 hover:text-forest dark:hover:text-emerald-400 transition-colors">Dashboard</a>
+        </nav>
+      </div>
+
+      <div class="pt-4 sm:pt-6 border-t border-stone-200 dark:border-stone-800 flex flex-col gap-2.5 sm:gap-3 shrink-0 my-2">
+        <!-- Theme & RTL Controls inside Hamburger -->
+        <div class="flex items-center justify-between px-3 py-2 rounded-2xl bg-stone-100/80 dark:bg-stone-900/60 border border-stone-200/70 dark:border-stone-800 mb-1">
+          <span class="text-xs font-semibold text-stone-600 dark:text-stone-300">Preferences</span>
+          <div class="flex items-center gap-2">
+            <button
+              class="theme-toggle-btn w-9 h-9 rounded-full bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-200 shadow-xs flex items-center justify-center hover:scale-105 transition-transform"
+              title="Toggle Light/Dark Theme">
+              <i data-lucide="moon" class="theme-icon-moon w-4 h-4"></i>
+              <i data-lucide="sun" class="theme-icon-sun w-4 h-4 hidden"></i>
+            </button>
+            <button
+              class="rtl-toggle-btn w-9 h-9 rounded-full bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-200 shadow-xs flex items-center justify-center hover:scale-105 transition-transform"
+              title="Toggle RTL / LTR Reading Direction" aria-label="Toggle RTL / LTR Reading Direction">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <a href="login.html" class="btn-secondary text-xs text-center py-2 sm:py-2.5 rounded-full font-semibold">Log In</a>
+        <a href="booking.html" class="btn-primary text-xs text-center py-2 sm:py-2.5 rounded-full font-semibold inline-flex items-center justify-center gap-1.5">
+          <i data-lucide="calendar" class="w-3.5 h-3.5 text-amberAccent"></i>
+          <span>Book Slot</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ==============================================================
+         TOURNAMENTS – SECTION 1: TOURNAMENT DISCOVERY HERO
+         ============================================================== -->
+    <section data-scroll-anim="curtain-rise" class="relative py-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=2000&q=80"
+          alt="Championship Tennis Stadium Stadium Court" class="w-full h-full object-cover filter brightness-[0.55]">
+        <div class="absolute inset-0 bg-stone-950/40"></div>
+      </div>
+
+      <div class="relative z-10 max-w-4xl mx-auto text-center text-white">
+        <span
+          class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md text-amber-200 text-xs font-semibold mb-6">
+          <i data-lucide="award" class="w-3.5 h-3.5 text-amber-300"></i> Sanctioned Competitions & Circuit Opens
+        </span>
+
+        <h1 class="font-serif text-4xl sm:text-6xl font-bold mb-6 leading-tight drop-shadow-md">
+          Compete On Championship Courts,<br>
+          <span class="italic font-display font-normal text-amber-100">Earn UTR Points & Championship Trophies.</span>
+        </h1>
+
+        <p class="text-stone-200 text-base sm:text-lg max-w-2xl mx-auto font-light leading-relaxed drop-shadow-sm mb-8">
+          From verified UTR Junior circuits to ITF World Tennis Tour ranking opens and NCAA college showcases, Vantage Academy hosts top-tier competitions year-round.
+        </p>
+
+        <!-- Tournament Filter Pill Bar -->
+        <div class="flex flex-wrap items-center justify-center gap-2 max-w-xl mx-auto">
+          <a href="#tourney-junior"
+            class="px-4 py-2 rounded-full text-xs font-semibold bg-white/20 hover:bg-white/30 backdrop-blur-md text-white transition-all">Junior
+            Circuit (UTR 2.0 - 8.5)</a>
+          <a href="#tourney-college"
+            class="px-4 py-2 rounded-full text-xs font-semibold bg-white/20 hover:bg-white/30 backdrop-blur-md text-white transition-all">Collegiate
+            Showcase (UTR 9.0+ & NCAA Scouts)</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================================
+         TOURNAMENTS – SECTION 2: POPULAR CHAMPIONSHIP CIRCUITS
+         (Large photographic cards with draw sizes, surface, and prize details)
+         ============================================================== -->
+    <section data-scroll-anim="zoom-in" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto" id="tourney-junior">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-14">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-forest dark:text-emerald-400 block mb-2">Sanctioned
+            Circuits</span>
+          <h2 class="section-title font-serif font-bold text-stone-900 dark:text-stone-100">
+            Championship Tournaments
+          </h2>
+        </div>
+        <p class="text-stone-600 dark:text-stone-400 text-sm max-w-md mt-4 md:mt-0 leading-relaxed">
+          Sanctioned by UTR and national tennis federations, featuring Hawkeye telemetry, certified chair umpires, and college scout access.
+        </p>
+      </div>
+
+      <!-- 4 Prime Showcase Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- 1. Summer Junior Grand Slam -->
+        <div class="group relative rounded-3xl overflow-hidden min-h-[420px] md:min-h-[440px] lg:min-h-0 lg:aspect-[16/10] shadow-xl">
+          <img
+            src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=1200&q=80"
+            alt="Summer Junior Grand Slam"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/20 to-transparent"></div>
+          <div class="absolute top-4 left-4 flex gap-2">
+            <span
+              class="px-3 py-1 rounded-full text-xs font-semibold bg-white/90 text-stone-900 backdrop-blur-md">July 15 - 20, 2026</span>
+            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-800 text-white">64-Player Draw</span>
+          </div>
+          <div class="absolute bottom-5 left-5 right-5 sm:bottom-6 sm:left-6 sm:right-6 text-white">
+            <h3 class="font-serif text-xl sm:text-2xl lg:text-3xl font-bold mb-2 leading-tight">Vantage Summer Junior Grand Slam</h3>
+            <p class="text-xs sm:text-sm text-stone-300 line-clamp-2 leading-relaxed mb-4">
+              Tier 1 UTR and ITF junior event featuring 64 singles players and 32 doubles pairs across grass and championship hard courts.
+            </p>
+            <a href="booking.html?tourney=summer-slam" class="btn-amber text-xs px-5 py-2.5 shadow-md">
+              Register For Draw &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- 2. Roland Garros Junior Clay Classic -->
+        <div class="group relative rounded-3xl overflow-hidden min-h-[420px] md:min-h-[440px] lg:min-h-0 lg:aspect-[16/10] shadow-xl">
+          <img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=1200&q=80"
+            alt="Roland Garros Junior Clay Classic"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/20 to-transparent"></div>
+          <div class="absolute top-4 left-4 flex gap-2">
+            <span
+              class="px-3 py-1 rounded-full text-xs font-semibold bg-white/90 text-stone-900 backdrop-blur-md">May 8 - 12, 2026</span>
+            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-800 text-white">Red Clay Stadium</span>
+          </div>
+          <div class="absolute bottom-5 left-5 right-5 sm:bottom-6 sm:left-6 sm:right-6 text-white">
+            <h3 class="font-serif text-xl sm:text-2xl lg:text-3xl font-bold mb-2 leading-tight">Roland Garros Junior Clay Classic</h3>
+            <p class="text-xs sm:text-sm text-stone-300 line-clamp-2 leading-relaxed mb-4">
+              Imported French red clay championship testing slide control, shot tolerance, and tactical spin. Full umpire chair coverage.
+            </p>
+            <a href="booking.html?tourney=clay-classic" class="btn-amber text-xs px-5 py-2.5 shadow-md">
+              Register For Clay Open &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- 3. Winter Indoor Masters Trophy -->
+        <div class="group relative rounded-3xl overflow-hidden min-h-[420px] md:min-h-[440px] lg:min-h-0 lg:aspect-[16/10] shadow-xl" id="tourney-college">
+          <img src="https://images.unsplash.com/photo-1560012057-4372e14c5085?auto=format&fit=crop&w=1200&q=80"
+            alt="Winter Indoor Masters Trophy"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/20 to-transparent"></div>
+          <div class="absolute top-4 left-4 flex gap-2">
+            <span
+              class="px-3 py-1 rounded-full text-xs font-semibold bg-white/90 text-stone-900 backdrop-blur-md">Nov 20 - 24, 2026</span>
+            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-800 text-white">Indoor Air-Dome</span>
+          </div>
+          <div class="absolute bottom-5 left-5 right-5 sm:bottom-6 sm:left-6 sm:right-6 text-white">
+            <h3 class="font-serif text-xl sm:text-2xl lg:text-3xl font-bold mb-2 leading-tight">Winter Indoor Masters Trophy</h3>
+            <p class="text-xs sm:text-sm text-stone-300 line-clamp-2 leading-relaxed mb-4">
+              Fast-paced indoor DecoTurf Masters featuring fast service records, high-speed rallies, and 4K multi-camera streaming.
+            </p>
+            <a href="booking.html?tourney=winter-masters" class="btn-amber text-xs px-5 py-2.5 shadow-md">
+              Register For Indoor Masters &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- 4. National College Showcase & Combine -->
+        <div class="group relative rounded-3xl overflow-hidden min-h-[420px] md:min-h-[440px] lg:min-h-0 lg:aspect-[16/10] shadow-xl">
+          <img
+            src="https://images.unsplash.com/photo-1530915536846-932d207ec2a2?auto=format&fit=crop&w=1200&q=80"
+            alt="National College Showcase"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/20 to-transparent"></div>
+          <div class="absolute top-4 left-4 flex gap-2">
+            <span
+              class="px-3 py-1 rounded-full text-xs font-semibold bg-white/90 text-stone-900 backdrop-blur-md">Aug 28 - 30, 2026</span>
+            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-800 text-white">NCAA Division I & II</span>
+          </div>
+          <div class="absolute bottom-5 left-5 right-5 sm:bottom-6 sm:left-6 sm:right-6 text-white">
+            <h3 class="font-serif text-xl sm:text-2xl lg:text-3xl font-bold mb-2 leading-tight">National College Showcase & Combine</h3>
+            <p class="text-xs sm:text-sm text-stone-300 line-clamp-2 leading-relaxed mb-4">
+              Scouting event for top junior recruits. Includes live biomechanical radar tracking, physical fitness combines, and recruiter Q&A.
+            </p>
+            <a href="booking.html?tourney=college-showcase" class="btn-amber text-xs px-5 py-2.5 shadow-md">
+              Register For Showcase &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================================
+         TOURNAMENTS – SECTION 3: COMPETITION DIVISIONS & TIERS
+         ============================================================== -->
+    <section data-scroll-anim="stagger-up"
+      class="py-24 bg-cream dark:bg-[#15221D] px-4 sm:px-6 lg:px-8 border-y border-stone-200/60 dark:border-stone-800/60">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span
+            class="text-xs font-bold uppercase tracking-widest text-forest dark:text-emerald-400 block mb-2">Division
+            Breakdown</span>
+          <h2 class="section-title font-serif font-bold text-stone-900 dark:text-stone-100">
+            Tournament Divisions & Sanctioned Tiers
+          </h2>
+          <p class="text-stone-600 dark:text-stone-400 text-sm mt-3">
+            Every athlete competes against matched opponents to ensure productive development, fair seeding, and authentic rating growth.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- 1. Junior Development Opens -->
+          <div
+            class="p-6 rounded-3xl bg-white dark:bg-[#1B2B25] border border-stone-200/80 dark:border-stone-800/80 shadow-sm flex flex-col justify-between">
+            <div>
+              <div
+                class="w-12 h-12 rounded-2xl bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 flex items-center justify-center mb-4">
+                <i data-lucide="award" class="w-6 h-6"></i>
+              </div>
+              <h3 class="font-serif font-bold text-lg mb-2">Junior Development Opens</h3>
+              <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed mb-4">
+                Ages 8-14. Red, orange, and green ball divisions designed to introduce young players to competitive match play with positive coaching.
+              </p>
+            </div>
+            <a href="programs.html#juniors"
+              class="text-xs font-bold text-emerald-800 dark:text-emerald-400 hover:underline">Explore Junior Squads
+              &rarr;</a>
+          </div>
+
+          <!-- 2. High-Performance ITF Circuits -->
+          <div
+            class="p-6 rounded-3xl bg-white dark:bg-[#1B2B25] border border-stone-200/80 dark:border-stone-800/80 shadow-sm flex flex-col justify-between">
+            <div>
+              <div
+                class="w-12 h-12 rounded-2xl bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-400 flex items-center justify-center mb-4">
+                <i data-lucide="zap" class="w-6 h-6"></i>
+              </div>
+              <h3 class="font-serif font-bold text-lg mb-2">UTR & ITF Junior Circuit</h3>
+              <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed mb-4">
+                UTR 6.0 - 12.0+ competitive bracket. Certified officials, stringing service on-site, and full Hawkeye video telemetry reviews.
+              </p>
+            </div>
+            <a href="programs.html#elite"
+              class="text-xs font-bold text-emerald-800 dark:text-emerald-400 hover:underline">Explore Elite Circuit
+              &rarr;</a>
+          </div>
+
+          <!-- 3. Adult Club Championships -->
+          <div
+            class="p-6 rounded-3xl bg-white dark:bg-[#1B2B25] border border-stone-200/80 dark:border-stone-800/80 shadow-sm flex flex-col justify-between">
+            <div>
+              <div
+                class="w-12 h-12 rounded-2xl bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 flex items-center justify-center mb-4">
+                <i data-lucide="shield" class="w-6 h-6"></i>
+              </div>
+              <h3 class="font-serif font-bold text-lg mb-2">Adult & Master Cups</h3>
+              <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed mb-4">
+                NTRP 3.0 to 5.0 men’s, women’s, and mixed doubles weekend tournaments with social banquets and catered clubhouse dining.
+              </p>
+            </div>
+            <a href="programs.html#adults"
+              class="text-xs font-bold text-emerald-800 dark:text-emerald-400 hover:underline">Explore Adult Leagues
+              &rarr;</a>
+          </div>
+
+          <!-- 4. NCAA Recruitment Combines -->
+          <div
+            class="p-6 rounded-3xl bg-white dark:bg-[#1B2B25] border border-stone-200/80 dark:border-stone-800/80 shadow-sm flex flex-col justify-between">
+            <div>
+              <div
+                class="w-12 h-12 rounded-2xl bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-400 flex items-center justify-center mb-4">
+                <i data-lucide="globe" class="w-6 h-6"></i>
+              </div>
+              <h3 class="font-serif font-bold text-lg mb-2">Collegiate Showcases</h3>
+              <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed mb-4">
+                Direct showcase to head coaches from top NCAA programs. Complete match footage, serve velocity statistics, and scout dossiers.
+              </p>
+            </div>
+            <a href="coaches.html"
+              class="text-xs font-bold text-emerald-800 dark:text-emerald-400 hover:underline">Meet College Coaches
+              &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================================
+         TOURNAMENTS – SECTION 4: RECOMMENDED DRAWS & FEATURED MATCHES
+         ============================================================== -->
+    <section data-scroll-anim="3d-tilt" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-forest dark:text-emerald-400 block mb-2">Tournament
+          Roster</span>
+        <h2 class="section-title font-serif font-bold text-stone-900 dark:text-stone-100">
+          Upcoming Draw Registrations & Fees
+        </h2>
+        <p class="text-stone-600 dark:text-stone-400 text-sm mt-3">
+          Lock in your tournament entry early. Verified UTR match results automatically update in your student portal.
+        </p>
+      </div>
+
+      <div class="space-y-6">
+        <!-- Row 1: Summer Grand Slam -->
+        <div
+          class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#15221D] border border-stone-200 dark:border-stone-800 shadow-sm flex flex-col lg:flex-row items-center justify-between gap-6">
+          <div class="flex items-center gap-5 w-full lg:w-auto">
+            <img
+              src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=400&q=80"
+              alt="Summer Grand Slam" class="w-24 h-24 rounded-2xl object-cover shrink-0 shadow-md">
+            <div>
+              <span class="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase">Grand Slam Grass & DecoTurf</span>
+              <h3 class="font-serif font-bold text-xl text-stone-900 dark:text-stone-100">Vantage Summer Junior Grand Slam
+              </h3>
+              <p class="text-xs text-stone-500 mt-1">Format: 64 Draw Single Elimination with Consolation Bracket & Hawkeye Telemetry
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 w-full lg:w-auto justify-between lg:justify-end">
+            <div class="text-right">
+              <span class="font-serif text-2xl font-bold text-forest dark:text-emerald-300">$85</span>
+              <span class="text-xs text-stone-500"> / player entry</span>
+            </div>
+            <a href="booking.html?tourney=summer-slam" class="btn-primary text-xs px-5 py-2.5">
+              Register Entry
+            </a>
+          </div>
+        </div>
+
+        <!-- Row 2: Clay Classic -->
+        <div
+          class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#15221D] border border-stone-200 dark:border-stone-800 shadow-sm flex flex-col lg:flex-row items-center justify-between gap-6">
+          <div class="flex items-center gap-5 w-full lg:w-auto">
+            <img
+              src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=400&q=80"
+              alt="Roland Garros Clay Classic" class="w-24 h-24 rounded-2xl object-cover shrink-0 shadow-md">
+            <div>
+              <span class="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase">European Red Clay Circuit</span>
+              <h3 class="font-serif font-bold text-xl text-stone-900 dark:text-stone-100">Roland Garros Junior Clay Classic</h3>
+              <p class="text-xs text-stone-500 mt-1">Format: 32 Draw Singles, 16 Doubles Pairs, Babolat French Open Official Balls</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 w-full lg:w-auto justify-between lg:justify-end">
+            <div class="text-right">
+              <span class="font-serif text-2xl font-bold text-forest dark:text-emerald-300">$75</span>
+              <span class="text-xs text-stone-500"> / player entry</span>
+            </div>
+            <a href="booking.html?tourney=clay-classic" class="btn-primary text-xs px-5 py-2.5">
+              Register Entry
+            </a>
+          </div>
+        </div>
+
+        <!-- Row 3: Indoor Masters -->
+        <div
+          class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#15221D] border border-stone-200 dark:border-stone-800 shadow-sm flex flex-col lg:flex-row items-center justify-between gap-6">
+          <div class="flex items-center gap-5 w-full lg:w-auto">
+            <img
+              src="https://images.unsplash.com/photo-1560012057-4372e14c5085?auto=format&fit=crop&w=400&q=80"
+              alt="Winter Indoor Masters" class="w-24 h-24 rounded-2xl object-cover shrink-0 shadow-md">
+            <div>
+              <span class="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase">Air-Conditioned Indoor Masters</span>
+              <h3 class="font-serif font-bold text-xl text-stone-900 dark:text-stone-100">Vantage Winter Indoor Masters Trophy</h3>
+              <p class="text-xs text-stone-500 mt-1">Format: Round Robin + Knockout, Guaranteed 3 Verified UTR Matches</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 w-full lg:w-auto justify-between lg:justify-end">
+            <div class="text-right">
+              <span class="font-serif text-2xl font-bold text-forest dark:text-emerald-300">$95</span>
+              <span class="text-xs text-stone-500"> / player entry</span>
+            </div>
+            <a href="booking.html?tourney=winter-masters" class="btn-primary text-xs px-5 py-2.5">
+              Register Entry
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================================
+         TOURNAMENTS – SECTION 5: TOURNAMENT DISPATCH & DRAW ALERTS
+         ============================================================== -->
+    <section data-scroll-anim="pulse-glow"
+      class="py-24 bg-stone-100/70 dark:bg-[#121D18] px-4 sm:px-6 lg:px-8 border-t border-stone-200/60 dark:border-stone-800/60 anim-landscape-cards-unfold">
+      <div
+        class="max-w-4xl mx-auto rounded-3xl bg-forest text-white p-10 sm:p-14 text-center shadow-2xl relative overflow-hidden">
+        <div class="relative z-10 space-y-6">
+          <span
+            class="inline-block px-4 py-1 rounded-full bg-white/20 backdrop-blur-md text-amber-200 text-xs font-semibold">
+            The Championship Dispatch
+          </span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold leading-tight">
+            Receive Tournament Entry Openings & Wild-Card Alerts
+          </h2>
+          <p class="text-stone-200 text-xs sm:text-sm max-w-lg mx-auto font-light leading-relaxed">
+            Every month we publish draw announcements, UTR rating deadline reminders, and special guest exhibition rosters directly to players.
+          </p>
+
+          <form class="newsletter-form max-w-md mx-auto flex flex-col sm:flex-row gap-2 pt-2">
+            <input type="email" required placeholder="Enter your email address"
+              class="w-full px-5 py-3 rounded-full bg-stone-800/80 border border-emerald-600/50 text-xs text-white placeholder-stone-400 focus:outline-hidden focus:border-amber-400">
+            <button type="submit" class="btn-amber text-xs px-6 py-3 rounded-full shrink-0 shadow-lg">
+              Join Dispatch
+            </button>
+          </form>
+
+          <p class="text-[11px] text-emerald-200">
+            Zero spam. Verified tournament fixtures and wild card notifications only. Unsubscribe anytime.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==============================================================
+       SHARED FOOTER
+       ============================================================== -->
+  <footer class="bg-stone-100 dark:bg-stone-900 text-stone-600 dark:text-stone-300 pt-20 pb-12 border-t border-stone-200 dark:border-stone-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-10 pb-16 border-b border-stone-200 dark:border-stone-800">
+
+        <!-- Brand Info -->
+        <div class="xl:col-span-2">
+          <a href="index.html" class="flex items-center gap-2.5 sm:gap-3 mb-4 group">
+            <div
+              class="w-10 h-10 rounded-2xl bg-forest dark:bg-emerald-800 text-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
+              <i data-lucide="trophy" class="w-5 h-5 text-amberAccent"></i>
+            </div>
+            <div>
+              <span class="font-serif text-2xl font-bold text-forest dark:text-white tracking-tight block leading-none">VANTAGE</span>
+              <span class="text-[10px] uppercase tracking-widest text-earth dark:text-amber-400 font-semibold">Tennis Academy</span>
+            </div>
+          </a>
+          <p class="text-xs text-stone-600 dark:text-stone-400 max-w-sm leading-relaxed mb-6">
+            A world-class tennis training sanctuary dedicated to athletic excellence, Grand Slam court surfaces, biomechanical analytics, and transformative coaching for junior, collegiate, and adult athletes.
+          </p>
+          <div class="flex items-center gap-2.5 text-stone-600 dark:text-stone-300">
+            <!-- Instagram -->
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+              class="social-icon-btn social-instagram" aria-label="Vantage on Instagram" title="Instagram">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </a>
+            <!-- Facebook -->
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+              class="social-icon-btn social-facebook" aria-label="Vantage on Facebook" title="Facebook">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </a>
+            <!-- X / Twitter -->
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-x"
+              aria-label="Vantage on X" title="X">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </a>
+            <!-- YouTube -->
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"
+              class="social-icon-btn social-youtube" aria-label="Vantage on YouTube" title="YouTube">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-serif font-bold text-sm text-stone-900 dark:text-white uppercase tracking-wider mb-4">Academy</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="courts.html" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Grand Slam Courts</a></li>
+            <li><a href="programs.html" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Coaching Programs</a></li>
+            <li><a href="coaches.html" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Our Master Coaches</a></li>
+            <li><a href="tournaments.html" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Tournament Circuit</a></li>
+            <li><a href="training.html" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Training Facility</a></li>
+            <li><a href="admissions.html" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Admissions & Trial</a></li>
+          </ul>
+        </div>
+
+        <!-- Student Portal -->
+        <div>
+          <h4 class="font-serif font-bold text-sm text-stone-900 dark:text-white uppercase tracking-wider mb-4">Students</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="dashboard.html" class="text-emerald-700 dark:text-emerald-400 font-semibold hover:underline">Student Dashboard</a></li>
+            <li><a href="booking.html" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Book Court Slot</a></li>
+            <li><a href="booking.html?type=coaching" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Book Private Coaching</a></li>
+            <li><a href="dashboard.html#progress" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Track UTR Progress</a></li>
+            <li><a href="dashboard.html#payments" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Pay Academy Fees</a></li>
+            <li><a href="login.html" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Student Login</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Subscription -->
+        <div>
+          <h4 class="font-serif font-bold text-sm text-stone-900 dark:text-white uppercase tracking-wider mb-4">Academy Dispatch</h4>
+          <p class="text-xs text-stone-600 dark:text-stone-400 mb-4 leading-relaxed">
+            Subscribe for tournament draws, holiday intensive camps, pro clinic announcements, and court availability.
+          </p>
+          <form class="newsletter-form space-y-2">
+            <input type="email" placeholder="Your email address" required
+              class="w-full px-4 py-2.5 rounded-2xl bg-white dark:bg-stone-800 border border-stone-300 dark:border-stone-700 text-xs text-stone-900 dark:text-white placeholder-stone-400 dark:placeholder-stone-500 focus:outline-hidden focus:border-forest dark:focus:border-emerald-500 shadow-xs">
+            <button type="submit" class="w-full btn-primary text-xs py-2.5">
+              Subscribe Free
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 dark:text-stone-500 gap-4">
+        <p>&copy; 2026 Vantage Tennis Academy. All rights reserved.</p>
+        <div class="flex items-center gap-6">
+          <a href="admissions.html" class="hover:text-stone-800 dark:hover:text-stone-300 transition-colors">Academy Rules</a>
+          <a href="admissions.html" class="hover:text-stone-800 dark:hover:text-stone-300 transition-colors">Court Etiquette</a>
+          <a href="admissions.html" class="hover:text-stone-800 dark:hover:text-stone-300 transition-colors">Safety Policy</a>
+          <a href="dashboard.html" class="hover:text-stone-800 dark:hover:text-stone-300 transition-colors">Student Account</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

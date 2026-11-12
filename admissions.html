@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academy Admissions, Trials & Campus Tours | Vantage Tennis Academy</title>
+  <meta name="description" content="Schedule a complimentary skill assessment trial, book a campus tour, or contact the Vantage Tennis Academy admissions and pro desk.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            forest: {
+              DEFAULT: '#0B3323',
+              dark: '#072317',
+              light: '#144A34'
+            },
+            sage: {
+              DEFAULT: '#B8EB18',
+              light: '#EBF8CC'
+            },
+            cream: '#F7FAF7',
+            earth: '#B8532F',
+            sand: '#E6D5B8',
+            amberAccent: '#CCA73A'
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            display: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#F7FAF7] dark:bg-[#0A1410] text-[#1C2420] dark:text-[#F3F7F5] transition-colors duration-300">
+
+  <!-- ==============================================================
+       HEADER & NAVIGATION
+       ============================================================== -->
+  <header class="sticky top-0 z-50 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 xl:px-8 h-20 flex items-center justify-between gap-4">
+      <a href="index.html" class="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+        <div class="w-10 h-10 rounded-2xl bg-forest dark:bg-emerald-800 text-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
+          <i data-lucide="trophy" class="w-5 h-5 text-amberAccent"></i>
+        </div>
+        <div>
+          <span class="font-serif text-2xl font-bold tracking-tight text-forest dark:text-emerald-300 block leading-none">VANTAGE</span>
+          <span class="text-[10px] uppercase tracking-widest text-earth dark:text-amber-400 font-semibold">Tennis Academy</span>
+        </div>
+      </a>
+
+      <nav class="hidden xl:flex items-center gap-4 xl:gap-6 2xl:gap-7 text-xs xl:text-sm font-semibold text-stone-700 dark:text-stone-200">
+        <div class="relative group py-2">
+          <button class="flex items-center gap-1 hover:text-forest dark:hover:text-emerald-400 transition-colors whitespace-nowrap">
+            Home <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i>
+          </button>
+          <div class="absolute top-full left-0 rtl:left-auto rtl:right-0 mt-1 w-44 bg-white dark:bg-[#15221D] rounded-2xl shadow-xl border border-stone-200 dark:border-stone-800 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <a href="index.html" class="block px-4 py-2 text-xs font-semibold hover:bg-stone-50 dark:hover:bg-stone-800">Home 1</a>
+            <a href="home-2.html" class="block px-4 py-2 text-xs font-semibold hover:bg-stone-50 dark:hover:bg-stone-800">Home 2</a>
+          </div>
+        </div>
+
+        <a href="coaches.html" class="hover:text-forest dark:hover:text-emerald-400 transition-colors whitespace-nowrap">Coaches</a>
+        <a href="programs.html" class="hover:text-forest dark:hover:text-emerald-400 transition-colors whitespace-nowrap">Programs</a>
+        <a href="courts.html" class="hover:text-forest dark:hover:text-emerald-400 transition-colors whitespace-nowrap">Courts</a>
+        <a href="tournaments.html" class="hover:text-forest dark:hover:text-emerald-400 transition-colors whitespace-nowrap">Tournaments</a>
+        <a href="training.html" class="hover:text-forest dark:hover:text-emerald-400 transition-colors whitespace-nowrap">Training</a>
+        <a href="admissions.html" class="nav-link-active text-forest dark:text-emerald-300 font-bold whitespace-nowrap">Admissions</a>
+        <a href="dashboard.html" class="hover:text-forest dark:hover:text-emerald-400 transition-colors whitespace-nowrap">Dashboard</a>
+      </nav>
+
+      <!-- Right Header Actions -->
+      <div class="flex items-center gap-2 xl:gap-3 shrink-0">
+        <!-- Theme Toggle (Desktop XL+) -->
+        <button
+          class="theme-toggle-btn hidden xl:flex w-9 h-9 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-200 items-center justify-center hover:scale-105 transition-transform"
+          title="Toggle Light/Dark Theme">
+          <i data-lucide="moon" class="theme-icon-moon w-4 h-4"></i>
+          <i data-lucide="sun" class="theme-icon-sun w-4 h-4 hidden"></i>
+        </button>
+
+        <!-- RTL Toggle (Desktop XL+) -->
+        <button
+          class="rtl-toggle-btn hidden xl:flex w-9 h-9 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-200 items-center justify-center hover:scale-105 transition-transform"
+          title="Toggle RTL / LTR Reading Direction" aria-label="Toggle RTL / LTR Reading Direction">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+          </svg>
+        </button>
+
+        <a href="login.html" class="hidden xl:inline-flex text-xs font-bold text-forest dark:text-emerald-300 hover:text-amberAccent px-3 py-2 transition-colors">
+          Log In
+        </a>
+
+        <!-- Primary CTA (Desktop XL+) -->
+        <div class="hidden xl:flex items-center">
+          <a href="booking.html" class="btn-primary text-xs px-5 py-2.5 shadow-sm inline-flex items-center gap-2 whitespace-nowrap">
+            <i data-lucide="calendar" class="w-3.5 h-3.5 text-amberAccent"></i>
+            <span>Book Slot</span>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Trigger -->
+        <button id="mobile-menu-toggle"
+          class="xl:hidden w-10 h-10 rounded-2xl bg-stone-100 dark:bg-stone-800 flex items-center justify-center text-stone-800 dark:text-stone-200">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay -->
+  <div id="mobile-drawer" class="fixed inset-0 z-[10000] bg-stone-950/60 backdrop-blur-sm hidden transition-opacity">
+    <div class="drawer-content fixed top-0 right-0 w-80 max-w-full h-full bg-cream dark:bg-[#15221D] p-5 sm:p-6 shadow-2xl flex flex-col justify-between transition-transform duration-300 translate-x-full overflow-y-auto">
+      <div>
+        <div class="flex items-center justify-between pb-6 border-b border-stone-200 dark:border-stone-800">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-forest dark:bg-emerald-800 text-white flex items-center justify-center shadow-xs">
+              <i data-lucide="trophy" class="w-4 h-4 text-amberAccent"></i>
+            </div>
+            <div>
+              <span class="font-serif font-bold text-lg text-forest dark:text-emerald-300 block leading-none">VANTAGE</span>
+              <span class="text-[9px] uppercase tracking-widest text-earth dark:text-amber-400 font-semibold">Tennis Academy</span>
+            </div>
+          </div>
+          <button id="mobile-drawer-close" class="w-8 h-8 rounded-full bg-stone-200 dark:bg-stone-800 flex items-center justify-center">
+            <i data-lucide="x" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+        <nav class="flex flex-col gap-2.5 mt-6 text-sm font-semibold">
+          <!-- Home Submenu matching Desktop -->
+          <div class="py-1">
+            <button type="button"
+              class="w-full flex items-center justify-between py-1.5 hover:text-forest dark:hover:text-emerald-400 transition-colors"
+              onclick="this.nextElementSibling.classList.toggle('hidden'); const icon = this.querySelector('i'); if (icon) icon.classList.toggle('rotate-180');">
+              <span class="flex items-center gap-1.5">Home</span>
+              <i data-lucide="chevron-down" class="w-4 h-4 text-stone-400 transition-transform duration-200"></i>
+            </button>
+            <div class="pl-4 flex flex-col gap-1.5 mt-1 border-l-2 border-emerald-700/40">
+              <a href="index.html" class="py-1 text-xs font-semibold hover:text-forest">Home 1</a>
+              <a href="home-2.html" class="py-1 text-xs font-semibold hover:text-forest">Home 2</a>
+            </div>
+          </div>
+
+          <a href="coaches.html" class="py-1.5 hover:text-forest dark:hover:text-emerald-400 transition-colors">Coaches</a>
+          <a href="programs.html" class="py-1.5 hover:text-forest dark:hover:text-emerald-400 transition-colors">Programs</a>
+          <a href="courts.html" class="py-1.5 hover:text-forest dark:hover:text-emerald-400 transition-colors">Courts</a>
+          <a href="tournaments.html" class="py-1.5 hover:text-forest dark:hover:text-emerald-400 transition-colors">Tournaments</a>
+          <a href="training.html" class="py-1.5 hover:text-forest dark:hover:text-emerald-400 transition-colors">Training</a>
+          <a href="admissions.html" class="drawer-link-active py-1.5 font-bold text-forest dark:text-emerald-300 transition-colors block">Admissions</a>
+          <a href="dashboard.html" class="py-1.5 hover:text-forest dark:hover:text-emerald-400 transition-colors">Dashboard</a>
+        </nav>
+      </div>
+
+      <div class="pt-4 sm:pt-6 border-t border-stone-200 dark:border-stone-800 flex flex-col gap-2.5 sm:gap-3 shrink-0 my-2">
+        <!-- Theme & RTL Controls inside Hamburger -->
+        <div class="flex items-center justify-between px-3 py-2 rounded-2xl bg-stone-100/80 dark:bg-stone-900/60 border border-stone-200/70 dark:border-stone-800 mb-1">
+          <span class="text-xs font-semibold text-stone-600 dark:text-stone-300">Preferences</span>
+          <div class="flex items-center gap-2">
+            <button
+              class="theme-toggle-btn w-9 h-9 rounded-full bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-200 shadow-xs flex items-center justify-center hover:scale-105 transition-transform"
+              title="Toggle Light/Dark Theme">
+              <i data-lucide="moon" class="theme-icon-moon w-4 h-4"></i>
+              <i data-lucide="sun" class="theme-icon-sun w-4 h-4 hidden"></i>
+            </button>
+            <button
+              class="rtl-toggle-btn w-9 h-9 rounded-full bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-200 shadow-xs flex items-center justify-center hover:scale-105 transition-transform"
+              title="Toggle RTL / LTR Reading Direction" aria-label="Toggle RTL / LTR Reading Direction">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <a href="login.html" class="btn-secondary text-xs text-center py-2 sm:py-2.5 rounded-full font-semibold">Log In</a>
+        <a href="booking.html" class="btn-primary text-xs text-center py-2 sm:py-2.5 rounded-full font-semibold inline-flex items-center justify-center gap-1.5">
+          <i data-lucide="calendar" class="w-3.5 h-3.5 text-amberAccent"></i>
+          <span>Book Slot</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ==============================================================
+         ADMISSIONS – SECTION 1: HERO SECTION
+         ============================================================== -->
+    <section data-scroll-anim="fade-up" class="relative py-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=2000&q=80" alt="Vantage Tennis Center Campus" class="w-full h-full object-cover filter brightness-[0.55]">
+        <div class="absolute inset-0 bg-stone-950/40"></div>
+      </div>
+
+      <div class="relative z-10 max-w-4xl mx-auto text-center text-white">
+        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md text-amber-200 text-xs font-semibold mb-6">
+          <i data-lucide="award" class="w-3.5 h-3.5 text-amber-300"></i> Complimentary Skill Evaluation & Campus Tours
+        </span>
+
+        <h1 class="font-serif text-4xl sm:text-6xl font-bold mb-6 leading-tight drop-shadow-md">
+          Begin Your Tennis Journey<br>
+          <span class="italic font-display font-normal text-amber-100">With Vantage Academy.</span>
+        </h1>
+
+        <p class="text-stone-200 text-base sm:text-lg max-w-2xl mx-auto font-light leading-relaxed drop-shadow-sm">
+          Whether auditioning for our High-Performance Squad, scheduling junior Red-Ball development, or booking private court slots, our admissions directors are ready to assist.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==============================================================
+         ADMISSIONS – SECTION 2: CONTACT INFORMATION CARDS
+         (Campus address, phone, email, and working hours)
+         ============================================================== -->
+    <section data-scroll-anim="spring-pop" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto -mt-14 relative z-20">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Card 1: Address -->
+        <div class="p-6 rounded-3xl bg-white dark:bg-[#15221D] border border-stone-200 dark:border-stone-800 shadow-xl space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 flex items-center justify-center">
+            <i data-lucide="map-pin" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-serif font-bold text-lg text-stone-900 dark:text-stone-100">Academy Campus</h3>
+          <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed">
+            1200 Championship Court Way, Palm Tennis Valley, CA 92260, United States
+          </p>
+        </div>
+
+        <!-- Card 2: Telephone -->
+        <div class="p-6 rounded-3xl bg-white dark:bg-[#15221D] border border-stone-200 dark:border-stone-800 shadow-xl space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 flex items-center justify-center">
+            <i data-lucide="phone" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-serif font-bold text-lg text-stone-900 dark:text-stone-100">Direct Pro Desk</h3>
+          <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed">
+            +1 (760) 555-0190<br>
+            Toll-Free: 1-800-VANTAGE-ACE
+          </p>
+        </div>
+
+        <!-- Card 3: Email -->
+        <div class="p-6 rounded-3xl bg-white dark:bg-[#15221D] border border-stone-200 dark:border-stone-800 shadow-xl space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 flex items-center justify-center">
+            <i data-lucide="mail" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-serif font-bold text-lg text-stone-900 dark:text-stone-100">Admissions Desk</h3>
+          <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed">
+            admissions@vantagetennis.com<br>
+            coaches@vantagetennis.com
+          </p>
+        </div>
+
+        <!-- Card 4: Working Hours -->
+        <div class="p-6 rounded-3xl bg-white dark:bg-[#15221D] border border-stone-200 dark:border-stone-800 shadow-xl space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 flex items-center justify-center">
+            <i data-lucide="clock" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-serif font-bold text-lg text-stone-900 dark:text-stone-100">Operating Hours</h3>
+          <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed">
+            Monday – Sunday: 6:00 AM – 10:00 PM PST<br>
+            24/7 Student Portal & Slot Reservation
+          </p>
+        </div>
+
+        <!-- Social Channels & Academy Community Connect Card -->
+        <div class="col-span-1 sm:col-span-2 lg:col-span-4 p-6 sm:p-8 rounded-3xl bg-stone-900 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 border border-stone-800">
+          <div class="flex items-center gap-4 text-center md:text-left flex-col md:flex-row">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-700/80 text-white flex items-center justify-center shrink-0 shadow-md">
+              <i data-lucide="share-2" class="w-6 h-6 text-amber-300"></i>
+            </div>
+            <div>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400 block mb-0.5">Academy Community & Match Streams</span>
+              <h3 class="font-serif font-bold text-lg text-white">Connect Across Our Tennis Channels</h3>
+              <p class="text-xs text-stone-400 mt-1 max-w-xl leading-relaxed">
+                Follow live tournament matches, technical stroke analysis breakdowns, coach masterclasses, and student championship triumphs.
+              </p>
+            </div>
+          </div>
+
+          <!-- Social Buttons -->
+          <div class="flex flex-wrap items-center justify-center gap-2.5 shrink-0">
+            <!-- Instagram -->
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+              class="social-icon-btn social-instagram" aria-label="Vantage on Instagram" title="Instagram (@vantagetennis)">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/17605550190" target="_blank" rel="noopener noreferrer"
+              class="social-icon-btn social-whatsapp" aria-label="Vantage on WhatsApp" title="WhatsApp (+1 760-555-0190)">
+              <svg viewBox="0 0 24 24">
+                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.51c-.19-.09-1.11-.55-1.28-.61-.17-.07-.3-.09-.43.1-.12.19-.48.61-.59.73-.11.13-.22.14-.4.05-.19-.09-.79-.29-1.5-.93-.56-.49-.93-1.11-1.04-1.3-.11-.19-.01-.29.08-.38.08-.08.19-.22.28-.33.09-.11.13-.19.19-.31.06-.13.03-.24-.02-.33-.04-.1-.43-1.03-.59-1.42-.15-.37-.31-.32-.43-.33h-.37c-.13 0-.33.05-.51.24-.17.19-.66.65-.66 1.58 0 .93.68 1.83.77 1.96.1.12 1.34 2.05 3.25 2.87.45.2.81.31 1.09.4.46.15.88.13 1.21.08.37-.06 1.11-.45 1.27-.89.15-.43.15-.81.11-.89-.05-.08-.18-.13-.37-.22"/>
+              </svg>
+            </a>
+
+            <!-- Facebook -->
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+              class="social-icon-btn social-facebook" aria-label="Vantage on Facebook" title="Facebook">
+              <svg viewBox="0 0 24 24">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+
+            <!-- X / Twitter -->
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer"
+              class="social-icon-btn social-x" aria-label="Vantage on X (Twitter)" title="X (Twitter)">
+              <svg viewBox="0 0 24 24">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+
+            <!-- YouTube -->
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"
+              class="social-icon-btn social-youtube" aria-label="Vantage on YouTube" title="YouTube">
+              <svg viewBox="0 0 24 24">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Master Two-Column Container for Sections 3 and 4 (Forms) -->
+    <div class="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      
+      <!-- ==============================================================
+           ADMISSIONS – SECTION 3: STUDENT TRIAL & ADMISSIONS ASSESSMENT FORM
+           ============================================================== -->
+      <section data-scroll-anim="slide-left" class="bg-white dark:bg-[#15221D] p-8 sm:p-10 rounded-3xl border border-stone-200 dark:border-stone-800 shadow-lg space-y-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-forest dark:text-emerald-400 block mb-2">Student Admissions</span>
+          <h2 class="font-serif font-bold text-2xl sm:text-3xl text-stone-900 dark:text-stone-100">
+            Book Skill Assessment Trial
+          </h2>
+          <p class="text-xs text-stone-500 mt-1">
+            Complimentary 45-minute on-court stroke, footwork, and UTR baseline evaluation with a master coach.
+          </p>
+        </div>
+
+        <form id="general-enquiry-form" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">Player Full Name</label>
+              <input type="text" id="gen-name" required placeholder="Alex Morgan" class="w-full p-3 rounded-2xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs focus:outline-hidden">
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">Email Address</label>
+              <input type="email" id="gen-email" required placeholder="alex.morgan@example.com" class="w-full p-3 rounded-2xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs focus:outline-hidden">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">Phone Number</label>
+              <input type="tel" id="gen-phone" placeholder="+1 (555) 019-2831" class="w-full p-3 rounded-2xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs focus:outline-hidden">
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">Desired Program Tier</label>
+              <select id="gen-type" class="w-full p-3 rounded-2xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs font-semibold focus:outline-hidden cursor-pointer">
+                <option value="Junior Development">Junior Development (Ages 5-14)</option>
+                <option value="High-Performance Elite">High-Performance Elite (UTR 6.0+)</option>
+                <option value="Adult Clinics & Cardio">Adult Clinics & Cardio Tennis</option>
+                <option value="Private 1-on-1 Biomechanics">Private 1-on-1 Biomechanics</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">Player Age / Category</label>
+              <input type="text" id="gen-age" placeholder="e.g. 14 years old (Junior)" class="w-full p-3 rounded-2xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs focus:outline-hidden">
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">Current UTR or NTRP Rating</label>
+              <input type="text" id="gen-dest" placeholder="e.g. UTR 7.4 or NTRP 4.0 / Beginner" class="w-full p-3 rounded-2xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs focus:outline-hidden">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">Training Goals & Preferred Days</label>
+            <textarea id="gen-message" required rows="4" placeholder="Tell us about your tennis background, competitive aspirations (college recruitment, tournament wins, or recreation), and preferred trial days." class="w-full p-3 rounded-2xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs focus:outline-hidden"></textarea>
+          </div>
+
+          <button type="submit" class="w-full btn-primary text-sm py-3.5 shadow-md">
+            <i data-lucide="send" class="w-4 h-4"></i> Schedule Assessment Trial
+          </button>
+        </form>
+      </section>
+
+      <!-- ==============================================================
+           ADMISSIONS – SECTION 4: COACH AFFILIATION & TOURNAMENT HOST APPLICATION
+           ============================================================== -->
+      <section data-scroll-anim="slide-right" id="host-enquiry" class="bg-cream dark:bg-[#1B2B25] p-8 sm:p-10 rounded-3xl border border-stone-200/80 dark:border-stone-800 shadow-lg space-y-6 anim-host-form-slide-left">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400 block mb-2">Staff & Tournament Hosting</span>
+          <h2 class="font-serif font-bold text-2xl sm:text-3xl text-stone-900 dark:text-stone-100">
+            Coach Affiliation & Inquiries
+          </h2>
+          <p class="text-xs text-stone-600 dark:text-stone-400 mt-1">
+            Are you a certified USPTA / PTR coach or tournament director seeking facility collaboration? Partner with Vantage.
+          </p>
+        </div>
+
+        <form id="host-listing-form" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">Applicant Name</label>
+              <input type="text" id="host-applicant-name" required placeholder="David Vance" class="w-full p-3 rounded-2xl bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs focus:outline-hidden">
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">Email Address</label>
+              <input type="email" id="host-applicant-email" required placeholder="david.vance@tennispro.org" class="w-full p-3 rounded-2xl bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs focus:outline-hidden">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">Affiliation / Ingestion Type</label>
+              <select id="host-property-type" class="w-full p-3 rounded-2xl bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs font-semibold focus:outline-hidden cursor-pointer">
+                <option value="Certified USPTA Coach">Certified USPTA / PTR Coach</option>
+                <option value="Collegiate Scout">NCAA College Tennis Recruiter</option>
+                <option value="Tournament Organizer">Sanctioned UTR / USTA Tournament Director</option>
+                <option value="Corporate Clinic">Corporate Clinic & Sponsor Partner</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">Certifications & Experience</label>
+              <input type="text" id="host-acreage" placeholder="e.g. USPTA Elite, 12 years collegiate coaching" class="w-full p-3 rounded-2xl bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs focus:outline-hidden">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">Current Base / Organization</label>
+            <input type="text" id="host-location" required placeholder="e.g. Southern California Tennis Association" class="w-full p-3 rounded-2xl bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs focus:outline-hidden">
+          </div>
+
+          <div>
+            <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">Partnership Proposal & Curriculum Overview</label>
+            <textarea id="host-description" required rows="4" placeholder="Detail your coaching philosophy, athletic specialty (serve biomechanics, mental conditioning), or tournament draw proposal." class="w-full p-3 rounded-2xl bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs focus:outline-hidden"></textarea>
+          </div>
+
+          <button type="submit" class="w-full btn-amber text-sm py-3.5 shadow-md">
+            <i data-lucide="check" class="w-4 h-4"></i> Submit Partnership Proposal
+          </button>
+        </form>
+      </section>
+    </div>
+
+    <!-- ==============================================================
+         ADMISSIONS – SECTION 5: GOOGLE MAPS, FAQS & FINAL CTA
+         ============================================================== -->
+    <section data-scroll-anim="curtain-rise" class="py-24 bg-stone-100/70 dark:bg-[#121D18] px-4 sm:px-6 lg:px-8 border-t border-stone-200/60 dark:border-stone-800/60 anim-faq-unfold">
+      <div class="max-w-7xl mx-auto space-y-16">
+        
+        <!-- FAQs Accordion -->
+        <div class="max-w-3xl mx-auto space-y-6">
+          <div class="text-center">
+            <span class="text-xs font-bold uppercase tracking-widest text-forest dark:text-emerald-400 block mb-2">Academy Questions</span>
+            <h2 class="section-title font-serif font-bold text-stone-900 dark:text-stone-100">
+              Frequently Asked Questions
+            </h2>
+          </div>
+
+          <div class="space-y-3">
+            <details class="group p-5 rounded-2xl bg-white dark:bg-[#15221D] border border-stone-200 dark:border-stone-800 shadow-xs cursor-pointer">
+              <summary class="font-serif font-bold text-base text-stone-900 dark:text-stone-100 flex items-center justify-between list-none">
+                <span>What equipment is needed for the trial skill evaluation?</span>
+                <i data-lucide="chevron-down" class="w-4 h-4 group-open:rotate-180 transition-transform"></i>
+              </summary>
+              <p class="text-xs text-stone-600 dark:text-stone-400 mt-3 leading-relaxed">
+                Players need appropriate non-marking tennis court shoes and athletic wear. We provide demo rackets from Babolat, Wilson, and Head, as well as new championship tennis balls and high-speed video telemetry analysis during your session.
+              </p>
+            </details>
+
+            <details class="group p-5 rounded-2xl bg-white dark:bg-[#15221D] border border-stone-200 dark:border-stone-800 shadow-xs cursor-pointer">
+              <summary class="font-serif font-bold text-base text-stone-900 dark:text-stone-100 flex items-center justify-between list-none">
+                <span>What is the academy court cancellation and rain policy?</span>
+                <i data-lucide="chevron-down" class="w-4 h-4 group-open:rotate-180 transition-transform"></i>
+              </summary>
+              <p class="text-xs text-stone-600 dark:text-stone-400 mt-3 leading-relaxed">
+                Court bookings can be cancelled or rescheduled directly inside your student dashboard up to 24 hours prior for a full credit. In case of inclement weather, outdoor matches are immediately transferred to our climate-controlled indoor dome or refunded automatically.
+              </p>
+            </details>
+
+            <details class="group p-5 rounded-2xl bg-white dark:bg-[#15221D] border border-stone-200 dark:border-stone-800 shadow-xs cursor-pointer">
+              <summary class="font-serif font-bold text-base text-stone-900 dark:text-stone-100 flex items-center justify-between list-none">
+                <span>How does the student dashboard help track progress and pay fees?</span>
+                <i data-lucide="chevron-down" class="w-4 h-4 group-open:rotate-180 transition-transform"></i>
+              </summary>
+              <p class="text-xs text-stone-600 dark:text-stone-400 mt-3 leading-relaxed">
+                Every enrolled athlete receives credentials for the student dashboard to view live UTR ratings, radar serve mph statistics, coach evaluations, upcoming court slots, and monthly tuition fee invoices with instant digital receipt generation.
+              </p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Real Interactive Google Map -->
+        <div class="space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <h3 class="font-serif font-bold text-xl text-stone-900 dark:text-stone-100 flex items-center gap-2">
+                <i data-lucide="map" class="w-5 h-5 text-emerald-800 dark:text-emerald-400"></i> Vantage Tennis Academy Hubs
+              </h3>
+              <p class="text-xs text-stone-500 mt-0.5">Explore our main campus and regional training facilities</p>
+            </div>
+            
+            <!-- Destination Switcher Pills -->
+            <div id="map-pills" class="flex flex-wrap items-center gap-1.5">
+              <button type="button" onclick="selectMapRegion(this, 'Palm Desert, California, USA', 'Vantage Main Championship Campus', 'Palm Tennis Valley, CA')"
+                class="map-pill px-3 py-1.5 rounded-full text-xs font-semibold bg-emerald-800 text-white shadow-xs transition-all">
+                Palm Desert, CA
+              </button>
+              <button type="button" onclick="selectMapRegion(this, 'Indian Wells Tennis Garden, California, USA', 'Vantage Red Clay & Grass Facility', 'Indian Wells, CA')"
+                class="map-pill px-3 py-1.5 rounded-full text-xs font-semibold bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:bg-emerald-800 hover:text-white border border-stone-200 dark:border-stone-700 transition-all">
+                Indian Wells, CA
+              </button>
+              <button type="button" onclick="selectMapRegion(this, 'Key Biscayne, Florida, USA', 'Vantage Coastal Performance Hub', 'Key Biscayne, FL')"
+                class="map-pill px-3 py-1.5 rounded-full text-xs font-semibold bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:bg-emerald-800 hover:text-white border border-stone-200 dark:border-stone-700 transition-all">
+                Key Biscayne, FL
+              </button>
+              <button type="button" onclick="selectMapRegion(this, 'Austin, Texas, USA', 'Vantage Indoor Masters Dome', 'Austin, TX')"
+                class="map-pill px-3 py-1.5 rounded-full text-xs font-semibold bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:bg-emerald-800 hover:text-white border border-stone-200 dark:border-stone-700 transition-all">
+                Austin, TX
+              </button>
+              <button type="button" onclick="selectMapRegion(this, 'Nice, France', 'Vantage European Clay Academy Base', 'French Riviera')"
+                class="map-pill px-3 py-1.5 rounded-full text-xs font-semibold bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:bg-emerald-800 hover:text-white border border-stone-200 dark:border-stone-700 transition-all">
+                Nice, France
+              </button>
+            </div>
+          </div>
+
+          <div class="relative rounded-3xl overflow-hidden aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] min-h-[460px] sm:min-h-[480px] lg:min-h-[400px] bg-stone-200 dark:bg-stone-800 border border-stone-300 dark:border-stone-700 shadow-md">
+            <!-- Embedded Google Map -->
+            <iframe
+              id="global-google-map"
+              title="Vantage Tennis Academy Campus Map"
+              class="w-full h-full border-0"
+              src="https://maps.google.com/maps?q=Palm%20Desert%2C%20California%2C%20USA&t=&z=12&ie=UTF8&iwloc=&output=embed"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+            <!-- Floating Info Card on bottom-left -->
+            <div class="absolute bottom-3 left-3 right-3 sm:right-auto sm:bottom-4 sm:left-4 z-10 p-3 sm:p-4 rounded-2xl bg-white/95 dark:bg-stone-900/95 backdrop-blur-md border border-stone-200/80 dark:border-stone-700/80 shadow-xl max-w-none sm:max-w-sm pointer-events-auto">
+              <div class="flex items-start gap-2.5 sm:gap-3">
+                <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-emerald-700 text-white flex items-center justify-center shrink-0 shadow-xs">
+                  <i data-lucide="map-pin" class="w-4 h-4 sm:w-5 sm:h-5 text-amber-300"></i>
+                </div>
+                <div>
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 block">Verified Academy Campus</span>
+                  <h4 id="map-active-title" class="font-serif font-bold text-stone-900 dark:text-stone-100 text-xs sm:text-sm">Vantage Main Championship Campus</h4>
+                  <p id="map-active-location" class="text-[11px] sm:text-xs text-stone-600 dark:text-stone-400 mt-0.5 leading-snug">Palm Tennis Valley, CA &bull; 12 Grand Slam Courts, Pro Shop & Telemetry Lab</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Final CTA Banner -->
+        <div class="p-10 rounded-3xl bg-forest text-white shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div>
+            <h3 class="font-serif text-2xl font-bold mb-1">Looking for Immediate Court or Academy Answers?</h3>
+            <p class="text-xs text-stone-200">Our tennis concierge is available via live phone or WhatsApp 7 days a week.</p>
+          </div>
+          <div class="flex flex-col sm:flex-row items-center gap-3 shrink-0">
+            <a href="https://wa.me/17605550190" target="_blank" rel="noopener noreferrer"
+              class="cta-btn-banner bg-[#25D366] hover:bg-[#20ba59] text-white shadow-md">
+              <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.51c-.19-.09-1.11-.55-1.28-.61-.17-.07-.3-.09-.43.1-.12.19-.48.61-.59.73-.11.13-.22.14-.4.05-.19-.09-.79-.29-1.5-.93-.56-.49-.93-1.11-1.04-1.3-.11-.19-.01-.29.08-.38.08-.08.19-.22.28-.33.09-.11.13-.19.19-.31.06-.13.03-.24-.02-.33-.04-.1-.43-1.03-.59-1.42-.15-.37-.31-.32-.43-.33h-.37c-.13 0-.33.05-.51.24-.17.19-.66.65-.66 1.58 0 .93.68 1.83.77 1.96.1.12 1.34 2.05 3.25 2.87.45.2.81.31 1.09.4.46.15.88.13 1.21.08.37-.06 1.11-.45 1.27-.89.15-.43.15-.81.11-.89-.05-.08-.18-.13-.37-.22"/></svg>
+              <span>WhatsApp Desk</span>
+            </a>
+            <a href="tel:+17605550190" class="cta-btn-banner btn-amber shadow-md">
+              <i data-lucide="phone-call" class="w-4 h-4 shrink-0"></i> <span>Call Admissions</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==============================================================
+       SHARED FOOTER
+       ============================================================== -->
+  <footer class="bg-stone-100 dark:bg-stone-900 text-stone-600 dark:text-stone-300 pt-20 pb-12 border-t border-stone-200 dark:border-stone-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-10 pb-16 border-b border-stone-200 dark:border-stone-800">
+
+        <!-- Brand Info -->
+        <div class="xl:col-span-2">
+          <a href="index.html" class="flex items-center gap-2.5 sm:gap-3 mb-4 group">
+            <div
+              class="w-10 h-10 rounded-2xl bg-forest dark:bg-emerald-800 text-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
+              <i data-lucide="trophy" class="w-5 h-5 text-amberAccent"></i>
+            </div>
+            <div>
+              <span class="font-serif text-2xl font-bold text-forest dark:text-white tracking-tight block leading-none">VANTAGE</span>
+              <span class="text-[10px] uppercase tracking-widest text-earth dark:text-amber-400 font-semibold">Tennis Academy</span>
+            </div>
+          </a>
+          <p class="text-xs text-stone-600 dark:text-stone-400 max-w-sm leading-relaxed mb-6">
+            A world-class tennis training sanctuary dedicated to athletic excellence, Grand Slam court surfaces, biomechanical analytics, and transformative coaching for junior, collegiate, and adult athletes.
+          </p>
+          <div class="flex items-center gap-2.5 text-stone-600 dark:text-stone-300">
+            <!-- Instagram -->
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+              class="social-icon-btn social-instagram" aria-label="Vantage on Instagram" title="Instagram">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </a>
+            <!-- Facebook -->
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+              class="social-icon-btn social-facebook" aria-label="Vantage on Facebook" title="Facebook">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </a>
+            <!-- X / Twitter -->
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-x"
+              aria-label="Vantage on X" title="X">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </a>
+            <!-- YouTube -->
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"
+              class="social-icon-btn social-youtube" aria-label="Vantage on YouTube" title="YouTube">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-serif font-bold text-sm text-stone-900 dark:text-white uppercase tracking-wider mb-4">Academy</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="courts.html" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Grand Slam Courts</a></li>
+            <li><a href="programs.html" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Coaching Programs</a></li>
+            <li><a href="coaches.html" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Our Master Coaches</a></li>
+            <li><a href="tournaments.html" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Tournament Circuit</a></li>
+            <li><a href="training.html" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Training Facility</a></li>
+            <li><a href="admissions.html" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Admissions & Trial</a></li>
+          </ul>
+        </div>
+
+        <!-- Student Portal -->
+        <div>
+          <h4 class="font-serif font-bold text-sm text-stone-900 dark:text-white uppercase tracking-wider mb-4">Students</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="dashboard.html" class="text-emerald-700 dark:text-emerald-400 font-semibold hover:underline">Student Dashboard</a></li>
+            <li><a href="booking.html" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Book Court Slot</a></li>
+            <li><a href="booking.html?type=coaching" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Book Private Coaching</a></li>
+            <li><a href="dashboard.html#progress" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Track UTR Progress</a></li>
+            <li><a href="dashboard.html#payments" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Pay Academy Fees</a></li>
+            <li><a href="login.html" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Student Login</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Subscription -->
+        <div>
+          <h4 class="font-serif font-bold text-sm text-stone-900 dark:text-white uppercase tracking-wider mb-4">Academy Dispatch</h4>
+          <p class="text-xs text-stone-600 dark:text-stone-400 mb-4 leading-relaxed">
+            Subscribe for tournament draws, holiday intensive camps, pro clinic announcements, and court availability.
+          </p>
+          <form class="newsletter-form space-y-2">
+            <input type="email" placeholder="Your email address" required
+              class="w-full px-4 py-2.5 rounded-2xl bg-white dark:bg-stone-800 border border-stone-300 dark:border-stone-700 text-xs text-stone-900 dark:text-white placeholder-stone-400 dark:placeholder-stone-500 focus:outline-hidden focus:border-forest dark:focus:border-emerald-500 shadow-xs">
+            <button type="submit" class="w-full btn-primary text-xs py-2.5">
+              Subscribe Free
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 dark:text-stone-500 gap-4">
+        <p>&copy; 2026 Vantage Tennis Academy. All rights reserved.</p>
+        <div class="flex items-center gap-6">
+          <a href="admissions.html" class="hover:text-stone-800 dark:hover:text-stone-300 transition-colors">Academy Rules</a>
+          <a href="admissions.html" class="hover:text-stone-800 dark:hover:text-stone-300 transition-colors">Court Etiquette</a>
+          <a href="admissions.html" class="hover:text-stone-800 dark:hover:text-stone-300 transition-colors">Safety Policy</a>
+          <a href="dashboard.html" class="hover:text-stone-800 dark:hover:text-stone-300 transition-colors">Student Account</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('general-enquiry-form')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('gen-name').value;
+      SylvanToast.show('Assessment Booked', `Thank you, ${name}. Our tennis coaching director will contact you within 3 hours to confirm your court time and coach assignment.`, 'success');
+      e.target.reset();
+    });
+
+    document.getElementById('host-listing-form')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('host-applicant-name').value;
+      SylvanToast.show('Application Received', `Thank you, ${name}. Our academy board will review your credentials and reach out to arrange an interview.`, 'success');
+      e.target.reset();
+    });
+
+    function selectMapRegion(button, query, name, region) {
+      const iframe = document.getElementById('global-google-map');
+      const title = document.getElementById('map-active-title');
+      const loc = document.getElementById('map-active-location');
+      const pills = document.querySelectorAll('#map-pills .map-pill');
+      
+      if (iframe) {
+        iframe.src = `https://maps.google.com/maps?q=${encodeURIComponent(query)}&t=&z=12&ie=UTF8&iwloc=&output=embed`;
+      }
+      if (title) title.textContent = name;
+      if (loc) loc.innerHTML = `${region} &bull; 12 Grand Slam Courts, Pro Shop & Telemetry Lab`;
+      
+      pills.forEach(p => {
+        p.classList.remove('bg-emerald-800', 'text-white', 'shadow-xs');
+        p.classList.add('bg-white', 'dark:bg-stone-800', 'text-stone-700', 'dark:text-stone-300', 'border', 'border-stone-200', 'dark:border-stone-700');
+      });
+      if (button) {
+        button.classList.add('bg-emerald-800', 'text-white', 'shadow-xs');
+        button.classList.remove('bg-white', 'dark:bg-stone-800', 'text-stone-700', 'dark:text-stone-300', 'border', 'border-stone-200', 'dark:border-stone-700');
+      }
+      if (window.lucide) lucide.createIcons();
+    }
+  </script>
+</body>
+</html>

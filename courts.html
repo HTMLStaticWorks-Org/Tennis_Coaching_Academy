@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Championship Tennis Courts & Booking | Vantage Tennis Academy</title>
+  <meta name="description"
+    content="Browse, filter, and reserve championship tennis courts: French red clay, US Open DecoTurf, Wimbledon grass, and climate-controlled indoor arena.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            forest: {
+              DEFAULT: '#0B3323',
+              dark: '#062016',
+              light: '#134B34'
+            },
+            sage: {
+              DEFAULT: '#7BA686',
+              light: '#DCE8DF'
+            },
+            cream: '#F5F7F4',
+            earth: '#B8532F',
+            sand: '#E2E8DE',
+            amberAccent: '#CCA73A'
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            display: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-[#F7FAF7] dark:bg-[#0A1410] text-[#0F1A15] dark:text-[#F2F7F4] transition-colors duration-300">
+
+  <!-- ==============================================================
+       HEADER & NAVIGATION
+       ============================================================== -->
+  <header class="sticky top-0 z-50 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 xl:px-8 h-20 flex items-center justify-between gap-4">
+      <a href="index.html" class="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+        <div
+          class="w-10 h-10 rounded-2xl bg-forest dark:bg-emerald-800 text-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
+          <i data-lucide="trophy" class="w-5 h-5 text-amberAccent"></i>
+        </div>
+        <div>
+          <span
+            class="font-serif text-2xl font-bold tracking-tight text-forest dark:text-emerald-300 block leading-none">VANTAGE</span>
+          <span class="text-[10px] uppercase tracking-widest text-earth dark:text-stone-400 font-semibold">Tennis Academy</span>
+        </div>
+      </a>
+
+      <nav class="hidden xl:flex items-center gap-4 xl:gap-6 2xl:gap-7 text-xs xl:text-sm font-semibold text-stone-700 dark:text-stone-200">
+        <div class="relative group py-2">
+          <button class="flex items-center gap-1 hover:text-forest dark:hover:text-emerald-400 transition-colors whitespace-nowrap">
+            Home <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i>
+          </button>
+          <div
+            class="absolute top-full left-0 rtl:left-auto rtl:right-0 mt-1 w-44 bg-white dark:bg-[#10211A] rounded-2xl shadow-xl border border-stone-200 dark:border-stone-800 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <a href="index.html"
+              class="block px-4 py-2 text-xs font-semibold hover:bg-stone-50 dark:hover:bg-stone-800">Home 1</a>
+            <a href="home-2.html"
+              class="block px-4 py-2 text-xs font-semibold hover:bg-stone-50 dark:hover:bg-stone-800">Home 2</a>
+          </div>
+        </div>
+
+        <a href="coaches.html" class="hover:text-forest dark:hover:text-emerald-400 transition-colors whitespace-nowrap">Coaches</a>
+        <a href="programs.html" class="hover:text-forest dark:hover:text-emerald-400 transition-colors whitespace-nowrap">Programs</a>
+        <a href="courts.html" class="nav-link-active text-forest dark:text-emerald-300 font-bold whitespace-nowrap">Courts</a>
+        <a href="tournaments.html" class="hover:text-forest dark:hover:text-emerald-400 transition-colors whitespace-nowrap">Tournaments</a>
+        <a href="training.html" class="hover:text-forest dark:hover:text-emerald-400 transition-colors whitespace-nowrap">Training</a>
+        <a href="admissions.html" class="hover:text-forest dark:hover:text-emerald-400 transition-colors whitespace-nowrap">Admissions</a>
+        <a href="dashboard.html" class="hover:text-forest dark:hover:text-emerald-400 transition-colors whitespace-nowrap">Dashboard</a>
+      </nav>
+
+      <!-- Right Header Actions -->
+      <div class="flex items-center gap-2 xl:gap-3 shrink-0">
+        <button
+          class="theme-toggle-btn hidden xl:flex w-9 h-9 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-200 items-center justify-center hover:scale-105 transition-transform"
+          title="Toggle Light/Dark Theme">
+          <i data-lucide="moon" class="theme-icon-moon w-4 h-4"></i>
+          <i data-lucide="sun" class="theme-icon-sun w-4 h-4 hidden"></i>
+        </button>
+
+        <button
+          class="rtl-toggle-btn hidden xl:flex w-9 h-9 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-200 items-center justify-center hover:scale-105 transition-transform"
+          title="Toggle RTL / LTR Reading Direction" aria-label="Toggle RTL / LTR Reading Direction">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+          </svg>
+        </button>
+
+        <a href="login.html" class="hidden xl:inline-flex text-xs font-semibold px-3 py-2 text-stone-700 dark:text-stone-200 hover:text-forest dark:hover:text-emerald-400 transition-colors">
+          Login
+        </a>
+
+        <div class="hidden xl:flex items-center">
+          <a href="booking.html" class="btn-primary text-xs px-5 py-2.5 shadow-sm inline-flex items-center gap-2 whitespace-nowrap">
+            <i data-lucide="calendar" class="w-3.5 h-3.5 text-amberAccent"></i>
+            <span>Book Slot</span>
+          </a>
+        </div>
+
+        <button id="mobile-menu-toggle"
+          class="xl:hidden w-10 h-10 rounded-2xl bg-stone-100 dark:bg-stone-800 flex items-center justify-center text-stone-800 dark:text-stone-200">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay -->
+  <div id="mobile-drawer" class="fixed inset-0 z-[10000] bg-stone-950/60 backdrop-blur-sm hidden transition-opacity">
+    <div
+      class="drawer-content fixed top-0 right-0 w-80 max-w-full h-full bg-cream dark:bg-[#10211A] p-5 sm:p-6 shadow-2xl flex flex-col justify-between transition-transform duration-300 translate-x-full overflow-y-auto">
+      <div>
+        <div class="flex items-center justify-between pb-6 border-b border-stone-200 dark:border-stone-800">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-forest dark:bg-emerald-800 text-white flex items-center justify-center shadow-xs">
+              <i data-lucide="trophy" class="w-4 h-4 text-amberAccent"></i>
+            </div>
+            <div>
+              <span class="font-serif font-bold text-lg text-forest dark:text-emerald-300 block leading-none">VANTAGE</span>
+              <span class="text-[9px] uppercase tracking-widest text-earth dark:text-stone-400 font-semibold">Tennis Academy</span>
+            </div>
+          </div>
+          <button id="mobile-drawer-close"
+            class="w-8 h-8 rounded-full bg-stone-200 dark:bg-stone-800 flex items-center justify-center">
+            <i data-lucide="x" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+        <nav class="flex flex-col gap-2.5 mt-6 text-sm font-semibold">
+          <div class="py-1">
+            <button type="button"
+              class="w-full flex items-center justify-between py-1.5 text-forest dark:text-emerald-300 transition-colors"
+              onclick="this.nextElementSibling.classList.toggle('hidden'); const icon = this.querySelector('i'); if (icon) icon.classList.toggle('rotate-180');">
+              <span class="flex items-center gap-1.5">Home</span>
+              <i data-lucide="chevron-down" class="w-4 h-4 text-stone-400 transition-transform duration-200"></i>
+            </button>
+            <div class="pl-4 flex flex-col gap-1.5 mt-1 border-l-2 border-emerald-700/40">
+              <a href="index.html" class="py-1 text-xs font-semibold hover:text-forest">Home 1</a>
+              <a href="home-2.html" class="py-1 text-xs font-semibold hover:text-forest">Home 2</a>
+            </div>
+          </div>
+
+          <a href="coaches.html" class="py-1.5 hover:text-forest dark:hover:text-emerald-400 transition-colors">Coaches</a>
+          <a href="programs.html" class="py-1.5 hover:text-forest dark:hover:text-emerald-400 transition-colors">Programs</a>
+          <a href="courts.html" class="drawer-link-active py-1.5 text-forest dark:text-emerald-300 font-bold block">Courts</a>
+          <a href="tournaments.html" class="py-1.5 hover:text-forest dark:hover:text-emerald-400 transition-colors">Tournaments</a>
+          <a href="training.html" class="py-1.5 hover:text-forest dark:hover:text-emerald-400 transition-colors">Training</a>
+          <a href="admissions.html" class="py-1.5 hover:text-forest dark:hover:text-emerald-400 transition-colors">Admissions</a>
+          <a href="dashboard.html" class="py-1.5 hover:text-forest dark:hover:text-emerald-400 transition-colors">Dashboard</a>
+        </nav>
+      </div>
+
+      <div class="pt-4 sm:pt-6 border-t border-stone-200 dark:border-stone-800 flex flex-col gap-2.5 sm:gap-3 shrink-0 my-2">
+        <a href="login.html" class="btn-secondary text-xs text-center py-2 sm:py-2.5 rounded-full font-semibold">Login</a>
+        <a href="booking.html" class="btn-primary text-xs text-center py-2 sm:py-2.5 rounded-full font-semibold inline-flex items-center justify-center gap-1.5">
+          <i data-lucide="calendar" class="w-3.5 h-3.5 text-amberAccent"></i>
+          <span>Book Slot</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ==============================================================
+         COURTS – SECTION 1: HERO
+         ============================================================== -->
+    <section data-scroll-anim="curtain-rise"
+      class="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-forest text-white">
+      <div class="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=2000&q=80"
+          alt="Championship Clay Tennis Court" class="w-full h-full object-cover filter brightness-[0.55]">
+        <div class="absolute inset-0 bg-stone-950/40"></div>
+      </div>
+
+      <div class="relative z-10 max-w-5xl mx-auto text-center">
+        <span
+          class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md text-amber-200 text-xs font-semibold mb-4">
+          <i data-lucide="shield" class="w-3.5 h-3.5 text-amber-300"></i> 24 Verified Championship Grand Slam Courts
+        </span>
+        <h1 class="font-serif text-3xl sm:text-5xl font-bold mb-4 leading-tight">
+          Reserve Championship Tennis Courts
+        </h1>
+        <p class="text-stone-200 text-sm sm:text-base max-w-xl mx-auto font-light leading-relaxed mb-8">
+          Play on French red clay, US Open DecoTurf, natural Wimbledon ryegrass, and indoor climate-controlled dome arenas.
+        </p>
+
+        <!-- Quick Search -->
+        <div
+          class="max-w-2xl mx-auto bg-white/95 dark:bg-[#10211A]/95 backdrop-blur-md p-2.5 rounded-2xl shadow-xl flex items-center gap-2 border border-white/40">
+          <div class="flex-1 flex items-center gap-2 px-3 text-stone-800 dark:text-stone-200">
+            <i data-lucide="search" class="w-4 h-4 text-emerald-700"></i>
+            <input type="text" id="filter-search"
+              placeholder="Search by court name, surface, complex (e.g. Red Clay, DecoTurf, Center Court)..."
+              class="w-full bg-transparent text-xs font-semibold focus:outline-hidden">
+          </div>
+          <button class="btn-primary text-xs px-5 py-2.5 shadow-xs shrink-0">
+            Search
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================================
+         COURTS – SECTION 2: CATEGORY FILTER TABS
+         ============================================================== -->
+    <section data-scroll-anim="slide-left"
+      class="py-8 bg-white dark:bg-[#10211A] border-b border-stone-200 dark:border-stone-800 px-4 sm:px-6 lg:px-8 sticky top-20 z-40 shadow-xs">
+      <div class="max-w-7xl mx-auto overflow-x-auto no-scrollbar">
+        <div class="flex items-center gap-2 min-w-max">
+          <button
+            class="category-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-emerald-800 text-white transition-all active"
+            data-category="All">
+            All Courts (8)
+          </button>
+          <button
+            class="category-filter-btn px-4 py-2 rounded-full text-xs font-semibold border border-stone-200 dark:border-stone-700 hover:bg-stone-100 dark:hover:bg-stone-800 text-stone-700 dark:text-stone-300 transition-all"
+            data-category="Clay Courts">
+            <i data-lucide="shield" class="w-3.5 h-3.5 inline mr-1 text-emerald-700"></i> Clay Courts
+          </button>
+          <button
+            class="category-filter-btn px-4 py-2 rounded-full text-xs font-semibold border border-stone-200 dark:border-stone-700 hover:bg-stone-100 dark:hover:bg-stone-800 text-stone-700 dark:text-stone-300 transition-all"
+            data-category="Hard Courts">
+            <i data-lucide="award" class="w-3.5 h-3.5 inline mr-1 text-emerald-700"></i> Hard Courts
+          </button>
+          <button
+            class="category-filter-btn px-4 py-2 rounded-full text-xs font-semibold border border-stone-200 dark:border-stone-700 hover:bg-stone-100 dark:hover:bg-stone-800 text-stone-700 dark:text-stone-300 transition-all"
+            data-category="Grass Courts">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 inline mr-1 text-emerald-700"></i> Grass Courts
+          </button>
+          <button
+            class="category-filter-btn px-4 py-2 rounded-full text-xs font-semibold border border-stone-200 dark:border-stone-700 hover:bg-stone-100 dark:hover:bg-stone-800 text-stone-700 dark:text-stone-300 transition-all"
+            data-category="Indoor Arena">
+            <i data-lucide="building" class="w-3.5 h-3.5 inline mr-1 text-emerald-700"></i> Indoor Arena
+          </button>
+          <button
+            class="category-filter-btn px-4 py-2 rounded-full text-xs font-semibold border border-stone-200 dark:border-stone-700 hover:bg-stone-100 dark:hover:bg-stone-800 text-stone-700 dark:text-stone-300 transition-all"
+            data-category="Center Court">
+            <i data-lucide="trophy" class="w-3.5 h-3.5 inline mr-1 text-emerald-700"></i> Center Court
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Master Discovery Container -->
+    <div class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+        <!-- ==============================================================
+             COURTS – SECTION 3: LIVE FILTERS PANEL
+             ============================================================== -->
+        <section data-scroll-anim="drift-left" id="section-filter-sidebar"
+          class="lg:col-span-4 bg-white dark:bg-[#10211A] p-6 rounded-3xl border border-stone-200 dark:border-stone-800 shadow-md space-y-6 relative lg:sticky lg:top-36">
+          <div class="flex items-center justify-between pb-4 border-b border-stone-100 dark:border-stone-800">
+            <h3 class="font-serif font-bold text-lg text-stone-900 dark:text-stone-100 flex items-center gap-2">
+              <i data-lucide="sliders" class="w-4 h-4 text-emerald-700"></i> Filter Court Slots
+            </h3>
+            <button id="filter-reset-btn" class="text-xs text-stone-500 hover:text-emerald-700 underline font-semibold">
+              Reset All
+            </button>
+          </div>
+
+          <!-- Price Range Slider -->
+          <div class="space-y-2">
+            <div class="flex items-center justify-between text-xs font-bold text-stone-700 dark:text-stone-300">
+              <span>Max Hourly Rate</span>
+              <span id="price-value-label"
+                class="text-emerald-800 dark:text-emerald-400 font-mono text-sm font-bold">$150/hr</span>
+            </div>
+            <input type="range" id="price-slider" min="40" max="150" step="10" value="150"
+              class="w-full accent-emerald-800 cursor-pointer">
+            <div class="flex justify-between text-[10px] text-stone-400">
+              <span>$40</span>
+              <span>$95</span>
+              <span>$150</span>
+            </div>
+          </div>
+
+          <!-- Capacity Filter -->
+          <div class="space-y-2">
+            <label class="block text-xs font-bold uppercase tracking-wider text-stone-600 dark:text-stone-400">Player Capacity</label>
+            <select id="filter-capacity"
+              class="w-full p-3 rounded-2xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs font-semibold focus:outline-hidden cursor-pointer">
+              <option value="any">Any Capacity (1-4 Players)</option>
+              <option value="2">2 Players (Singles)</option>
+              <option value="4">4 Players (Doubles)</option>
+            </select>
+          </div>
+
+          <!-- Sorting Dropdown -->
+          <div class="space-y-2">
+            <label class="block text-xs font-bold uppercase tracking-wider text-stone-600 dark:text-stone-400">Sort Courts By</label>
+            <select id="filter-sort"
+              class="w-full p-3 rounded-2xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs font-semibold focus:outline-hidden cursor-pointer">
+              <option value="popular">Most Popular & Reviewed</option>
+              <option value="rating">Highest Rated (5.0 &darr;)</option>
+              <option value="price-low">Rate: Low to High</option>
+              <option value="price-high">Rate: High to Low</option>
+            </select>
+          </div>
+
+          <!-- Amenities Filter Checkboxes -->
+          <div class="space-y-3 pt-4 border-t border-stone-100 dark:border-stone-800">
+            <label class="block text-xs font-bold uppercase tracking-wider text-stone-600 dark:text-stone-400">Court Amenities</label>
+
+            <div class="space-y-2.5 max-h-56 overflow-y-auto pr-2 text-xs">
+              <label class="flex items-center gap-2.5 cursor-pointer text-stone-700 dark:text-stone-300">
+                <input type="checkbox" value="Tournament Lighting" class="amenity-checkbox accent-emerald-800 rounded">
+                <span>Tournament Floodlights (1,000 Lux)</span>
+              </label>
+              <label class="flex items-center gap-2.5 cursor-pointer text-stone-700 dark:text-stone-300">
+                <input type="checkbox" value="Ball Machine Ready" class="amenity-checkbox accent-emerald-800 rounded">
+                <span>Ball Machine Ready / Provided</span>
+              </label>
+              <label class="flex items-center gap-2.5 cursor-pointer text-stone-700 dark:text-stone-300">
+                <input type="checkbox" value="Hawk-Eye System" class="amenity-checkbox accent-emerald-800 rounded">
+                <span>Hawk-Eye Telemetry</span>
+              </label>
+              <label class="flex items-center gap-2.5 cursor-pointer text-stone-700 dark:text-stone-300">
+                <input type="checkbox" value="Climate Controlled" class="amenity-checkbox accent-emerald-800 rounded">
+                <span>Climate-Controlled Indoor Dome</span>
+              </label>
+              <label class="flex items-center gap-2.5 cursor-pointer text-stone-700 dark:text-stone-300">
+                <input type="checkbox" value="Pro Locker Rooms" class="amenity-checkbox accent-emerald-800 rounded">
+                <span>Pro Locker Rooms & Showers</span>
+              </label>
+              <label class="flex items-center gap-2.5 cursor-pointer text-stone-700 dark:text-stone-300">
+                <input type="checkbox" value="Hydration Bar" class="amenity-checkbox accent-emerald-800 rounded">
+                <span>Hydration Bar & Towel Service</span>
+              </label>
+              <label class="flex items-center gap-2.5 cursor-pointer text-stone-700 dark:text-stone-300">
+                <input type="checkbox" value="Free Parking" class="amenity-checkbox accent-emerald-800 rounded">
+                <span>Free Parking & Clubhouse Wi-Fi</span>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==============================================================
+             COURTS – SECTION 4: AVAILABLE COURTS GRID
+             ============================================================== -->
+        <section data-scroll-anim="stagger-up" id="section-available-stays" class="lg:col-span-8 space-y-6">
+          <div class="flex items-center justify-between pb-3 border-b border-stone-200 dark:border-stone-800">
+            <h2 class="font-serif font-bold text-2xl text-stone-900 dark:text-stone-100">
+              Available Tennis Courts
+            </h2>
+            <span id="stays-count-text" class="text-xs font-semibold text-stone-500">
+              Showing 8 of 8 verified championship courts
+            </span>
+          </div>
+
+          <!-- Courts Grid populated dynamically via js/stays.js -->
+          <div id="stays-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Dynamic Court Cards will render here -->
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- ==============================================================
+         COURTS – SECTION 5: SPECIAL COURT PASSES & PACKAGES
+         ============================================================== -->
+    <section data-scroll-anim="pulse-glow"
+      class="py-24 bg-cream dark:bg-[#10211A] px-4 sm:px-6 lg:px-8 border-t border-stone-200/60 dark:border-stone-800/60">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span
+            class="text-xs font-bold uppercase tracking-widest text-forest dark:text-emerald-400 block mb-2">Court Memberships</span>
+          <h2 class="section-title font-serif font-bold text-stone-900 dark:text-stone-100">
+            Training Passes & Special Offers
+          </h2>
+          <p class="text-stone-600 dark:text-stone-400 text-sm mt-3">
+            Flexible passes combining court rentals, coaching clinic access, and ball machine privileges.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <!-- 1. Unlimited Night Play -->
+          <div
+            class="p-6 rounded-3xl bg-white dark:bg-[#162B22] border border-stone-200/80 dark:border-stone-800/80 shadow-sm flex flex-col justify-between">
+            <div>
+              <div
+                class="w-10 h-10 rounded-2xl bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 flex items-center justify-center mb-4">
+                <i data-lucide="moon" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-serif font-bold text-lg mb-2">Night Play Pass</h3>
+              <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed mb-4">
+                Unlimited floodlit evening court booking from 7:00 PM to 10:00 PM on weekdays with complimentary cans of Wilson balls.
+              </p>
+            </div>
+            <a href="booking.html"
+              class="text-xs font-bold text-emerald-800 dark:text-emerald-400 hover:underline">View Pass Details &rarr;</a>
+          </div>
+
+          <!-- 2. Clay Court Season Pack -->
+          <div
+            class="p-6 rounded-3xl bg-white dark:bg-[#162B22] border border-stone-200/80 dark:border-stone-800/80 shadow-sm flex flex-col justify-between">
+            <div>
+              <div
+                class="w-10 h-10 rounded-2xl bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-400 flex items-center justify-center mb-4">
+                <i data-lucide="shield" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-serif font-bold text-lg mb-2">Clay Court Mastery Pack</h3>
+              <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed mb-4">
+                10-session punch card for Roland Garros red clay courts including drag equipment and court shoe cleaning stations.
+              </p>
+            </div>
+            <a href="booking.html"
+              class="text-xs font-bold text-emerald-800 dark:text-emerald-400 hover:underline">View Pass Details &rarr;</a>
+          </div>
+
+          <!-- 3. High Performance Squad Pass -->
+          <div
+            class="p-6 rounded-3xl bg-white dark:bg-[#162B22] border border-stone-200/80 dark:border-stone-800/80 shadow-sm flex flex-col justify-between">
+            <div>
+              <div
+                class="w-10 h-10 rounded-2xl bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 flex items-center justify-center mb-4">
+                <i data-lucide="award" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-serif font-bold text-lg mb-2">Tournament Squad Pass</h3>
+              <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed mb-4">
+                Dedicated daily 2-hour court reservation, weekly match play with ranked players, and video telemetry review.
+              </p>
+            </div>
+            <a href="booking.html"
+              class="text-xs font-bold text-emerald-800 dark:text-emerald-400 hover:underline">View Pass Details &rarr;</a>
+          </div>
+
+          <!-- 4. Private Lesson Bundle -->
+          <div
+            class="p-6 rounded-3xl bg-white dark:bg-[#162B22] border border-stone-200/80 dark:border-stone-800/80 shadow-sm flex flex-col justify-between">
+            <div>
+              <div
+                class="w-10 h-10 rounded-2xl bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-400 flex items-center justify-center mb-4">
+                <i data-lucide="user" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-serif font-bold text-lg mb-2">1-on-1 Pro Master Pack</h3>
+              <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed mb-4">
+                5 private lessons with our USPTA Master Pro, including slow-motion stroke breakdown and personalized drills.
+              </p>
+            </div>
+            <a href="booking.html"
+              class="text-xs font-bold text-emerald-800 dark:text-emerald-400 hover:underline">View Pass Details &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==============================================================
+       SHARED FOOTER
+       ============================================================== -->
+  <footer class="bg-stone-100 dark:bg-stone-900 text-stone-600 dark:text-stone-300 pt-20 pb-12 border-t border-stone-200 dark:border-stone-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-10 pb-16 border-b border-stone-200 dark:border-stone-800">
+        <div class="xl:col-span-2">
+          <a href="index.html" class="flex items-center gap-2.5 sm:gap-3 mb-4 group">
+            <div
+              class="w-10 h-10 rounded-2xl bg-forest dark:bg-emerald-800 text-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
+              <i data-lucide="trophy" class="w-5 h-5 text-amberAccent"></i>
+            </div>
+            <div>
+              <span class="font-serif text-2xl font-bold text-forest dark:text-white tracking-tight block leading-none">VANTAGE</span>
+              <span class="text-[10px] uppercase tracking-widest text-stone-500 dark:text-stone-400 font-semibold">Tennis Academy</span>
+            </div>
+          </a>
+          <p class="text-xs text-stone-600 dark:text-stone-400 max-w-sm leading-relaxed mb-6">
+            A world-class athletic tennis academy offering Grand Slam surface facilities, ATP/WTA certified coaching, 
+            high-performance junior pathways, and interactive student slot booking.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-serif font-bold text-sm text-stone-900 dark:text-white uppercase tracking-wider mb-4">Academy</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="courts.html" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Courts & Facilities</a></li>
+            <li><a href="programs.html" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Junior Programs</a></li>
+            <li><a href="programs.html#elite" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">High Performance Squad</a></li>
+            <li><a href="programs.html#adult" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Adult Clinics & Cardio</a></li>
+            <li><a href="coaches.html" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Coaching Staff</a></li>
+            <li><a href="tournaments.html" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Tournaments & Draws</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-serif font-bold text-sm text-stone-900 dark:text-white uppercase tracking-wider mb-4">Player Portal</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="dashboard.html" class="text-emerald-700 dark:text-emerald-400 font-semibold hover:underline">Student Dashboard</a></li>
+            <li><a href="booking.html" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Book Court / Coaching Slot</a></li>
+            <li><a href="training.html" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Training Photo Gallery</a></li>
+            <li><a href="admissions.html" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Admissions & Skill Trial</a></li>
+            <li><a href="login.html" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Student Login</a></li>
+            <li><a href="signup.html" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Player Registration</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-serif font-bold text-sm text-stone-900 dark:text-white uppercase tracking-wider mb-4">Academy Wire</h4>
+          <p class="text-xs text-stone-600 dark:text-stone-400 mb-4 leading-relaxed">
+            Subscribe for tournament draws, seasonal clinic dates, and pro clinic invitations.
+          </p>
+          <form class="newsletter-form space-y-2">
+            <input type="email" placeholder="Your player / parent email" required
+              class="w-full px-4 py-2.5 rounded-2xl bg-white dark:bg-stone-800 border border-stone-300 dark:border-stone-700 text-xs text-stone-900 dark:text-white placeholder-stone-400 dark:placeholder-stone-500 focus:outline-hidden focus:border-forest dark:focus:border-emerald-500 shadow-xs">
+            <button type="submit" class="w-full btn-primary text-xs py-2.5">
+              Subscribe Free
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 dark:text-stone-500 gap-4">
+        <p>&copy; 2026 Vantage Tennis Coaching Academy. All rights reserved.</p>
+        <div class="flex items-center gap-6">
+          <a href="admissions.html" class="hover:text-stone-800 dark:hover:text-stone-300 transition-colors">Court Rules & Etiquette</a>
+          <a href="admissions.html" class="hover:text-stone-800 dark:hover:text-stone-300 transition-colors">Safety & Medical</a>
+          <a href="dashboard.html" class="hover:text-stone-800 dark:hover:text-stone-300 transition-colors">Student Portal</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/stays.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserve Court & Coaching Slot | Vantage Tennis Academy</title>
+  <meta name="description" content="Secure reservation checkout for Grand Slam tennis courts, indoor domes, and master coaching sessions at Vantage Tennis Academy.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            forest: {
+              DEFAULT: '#0B3323',
+              dark: '#072317',
+              light: '#144A34'
+            },
+            sage: {
+              DEFAULT: '#B8EB18',
+              light: '#EBF8CC'
+            },
+            cream: '#F7FAF7',
+            earth: '#B8532F',
+            sand: '#E6D5B8',
+            amberAccent: '#CCA73A'
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            display: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#F7FAF7] dark:bg-[#0A1410] text-[#1C2420] dark:text-[#F3F7F5] transition-colors duration-300 min-h-screen flex flex-col justify-between">
+
+  <!-- ==============================================================
+       CHECKOUT HEADER
+       ============================================================== -->
+  <header class="glass-nav sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+        <div class="w-10 h-10 rounded-2xl bg-forest dark:bg-emerald-800 text-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
+          <i data-lucide="trophy" class="w-5 h-5 text-amberAccent"></i>
+        </div>
+        <div>
+          <span class="font-serif text-2xl font-bold tracking-tight text-forest dark:text-emerald-300 block leading-none">VANTAGE</span>
+          <span class="text-[10px] uppercase tracking-widest text-earth dark:text-amber-400 font-semibold">Tennis Academy</span>
+        </div>
+      </a>
+
+      <div class="flex items-center gap-4">
+        <div class="hidden sm:flex items-center gap-2 text-xs font-semibold text-emerald-800 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 px-3.5 py-1.5 rounded-full border border-emerald-200 dark:border-emerald-800">
+          <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600"></i> Encrypted Academy Checkout
+        </div>
+
+        <!-- Theme Toggle -->
+        <button class="theme-toggle-btn w-9 h-9 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-200 flex items-center justify-center hover:scale-105 transition-transform" title="Toggle Light/Dark Theme">
+          <i data-lucide="moon" class="theme-icon-moon w-4 h-4"></i>
+          <i data-lucide="sun" class="theme-icon-sun w-4 h-4 hidden"></i>
+        </button>
+
+        <!-- RTL Toggle -->
+        <button
+          class="rtl-toggle-btn w-9 h-9 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-200 flex items-center justify-center hover:scale-105 transition-transform"
+          title="Toggle RTL / LTR Reading Direction" aria-label="Toggle RTL / LTR Reading Direction">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+          </svg>
+        </button>
+
+        <a href="courts.html" class="text-xs font-bold text-stone-500 hover:text-stone-800 dark:hover:text-stone-200">
+          Exit Checkout
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Wizard Container -->
+  <main id="booking-wizard" class="flex-1 py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+    
+    <!-- Wizard Step Progress Indicators -->
+    <div class="mb-10 max-w-3xl mx-auto">
+      <div class="grid grid-cols-5 gap-2 text-center">
+        <!-- Step 1 -->
+        <div class="wizard-step-indicator flex flex-col items-center gap-1.5" data-step="1">
+          <div class="step-circle w-8 h-8 rounded-full bg-amber-500 text-stone-950 flex items-center justify-center font-bold text-xs ring-4 ring-amber-500/20">1</div>
+          <span class="step-label text-[11px] font-bold text-stone-800 dark:text-stone-200">1. Court & Slot</span>
+        </div>
+        <!-- Step 2 -->
+        <div class="wizard-step-indicator flex flex-col items-center gap-1.5 opacity-40" data-step="2">
+          <div class="step-circle w-8 h-8 rounded-full bg-stone-200 dark:bg-stone-700 text-stone-600 dark:text-stone-300 flex items-center justify-center font-bold text-xs">2</div>
+          <span class="step-label text-[11px] font-bold text-stone-500">2. Player Info</span>
+        </div>
+        <!-- Step 3 -->
+        <div class="wizard-step-indicator flex flex-col items-center gap-1.5 opacity-40" data-step="3">
+          <div class="step-circle w-8 h-8 rounded-full bg-stone-200 dark:bg-stone-700 text-stone-600 dark:text-stone-300 flex items-center justify-center font-bold text-xs">3</div>
+          <span class="step-label text-[11px] font-bold text-stone-500">3. Add-Ons</span>
+        </div>
+        <!-- Step 4 -->
+        <div class="wizard-step-indicator flex flex-col items-center gap-1.5 opacity-40" data-step="4">
+          <div class="step-circle w-8 h-8 rounded-full bg-stone-200 dark:bg-stone-700 text-stone-600 dark:text-stone-300 flex items-center justify-center font-bold text-xs">4</div>
+          <span class="step-label text-[11px] font-bold text-stone-500">4. Payment</span>
+        </div>
+        <!-- Step 5 -->
+        <div class="wizard-step-indicator flex flex-col items-center gap-1.5 opacity-40" data-step="5">
+          <div class="step-circle w-8 h-8 rounded-full bg-stone-200 dark:bg-stone-700 text-stone-600 dark:text-stone-300 flex items-center justify-center font-bold text-xs">5</div>
+          <span class="step-label text-[11px] font-bold text-stone-500">5. Confirmation</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Master Two-Column Checkout Layout -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      
+      <!-- Left Column: Step Panels 1-5 -->
+      <div class="lg:col-span-7 space-y-6">
+        
+        <!-- ==============================================================
+             STEP 1: SELECT COURT & TIME WINDOW
+             ============================================================== -->
+        <div id="step-1-panel" class="step-panel bg-white dark:bg-[#15221D] p-6 sm:p-8 rounded-3xl border border-stone-200 dark:border-stone-800 shadow-md space-y-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-forest dark:text-emerald-400 block mb-1">Step 1 of 5</span>
+            <h2 class="font-serif font-bold text-2xl text-stone-900 dark:text-stone-100">Confirm Court & Time Window</h2>
+            <p class="text-xs text-stone-500 mt-1">Review your selected Grand Slam court surface and adjust slot dates.</p>
+          </div>
+
+          <!-- Court Card Preview -->
+          <div class="flex items-center gap-4 p-4 rounded-2xl bg-stone-50 dark:bg-stone-800/60 border border-stone-200 dark:border-stone-700">
+            <img src="" alt="Booked Court Preview" class="checkout-stay-img w-20 h-20 rounded-xl object-cover shrink-0">
+            <div class="min-w-0">
+              <span class="checkout-stay-location text-xs text-stone-500 block"></span>
+              <h3 class="checkout-stay-title font-serif font-bold text-base text-stone-900 dark:text-stone-100 truncate"></h3>
+              <div class="flex items-center gap-3 text-xs text-stone-600 dark:text-stone-400 mt-1">
+                <span><strong class="checkout-stay-price font-serif text-emerald-800 dark:text-emerald-300 text-sm"></strong> / hour</span>
+                <span>&bull;</span>
+                <span class="checkout-stay-rating text-amber-500 font-bold flex items-center gap-1"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Date & Duration Adjustments -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">Session Date</label>
+              <input type="date" id="step1-checkin" class="w-full p-3 rounded-2xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs font-bold focus:outline-hidden">
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">Time Slot Window</label>
+              <select id="step1-timeslot" class="w-full p-3 rounded-2xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs font-bold focus:outline-hidden cursor-pointer">
+                <option value="08:00 AM - 10:00 AM">08:00 AM - 10:00 AM (Morning Prime)</option>
+                <option value="10:00 AM - 12:00 PM">10:00 AM - 12:00 PM (Midday)</option>
+                <option value="02:00 PM - 04:00 PM">02:00 PM - 04:00 PM (Afternoon Squad)</option>
+                <option value="04:00 PM - 06:00 PM">04:00 PM - 06:00 PM (Sunset Match)</option>
+                <option value="06:00 PM - 08:00 PM">06:00 PM - 08:00 PM (Floodlit Night Match)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">Session Duration</label>
+              <select id="step1-adults" class="w-full p-3 rounded-2xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs font-bold focus:outline-hidden cursor-pointer">
+                <option value="1">1 Hour Slot</option>
+                <option value="2" selected>2 Hours (Standard Match / Clinic)</option>
+                <option value="3">3 Hours (Intensive Squad Block)</option>
+                <option value="4">4 Hours (Half-Day Camp Block)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">Court Lights / Equipment</label>
+              <select id="step1-children" class="w-full p-3 rounded-2xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs font-bold focus:outline-hidden cursor-pointer">
+                <option value="0">Standard Natural Daylight</option>
+                <option value="1">High-Lumen LED Match Floodlights</option>
+                <option value="2">Video Telemetry TrackMan Cameras</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="pt-4 flex justify-end">
+            <button class="btn-primary text-xs px-6 py-3" data-next-step>
+              Continue to Player Details &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- ==============================================================
+             STEP 2: PLAYER INFORMATION
+             ============================================================== -->
+        <div id="step-2-panel" class="step-panel hidden bg-white dark:bg-[#15221D] p-6 sm:p-8 rounded-3xl border border-stone-200 dark:border-stone-800 shadow-md space-y-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-forest dark:text-emerald-400 block mb-1">Step 2 of 5</span>
+            <h2 class="font-serif font-bold text-2xl text-stone-900 dark:text-stone-100">Player Information</h2>
+            <p class="text-xs text-stone-500 mt-1">Our pro desk issues your digital gate access code and assigns court staff.</p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">First Name *</label>
+              <input type="text" id="guest-fname" required value="Alex" class="w-full p-3 rounded-2xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs font-medium focus:outline-hidden">
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">Last Name *</label>
+              <input type="text" id="guest-lname" required value="Morgan" class="w-full p-3 rounded-2xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs font-medium focus:outline-hidden">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">Email Address *</label>
+              <input type="email" id="guest-email" required value="alex.morgan@example.com" class="w-full p-3 rounded-2xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs font-medium focus:outline-hidden">
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">Mobile Phone *</label>
+              <input type="tel" id="guest-phone" required value="+1 (760) 555-0194" class="w-full p-3 rounded-2xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs font-medium focus:outline-hidden">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">Player Category & Special Requests (Optional)</label>
+            <textarea id="guest-requests" rows="3" placeholder="e.g. Junior tournament preparation, requesting heavy Wilson US Open balls, need left-handed hitting partner..." class="w-full p-3 rounded-2xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs focus:outline-hidden"></textarea>
+          </div>
+
+          <div class="pt-4 flex items-center justify-between border-t border-stone-100 dark:border-stone-800">
+            <button class="btn-secondary text-xs px-5 py-2.5" data-prev-step>
+              &larr; Back
+            </button>
+            <button class="btn-primary text-xs px-6 py-3" data-next-step>
+              Review Add-Ons &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- ==============================================================
+             STEP 3: ADD-ONS & EQUIPMENT ENHANCEMENTS
+             ============================================================== -->
+        <div id="step-3-panel" class="step-panel hidden bg-white dark:bg-[#15221D] p-6 sm:p-8 rounded-3xl border border-stone-200 dark:border-stone-800 shadow-md space-y-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-forest dark:text-emerald-400 block mb-1">Step 3 of 5</span>
+            <h2 class="font-serif font-bold text-2xl text-stone-900 dark:text-stone-100">Review Summary & Enhancements</h2>
+            <p class="text-xs text-stone-500 mt-1">Select optional coaching add-ons or enter an academy promotion code.</p>
+          </div>
+
+          <!-- Add-ons Selection -->
+          <div class="space-y-3">
+            <h3 class="font-serif font-bold text-sm text-stone-800 dark:text-stone-200">Optional Academy Enhancements</h3>
+            
+            <label class="flex items-center justify-between p-4 rounded-2xl border border-stone-200 dark:border-stone-700 hover:bg-stone-50 dark:hover:bg-stone-800/40 cursor-pointer transition-colors">
+              <div class="flex items-center gap-3">
+                <input type="checkbox" class="addon-checkbox accent-emerald-800 rounded" data-addon="breakfastHamper">
+                <div>
+                  <h4 class="font-bold text-xs">Wilson US Open Championship Balls (3 Cans)</h4>
+                  <p class="text-[11px] text-stone-500">Official tournament felt balls unpressurized on court arrival</p>
+                </div>
+              </div>
+              <span class="font-bold text-xs text-emerald-800 dark:text-emerald-400">+$25</span>
+            </label>
+
+            <label class="flex items-center justify-between p-4 rounded-2xl border border-stone-200 dark:border-stone-700 hover:bg-stone-50 dark:hover:bg-stone-800/40 cursor-pointer transition-colors">
+              <div class="flex items-center gap-3">
+                <input type="checkbox" class="addon-checkbox accent-emerald-800 rounded" data-addon="orchardTasting">
+                <div>
+                  <h4 class="font-bold text-xs">Pro Smart Ball Machine & Remote Control</h4>
+                  <p class="text-[11px] text-stone-500">200-ball capacity, multi-spin variations (topspin, slice, lob)</p>
+                </div>
+              </div>
+              <span class="font-bold text-xs text-emerald-800 dark:text-emerald-400">+$45</span>
+            </label>
+
+            <label class="flex items-center justify-between p-4 rounded-2xl border border-stone-200 dark:border-stone-700 hover:bg-stone-50 dark:hover:bg-stone-800/40 cursor-pointer transition-colors">
+              <div class="flex items-center gap-3">
+                <input type="checkbox" class="addon-checkbox accent-emerald-800 rounded" data-addon="firewoodBundle">
+                <div>
+                  <h4 class="font-bold text-xs">Private 1-on-1 Master Coach on Court (1 Hour)</h4>
+                  <p class="text-[11px] text-stone-500">PTR/USPTA certified master coach feeding, footwork correction & tactical drill</p>
+                </div>
+              </div>
+              <span class="font-bold text-xs text-emerald-800 dark:text-emerald-400">+$95</span>
+            </label>
+          </div>
+
+          <!-- Coupon Code Promo -->
+          <div class="p-4 rounded-2xl bg-stone-50 dark:bg-stone-800/60 border border-stone-200 dark:border-stone-700 space-y-2">
+            <label class="block text-[11px] font-bold uppercase text-stone-500">Academy Voucher / Promotion Code</label>
+            <form id="coupon-form" class="flex gap-2">
+              <input type="text" id="coupon-input" placeholder="Try 'ACE10' for 10% off" class="flex-1 p-2.5 rounded-xl bg-white dark:bg-stone-900 border border-stone-300 dark:border-stone-700 text-xs uppercase font-mono font-bold focus:outline-hidden">
+              <button type="submit" class="btn-secondary text-xs px-4 py-2.5 shrink-0">
+                Apply Code
+              </button>
+            </form>
+          </div>
+
+          <div class="pt-4 flex items-center justify-between border-t border-stone-100 dark:border-stone-800">
+            <button class="btn-secondary text-xs px-5 py-2.5" data-prev-step>
+              &larr; Back
+            </button>
+            <button class="btn-primary text-xs px-6 py-3" data-next-step>
+              Proceed to Payment &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- ==============================================================
+             STEP 4: PAYMENT SELECTION
+             ============================================================== -->
+        <div id="step-4-panel" class="step-panel hidden bg-white dark:bg-[#15221D] p-6 sm:p-8 rounded-3xl border border-stone-200 dark:border-stone-800 shadow-md space-y-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-forest dark:text-emerald-400 block mb-1">Step 4 of 5</span>
+            <h2 class="font-serif font-bold text-2xl text-stone-900 dark:text-stone-100">Select Payment Method</h2>
+            <p class="text-xs text-stone-500 mt-1">Simulated bank-grade checkout. Instant slot confirmation and digital invoice.</p>
+          </div>
+
+          <!-- Payment Tabs -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <button type="button" class="payment-tab-btn p-3 rounded-2xl border-2 border-emerald-800 bg-emerald-50/50 dark:bg-emerald-950/30 text-emerald-900 dark:text-emerald-300 flex flex-col items-center gap-1.5 transition-all" data-method="card">
+              <i data-lucide="credit-card" class="w-5 h-5"></i>
+              <span class="text-xs font-bold">Credit Card</span>
+            </button>
+            <button type="button" class="payment-tab-btn p-3 rounded-2xl border border-stone-200 dark:border-stone-700 flex flex-col items-center gap-1.5 transition-all text-stone-600 dark:text-stone-300" data-method="upi">
+              <i data-lucide="qr-code" class="w-5 h-5"></i>
+              <span class="text-xs font-bold">Apple Pay / UPI</span>
+            </button>
+            <button type="button" class="payment-tab-btn p-3 rounded-2xl border border-stone-200 dark:border-stone-700 flex flex-col items-center gap-1.5 transition-all text-stone-600 dark:text-stone-300" data-method="netbanking">
+              <i data-lucide="building" class="w-5 h-5"></i>
+              <span class="text-xs font-bold">Student Account</span>
+            </button>
+          </div>
+
+          <!-- Card Panel -->
+          <div id="payment-card-panel" class="payment-panel space-y-4">
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">Card Number</label>
+              <div class="relative">
+                <input type="text" id="card-number-input" maxlength="19" value="4242 4242 4242 4242" class="w-full p-3 rounded-2xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs font-mono font-bold focus:outline-hidden">
+                <div class="absolute right-3.5 top-1/2 -translate-y-1/2 flex gap-1">
+                  <span class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-blue-100 text-blue-800">VISA</span>
+                  <span class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-amber-100 text-amber-800">MC</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">Expiry Date</label>
+                <input type="text" maxlength="5" value="12/28" placeholder="MM/YY" class="w-full p-3 rounded-2xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs font-mono font-bold focus:outline-hidden">
+              </div>
+              <div>
+                <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">CVV / CVC</label>
+                <input type="password" maxlength="4" value="842" class="w-full p-3 rounded-2xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs font-mono font-bold focus:outline-hidden">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">Name on Card</label>
+              <input type="text" value="Alex Morgan" class="w-full p-3 rounded-2xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs font-medium focus:outline-hidden">
+            </div>
+          </div>
+
+          <!-- UPI Panel -->
+          <div id="payment-upi-panel" class="payment-panel hidden space-y-4 text-center">
+            <div class="p-4 bg-stone-50 dark:bg-stone-800 rounded-2xl border border-stone-200 dark:border-stone-700 inline-block mx-auto">
+              <!-- Simulated QR -->
+              <div class="w-40 h-40 bg-white p-2 rounded-xl border border-stone-300 mx-auto flex flex-col items-center justify-center">
+                <i data-lucide="qr-code" class="w-28 h-28 text-stone-900"></i>
+                <span class="text-[9px] font-mono text-stone-500 mt-1">Scan via Apple Pay / UPI</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Net Banking Panel -->
+          <div id="payment-netbanking-panel" class="payment-panel hidden space-y-4">
+            <label class="block text-[11px] font-bold uppercase text-stone-500 mb-1">Select Bank / Academy Account</label>
+            <select class="w-full p-3 rounded-2xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs font-semibold focus:outline-hidden cursor-pointer">
+              <option>Student Stored Balance ($450.00 Credit)</option>
+              <option>Chase / J.P. Morgan</option>
+              <option>Bank of America</option>
+              <option>Wells Fargo</option>
+              <option>Citibank</option>
+            </select>
+          </div>
+
+          <!-- Terms Agreement -->
+          <div class="flex items-start gap-2 pt-2 text-xs text-stone-600 dark:text-stone-400">
+            <input type="checkbox" id="agree-terms" checked class="accent-forest mt-0.5 rounded">
+            <label for="agree-terms" class="leading-relaxed">
+              I agree to the Vantage Tennis Academy Court Etiquette, non-marking shoe policy, and 24-hour cancellation rules.
+            </label>
+          </div>
+
+          <div class="pt-4 flex items-center justify-between border-t border-stone-100 dark:border-stone-800">
+            <button class="btn-secondary text-xs px-5 py-2.5" data-prev-step>
+              &larr; Back
+            </button>
+            <button id="btn-confirm-payment" class="btn-primary text-xs px-7 py-3.5 shadow-lg" data-next-step>
+              <i data-lucide="lock" class="w-4 h-4"></i> Complete Court Reservation
+            </button>
+          </div>
+        </div>
+
+        <!-- ==============================================================
+             STEP 5: CONFIRMATION SCREEN
+             ============================================================== -->
+        <div id="step-5-panel" class="step-panel hidden bg-white dark:bg-[#15221D] p-8 sm:p-10 rounded-3xl border border-stone-200 dark:border-stone-800 shadow-2xl text-center space-y-6">
+          <div class="w-16 h-16 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 flex items-center justify-center mx-auto shadow-md">
+            <i data-lucide="check-circle-2" class="w-8 h-8"></i>
+          </div>
+
+          <div class="space-y-1">
+            <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">Court Slot Confirmed</span>
+            <h2 class="font-serif font-bold text-3xl text-stone-900 dark:text-stone-100">Your Court Slot is Reserved!</h2>
+            <p class="text-xs text-stone-500">Booking Reference: <strong id="conf-booking-ref" class="font-mono text-stone-900 dark:text-stone-100 text-sm">#VAN-84920</strong></p>
+          </div>
+
+          <!-- Confirmation Breakdown Box -->
+          <div class="p-6 rounded-2xl bg-stone-50 dark:bg-stone-800/60 border border-stone-200 dark:border-stone-700 text-left text-xs space-y-2.5">
+            <div class="flex justify-between font-bold text-sm">
+              <span id="conf-stay-name">Centre Court Wimbledon Grass</span>
+              <span id="conf-total-paid" class="text-emerald-800 dark:text-emerald-300">$280.00</span>
+            </div>
+            <div class="flex justify-between text-stone-500">
+              <span>Date:</span>
+              <span id="conf-dates" class="font-semibold text-stone-800 dark:text-stone-200">2026-11-20 (09:00 AM - 11:00 AM)</span>
+            </div>
+            <div class="flex justify-between text-stone-500">
+              <span>Duration:</span>
+              <span id="conf-guests" class="font-semibold text-stone-800 dark:text-stone-200">2 Hours</span>
+            </div>
+            <div class="flex justify-between text-stone-500">
+              <span>Player:</span>
+              <span id="conf-guest-name" class="font-semibold text-stone-800 dark:text-stone-200">Alex Morgan</span>
+            </div>
+            <div class="flex justify-between text-stone-500">
+              <span>Confirmation Email:</span>
+              <span id="conf-guest-email" class="font-semibold text-stone-800 dark:text-stone-200">alex.morgan@example.com</span>
+            </div>
+          </div>
+
+          <p class="text-xs text-stone-500">
+            Head Coach Marcus Sterling and the court grounds team have been notified. Please present your digital pass at Gate 2 upon arrival.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+            <button id="btn-print-receipt" class="cta-btn-banner btn-secondary">
+              <i data-lucide="printer" class="w-4 h-4 shrink-0"></i> <span>Download Receipt</span>
+            </button>
+            <a href="dashboard.html#upcoming" class="cta-btn-banner btn-primary shadow-md">
+              <i data-lucide="layout-dashboard" class="w-4 h-4 shrink-0"></i> <span>Student Dashboard</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Sticky Live Booking Summary Sidebar -->
+      <aside class="lg:col-span-5 sticky top-28 bg-white dark:bg-[#15221D] p-6 sm:p-7 rounded-3xl border border-stone-200 dark:border-stone-800 shadow-xl space-y-6">
+        <h3 class="font-serif font-bold text-lg text-stone-900 dark:text-stone-100 pb-3 border-b border-stone-100 dark:border-stone-800">
+          Court Reservation Summary
+        </h3>
+
+        <!-- Court Preview -->
+        <div class="flex items-center gap-3">
+          <img src="" alt="Booked Court Preview" class="checkout-stay-img w-16 h-16 rounded-xl object-cover shrink-0 shadow-xs">
+          <div>
+            <h4 class="checkout-stay-title font-serif font-bold text-sm text-stone-900 dark:text-stone-100"></h4>
+            <span class="checkout-stay-location text-xs text-stone-500 flex items-center gap-1"></span>
+          </div>
+        </div>
+
+        <!-- Cost Breakdown List -->
+        <div class="space-y-2 text-xs text-stone-600 dark:text-stone-400">
+          <div class="flex justify-between">
+            <span id="summary-nights">2 Hours</span>
+            <span id="summary-base-rate" class="font-semibold text-stone-800 dark:text-stone-200">$280</span>
+          </div>
+          <div class="flex justify-between">
+            <span>Court Lighting & Surface Maintenance</span>
+            <span id="summary-cleaning" class="font-semibold text-stone-800 dark:text-stone-200">$20</span>
+          </div>
+          <div class="flex justify-between">
+            <span>Academy Service & Ball Fee (10%)</span>
+            <span id="summary-service" class="font-semibold text-stone-800 dark:text-stone-200">$28</span>
+          </div>
+          <div class="flex justify-between">
+            <span>Facility Access Tax (5%)</span>
+            <span id="summary-taxes" class="font-semibold text-stone-800 dark:text-stone-200">$14</span>
+          </div>
+
+          <!-- Addons Row -->
+          <div id="summary-extras-row" class="flex justify-between text-amber-700 dark:text-amber-400 hidden">
+            <span>Enhancements</span>
+            <span id="summary-extras-amount" class="font-semibold">+$0</span>
+          </div>
+
+          <!-- Discount Row -->
+          <div id="summary-discount-row" class="flex justify-between text-emerald-700 dark:text-emerald-400 font-bold hidden">
+            <span>Voucher Discount</span>
+            <span id="summary-discount-amount">-$0</span>
+          </div>
+
+          <!-- Grand Total -->
+          <div class="pt-3 border-t border-stone-200 dark:border-stone-700 flex justify-between text-base font-bold text-stone-900 dark:text-stone-100">
+            <span>Total (USD)</span>
+            <span id="summary-final-total" class="font-serif text-xl text-emerald-950 dark:text-emerald-300">$342.00</span>
+          </div>
+        </div>
+
+        <div class="p-3 bg-stone-50 dark:bg-stone-800/50 rounded-2xl text-[11px] text-stone-500 space-y-1">
+          <p class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-700"></i> Free cancellation up to 24 hours prior</p>
+          <p class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-700"></i> High-speed ball machine & demo rackets available</p>
+          <p class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-700"></i> Automatic telemetry match log to Student Dashboard</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Checkout Minimal Footer -->
+  <footer class="py-6 border-t border-stone-200 dark:border-stone-800 text-center text-xs text-stone-500">
+    <p>&copy; 2026 Vantage Tennis Academy. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/booking.js"></script>
+</body>
+</html>
