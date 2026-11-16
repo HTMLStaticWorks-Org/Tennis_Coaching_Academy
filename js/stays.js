@@ -178,10 +178,10 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
 
             <div class="flex items-center gap-2">
-              <a href="booking.html?id=${stay.id}" class="px-5 py-2.5 rounded-full text-xs font-semibold bg-emerald-800 hover:bg-emerald-900 text-white transition-all shadow-sm inline-flex items-center gap-1.5">
+              <button type="button" onclick="event.preventDefault(); event.stopPropagation(); return false;" class="px-5 py-2.5 rounded-full text-xs font-semibold bg-emerald-800 hover:bg-emerald-900 dark:hover:bg-emerald-700 text-white transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 inline-flex items-center gap-1.5 cursor-pointer">
                 <i data-lucide="calendar" class="w-3.5 h-3.5 text-amber-300"></i>
                 <span>Book Slot</span>
-              </a>
+              </button>
             </div>
           </div>
         </div>

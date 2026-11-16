@@ -11,7 +11,7 @@ const SYLVAN_DATA = {
       name: "Roland Garros Red Clay Court (Court 2)",
       category: "Clay Courts",
       type: "Championship Red Clay",
-      tagline: "Natural crushed brick red clay imported from Europe with moisture-controlled sub-surface irrigation",
+      tagline: "Natural crushed brick red clay imported from Europe sub-surface irrigation",
       location: "East Campus · Red Clay Pavilion",
       region: "California Campus",
       price: 65,
@@ -26,12 +26,13 @@ const SYLVAN_DATA = {
       featured: true,
       isAvailable: true,
       instantBook: true,
+      // Card cover image shown on courts.html & booking.html (replace images[0] here)
       images: [
-        "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1560012057-4372e14c5085?auto=format&fit=crop&w=1200&q=80"
+        "https://live.staticflickr.com/65535/55310576728_1a21725bab_b.jpg",
+        "https://live.staticflickr.com/65535/55221420618_b45576dd5a_b.jpg",
+        "https://images.pexels.com/photos/38381015/pexels-photo-38381015.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        "https://live.staticflickr.com/65535/55305613610_b6a1631e94_b.jpg",
+        "https://live.staticflickr.com/65535/55250913318_2568131397_b.jpg"
       ],
       description: "Trained on by national junior champions and touring professionals, Court 2 features genuine crushed French terracotta brick laid over a porous limestone bedrock. Perfect for mastering slide control, endurance rallying, and heavy topspin trajectories under natural Mediterranean light.",
       highlights: [
@@ -67,7 +68,7 @@ const SYLVAN_DATA = {
       name: "US Open DecoTurf Hard Court (Court 1)",
       category: "Hard Courts",
       type: "Cushioned Acrylic Hard Court",
-      tagline: "Official tournament blue & green multi-layer cushioned acrylic surface with zero-glare LED illumination",
+      tagline: "Official tournament blue & green multi-layer with zero-glare LED illumination",
       location: "North Complex · Championship Row",
       region: "California Campus",
       price: 50,
@@ -82,12 +83,13 @@ const SYLVAN_DATA = {
       featured: true,
       isAvailable: true,
       instantBook: true,
+      // Card cover image shown on courts.html & booking.html (replace images[0] here)
       images: [
-        "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1560012057-4372e14c5085?auto=format&fit=crop&w=1200&q=80"
+        "https://live.staticflickr.com/65535/55503391906_7f9b62e72e_b.jpg",
+        "https://live.staticflickr.com/65535/53844638834_cbcf06009e_b.jpg",
+        "https://live.staticflickr.com/65535/53855137312_c301f77b4d_b.jpg",
+        "https://live.staticflickr.com/65535/55492408786_884dd48b83_b.jpg",
+        "https://live.staticflickr.com/65535/55488898495_c68758ab08_b.jpg"
       ],
       description: "Engineered to exact US Open specifications with an 8-layer rubberized cushion system that protects joints and knees during rigorous multi-hour drills. Features ultra-crisp true bounce, medium-fast court pace, and high-contrast tournament blue lines.",
       highlights: [
@@ -138,12 +140,13 @@ const SYLVAN_DATA = {
       featured: true,
       isAvailable: true,
       instantBook: false,
+      // Card cover image shown on courts.html & booking.html (replace images[0] here)
       images: [
-        "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=1200&q=80"
+        "https://live.staticflickr.com/65535/53705138586_1300fde221_b.jpg",
+        "https://live.staticflickr.com/65535/53834266154_da29857c76_b.jpg",
+        "https://live.staticflickr.com/65535/55451770072_2e79ef66ab_b.jpg",
+        "https://live.staticflickr.com/65535/55452863628_2d085d8829_b.jpg",
+        "https://live.staticflickr.com/65535/52298930314_7bf4dec6fc_b.jpg"
       ],
       description: "An authentic Wimbledon grass court experience in sunny California. Cut precisely to 8mm on a firm, compacted soil bed, this rare natural grass court delivers lightning-quick rallies, slice that stays below the knees, and traditional serve-and-volley finesse.",
       highlights: [
@@ -178,7 +181,7 @@ const SYLVAN_DATA = {
       name: "Grand Slam Stadium Center Court",
       category: "Center Court",
       type: "Stadium Tournament Hard Court",
-      tagline: "1,500-seat championship arena with live electronic Hawk-Eye telemetry and broadcast broadcast lighting",
+      tagline: "1,500-seat championship arena with live electronic Hawk-Eye telemetry and lighting",
       location: "Central Arena Plaza",
       region: "California Campus",
       price: 120,
@@ -193,12 +196,13 @@ const SYLVAN_DATA = {
       featured: true,
       isAvailable: true,
       instantBook: true,
+      // Card cover image shown on courts.html & booking.html (replace images[0] here)
       images: [
-        "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=1200&q=80"
+        "https://live.staticflickr.com/65535/55305211991_e0f58502ec_b.jpg",
+        "https://live.staticflickr.com/65535/55446770977_709affd28c_b.jpg",
+        "https://live.staticflickr.com/65535/54241726021_ca3860b702_b.jpg",
+        "https://live.staticflickr.com/65535/55498802929_3bcd5b4e67_b.jpg",
+        "https://live.staticflickr.com/65535/55514060297_1ca879d0c0_b.jpg"
       ],
       description: "Feel the electrifying atmosphere of Grand Slam tennis. Center Court features stepped stadium grandstands for 1,500 spectators, dual digital scoreboards, broadcast-grade television cameras, and full live Hawk-Eye electronic line calls for tournament simulations.",
       highlights: [
@@ -233,7 +237,7 @@ const SYLVAN_DATA = {
       name: "Climate-Controlled Indoor Tennis Arena",
       category: "Indoor Arena",
       type: "Indoor Plexicushion Court",
-      tagline: "All-weather indoor tournament arena with temperature balance, acoustic baffles, and diffuse overhead LED arrays",
+      tagline: "All-weather indoor tournament arena with temperature balance, acoustic baffles, LED arrays",
       location: "West Wing · Indoor Sports Dome",
       region: "California Campus",
       price: 75,
@@ -248,12 +252,13 @@ const SYLVAN_DATA = {
       featured: true,
       isAvailable: true,
       instantBook: true,
+      // Card cover image shown on courts.html & booking.html (replace images[0] here)
       images: [
-        "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80"
+        "https://live.staticflickr.com/65535/53828568206_d099e483b7_b.jpg",
+        "https://live.staticflickr.com/65535/55575183101_8e28750166_b.jpg",
+        "https://live.staticflickr.com/65535/55502709905_f7c5fd7165_b.jpg",
+        "https://live.staticflickr.com/65535/53828598336_d45b830138_b.jpg",
+        "https://images.unsplash.com/photo-1560012057-4372e14c5085?auto=format&fit=crop&w=1200&q=80"
       ],
       description: "Play 365 days a year in peak physical comfort regardless of heat or rain. The Indoor Dome features 40-foot clear-span ceilings, silent HVAC maintaining an ideal 20°C playing environment, and sound-absorbing walls for focused coaching concentration.",
       highlights: [
@@ -288,7 +293,7 @@ const SYLVAN_DATA = {
       name: "Smart Video Biomechanics Analysis Court",
       category: "Indoor Arena",
       type: "High-Tech Telemetry Court",
-      tagline: "Equipped with 8 high-speed 240fps 4K cameras, real-time kinetic chain telemetry, and instant courtside tablet breakdown",
+      tagline: "Equipped with 8 high-speed 240fps 4K cameras telemetry, and instant courtside tablet breakdown",
       location: "Innovation Wing · Sports Science Lab",
       region: "California Campus",
       price: 110,
@@ -303,12 +308,13 @@ const SYLVAN_DATA = {
       featured: true,
       isAvailable: true,
       instantBook: true,
+      // Card cover image shown on courts.html & booking.html (replace images[0] here)
       images: [
-        "https://images.unsplash.com/photo-1560012057-4372e14c5085?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=1200&q=80"
+        "https://live.staticflickr.com/65535/53828784243_a9cf6bd0f7_b.jpg",
+        "https://live.staticflickr.com/65535/54978283742_47443236b1_b.jpg",
+        "https://live.staticflickr.com/65535/54400856938_1dbc3fe0ee_b.jpg",
+        "https://live.staticflickr.com/65535/55502710060_8c2817024b_b.jpg",
+        "https://live.staticflickr.com/65535/55502484604_8e50716db3_b.jpg"
       ],
       description: "The gold standard for technical stroke mastery. High-precision cameras record your serve pronation, racket head speed, topspin RPM, contact point height, and footwork split-step timing. Every session concludes with an exportable 4K cloud video dossier.",
       highlights: [
@@ -343,7 +349,7 @@ const SYLVAN_DATA = {
       name: "Night Match Floodlit Hard Court (Court 4)",
       category: "Hard Courts",
       type: "Tournament Night Court",
-      tagline: "Equipped with state-of-the-art Musco LED shadowless floodlights and programmable multi-spin ball machine",
+      tagline: "Equipped with state-of-the-art Musco LED shadowless multi-spin ball machine",
       location: "North Complex · Court 4",
       region: "California Campus",
       price: 55,
@@ -358,12 +364,13 @@ const SYLVAN_DATA = {
       featured: false,
       isAvailable: true,
       instantBook: true,
+      // Card cover image shown on courts.html & booking.html (replace images[0] here)
       images: [
-        "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80"
+        "images/night-match-court-4.jpg",
+        "https://live.staticflickr.com/65535/55651594851_7aef016b75_b.jpg",
+        "https://live.staticflickr.com/65535/55339473074_b11d27b2e4_b.jpg",
+        "https://live.staticflickr.com/65535/53827651012_688f7efec0_b.jpg",
+        "https://live.staticflickr.com/65535/53828804293_6291eaf70c_b.jpg"
       ],
       description: "Experience the magic of evening tennis under perfect tournament illumination. Includes a programmable Spinfire Pro 2 ball machine with remote control that feeds customizable topspin, slice, flat, and 2-line oscillations at up to 80 mph.",
       highlights: [
@@ -389,7 +396,7 @@ const SYLVAN_DATA = {
         rating: 4.95,
         responseRate: "100%",
         responseTime: "within 30 minutes",
-        bio: "Former collegiate captain passionate about nighttime drill sessions, cardio tennis high-energy groups, and doubles tactics."
+        bio: "Former collegiate captain passionat cardio tennis high-energy groups, and doubles tactics."
       }
     },
     {
@@ -398,7 +405,7 @@ const SYLVAN_DATA = {
       name: "European Clay Practice Court (Court B)",
       category: "Clay Courts",
       type: "Semi-Enclosed Clay Court",
-      tagline: "Dedicated red clay development court with target grids, footwork ladder lanes, and video tripod stations",
+      tagline: "Dedicated red clay development ladder lanes, and video tripod stations",
       location: "East Campus · Development Row",
       region: "California Campus",
       price: 60,
@@ -413,12 +420,13 @@ const SYLVAN_DATA = {
       featured: false,
       isAvailable: true,
       instantBook: true,
+      // Card cover image shown on courts.html & booking.html (replace images[0] here)
       images: [
-        "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1560012057-4372e14c5085?auto=format&fit=crop&w=1200&q=80"
+        "https://live.staticflickr.com/65535/55621803661_10580846f1_b.jpg",
+        "https://live.staticflickr.com/65535/55501006601_44697d03fb_b.jpg",
+        "https://live.staticflickr.com/65535/55499028755_985669a9df_b.jpg",
+        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=1200&q=80"
       ],
       description: "Designed specifically for technical repetition and footwork agility. Features painted depth target zones on the clay, high-tension rebound walls behind the court for solo volley sharpening, and elevated coaching viewing podiums.",
       highlights: [
@@ -455,7 +463,7 @@ const SYLVAN_DATA = {
       name: "Clay Courts",
       count: 8,
       icon: "shield",
-      image: "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=800&q=80",
+      image: "https://live.staticflickr.com/65535/53828597541_e52634b0a6_b.jpg",
       description: "Authentic French red clay for heavy topspin, slide control, and endurance rallies."
     },
     {
@@ -463,7 +471,7 @@ const SYLVAN_DATA = {
       name: "Hard Courts",
       count: 12,
       icon: "award",
-      image: "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=800&q=80",
+      image: "https://live.staticflickr.com/65535/55310836500_35becb55b8_b.jpg",
       description: "US Open cushioned acrylic tournament surfaces engineered for crisp bounce and fast pace."
     },
     {
@@ -471,7 +479,7 @@ const SYLVAN_DATA = {
       name: "Grass Courts",
       count: 4,
       icon: "sparkles",
-      image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
+      image: "https://live.staticflickr.com/65535/53827681012_48a6e5f93a_b.jpg",
       description: "Pristine natural ryegrass cut to 8mm for classic Wimbledon touch and serve-and-volley."
     },
     {
@@ -479,7 +487,7 @@ const SYLVAN_DATA = {
       name: "Indoor Arena",
       count: 6,
       icon: "building",
-      image: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=800&q=80",
+      image: "https://live.staticflickr.com/65535/53828926734_7f0f0db939_b.jpg",
       description: "Climate-controlled all-weather dome courts with zero glare and ideal acoustic feedback."
     },
     {
@@ -487,7 +495,7 @@ const SYLVAN_DATA = {
       name: "Center Court",
       count: 2,
       icon: "trophy",
-      image: "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=800&q=80",
+      image: "https://live.staticflickr.com/65535/55652019575_b6eecd33db_b.jpg",
       description: "1,500-seat championship arena featuring live Hawk-Eye telemetry and broadcast lighting."
     }
   ],
@@ -502,7 +510,7 @@ const SYLVAN_DATA = {
       weather: "26°C · Clear & Sunny",
       bestSeason: "July - August",
       tagline: "Tier 1 UTR and ITF junior ranking tournament with NCAA Division I collegiate scouts attending",
-      image: "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=800&q=80"
+      image: "https://live.staticflickr.com/65535/53829032650_6a87d63cb9_b.jpg"
     },
     {
       id: "dest-clay-classic",
@@ -513,7 +521,7 @@ const SYLVAN_DATA = {
       weather: "24°C · Mild Breeze",
       bestSeason: "May - June",
       tagline: "Intensive 3-set red clay tournament testing patience, slide control, and tactical point construction",
-      image: "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=800&q=80"
+      image: "https://live.staticflickr.com/65535/53828597746_d2d6b8c3f1_b.jpg"
     },
     {
       id: "dest-indoor-trophy",
@@ -524,7 +532,7 @@ const SYLVAN_DATA = {
       weather: "20°C · Climate-Controlled",
       bestSeason: "December - January",
       tagline: "Fast-paced indoor hard court invitational for top regional juniors, varsity athletes, and masters",
-      image: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=800&q=80"
+      image: "https://live.staticflickr.com/65535/52930556259_b965cf8a3b_b.jpg"
     },
     {
       id: "dest-college-showcase",
@@ -535,7 +543,7 @@ const SYLVAN_DATA = {
       weather: "22°C · Crisp Autumn",
       bestSeason: "September - October",
       tagline: "Direct recruitment showcase for high school players seeking NCAA Division I & II scholarships",
-      image: "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=800&q=80"
+      image: "https://live.staticflickr.com/65535/55501159204_be9be3f0fc_b.jpg"
     }
   ],
 
@@ -551,7 +559,7 @@ const SYLVAN_DATA = {
       reviewsCount: 64,
       minAge: "Ages 5-11",
       maxGroup: 6,
-      image: "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=800&q=80",
+      image: "https://live.staticflickr.com/65535/55497636062_f6b60841ac_b.jpg",
       tagline: "Fun, structured motor-skill foundations, rally consistency, and basic match rules using scaled equipment",
       included: [
         "USPTA certified junior coach instruction",
@@ -571,7 +579,7 @@ const SYLVAN_DATA = {
       reviewsCount: 82,
       minAge: "Ages 12-18",
       maxGroup: 4,
-      image: "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=800&q=80",
+      image: "https://live.staticflickr.com/65535/55494797156_aa2a7fe01d_b.jpg",
       tagline: "Intensive training for ranked UTR players: high-tempo match play, tactical shot selection, and mental toughness",
       included: [
         "Head Coach Marcus Vance direct supervision",
@@ -591,7 +599,7 @@ const SYLVAN_DATA = {
       reviewsCount: 58,
       minAge: "Adults 18+",
       maxGroup: 6,
-      image: "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=800&q=80",
+      image: "https://live.staticflickr.com/65535/55492690675_066c55557e_b.jpg",
       tagline: "Refine topspin groundstrokes, net volleys, dependable second serves, and smart doubles positioning",
       included: [
         "Live-ball feeding and point simulation",
@@ -611,7 +619,7 @@ const SYLVAN_DATA = {
       reviewsCount: 76,
       minAge: "All Levels",
       maxGroup: 8,
-      image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80",
+      image: "https://live.staticflickr.com/65535/55488748551_4e8d85935b_b.jpg",
       tagline: "Heart-pumping aerobic tennis workout set to music with continuous ball hitting, footwork ladders, and calorie burn",
       included: [
         "Burn up to 600+ calories in an hour",
@@ -631,7 +639,7 @@ const SYLVAN_DATA = {
       reviewsCount: 49,
       minAge: "All Ages",
       maxGroup: 1,
-      image: "https://images.unsplash.com/photo-1560012057-4372e14c5085?auto=format&fit=crop&w=800&q=80",
+      image: "https://live.staticflickr.com/65535/55453115742_da8370a44f_b.jpg",
       tagline: "Comprehensive stroke surgery: 240fps video capture, kinetic chain review, and personalized corrective drills",
       included: [
         "8-angle high-speed 4K camera telemetry",
@@ -651,7 +659,7 @@ const SYLVAN_DATA = {
       reviewsCount: 43,
       minAge: "Intermediate+",
       maxGroup: 4,
-      image: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=800&q=80",
+      image: "https://live.staticflickr.com/65535/55496694891_e917cb8bed_b.jpg",
       tagline: "Turn your serve into your greatest weapon: toss consistency, shoulder internal rotation, kick and slice variations",
       included: [
         "High-volume target serve repetitions",
@@ -715,7 +723,7 @@ const SYLVAN_DATA = {
       category: "Match Play",
       title: "Championship Point Forehand Winner",
       location: "Stadium Center Court",
-      image: "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=900&q=80",
+      image: "https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?auto=format&fit=crop&w=900&q=80",
       description: "Full kinetic coil and explosive follow-through on a match-deciding crosscourt forehand."
     },
     {
@@ -723,7 +731,7 @@ const SYLVAN_DATA = {
       category: "Courts",
       title: "French Red Clay at Morning Golden Hour",
       location: "East Campus Court 2",
-      image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=80",
+      image: "https://images.pexels.com/photos/34198193/pexels-photo-34198193.jpeg?auto=compress&cs=tinysrgb&w=1200",
       description: "Freshly dragged and swept crushed terracotta clay court ready for the morning squad session."
     },
     {
@@ -731,7 +739,7 @@ const SYLVAN_DATA = {
       category: "Coaching",
       title: "Tactical Board & Match Strategy Breakdown",
       location: "Coaches Pavilion",
-      image: "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=900&q=80",
+      image: "https://images.pexels.com/photos/18421042/pexels-photo-18421042.jpeg?auto=compress&cs=tinysrgb&w=1200",
       description: "Coach Marcus outlining serve-and-volley pattern positioning before the tournament finals."
     },
     {
@@ -739,7 +747,7 @@ const SYLVAN_DATA = {
       category: "Match Play",
       title: "First Serve Pronation at 122 MPH",
       location: "Biomechanics Center Court",
-      image: "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=900&q=80",
+      image: "https://live.staticflickr.com/65535/55502483564_a42fd89f7c_b.jpg",
       description: "Full extension at peak reach, driving down the T on break point."
     },
     {
@@ -747,7 +755,7 @@ const SYLVAN_DATA = {
       category: "Courts",
       title: "Night Tournament Under Stadium Floodlights",
       location: "North Complex Court 4",
-      image: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=900&q=80",
+      image: "https://live.staticflickr.com/65535/55644261545_f39c24e4a4_b.jpg",
       description: "Electrifying atmosphere during the Vantage Junior Masters evening feature match."
     },
     {
@@ -755,7 +763,7 @@ const SYLVAN_DATA = {
       category: "Coaching",
       title: "Junior Red Ball Agility Drills",
       location: "Junior Pavilion",
-      image: "https://images.unsplash.com/photo-1560012057-4372e14c5085?auto=format&fit=crop&w=900&q=80",
+      image: "https://live.staticflickr.com/65535/53827680937_34fb19441e_b.jpg",
       description: "Building fast feet, balance recovery, and hand-eye instincts in future champions."
     },
     {
@@ -763,7 +771,7 @@ const SYLVAN_DATA = {
       category: "Courts",
       title: "Pristine Ryegrass Grass Court Lawn",
       location: "South Estate Greens",
-      image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=80",
+      image: "https://live.staticflickr.com/65535/55501325002_67b855d6c7_b.jpg",
       description: "Laser-cut 8mm natural lawn offering authentic traditional English grass court play."
     },
     {
@@ -771,7 +779,7 @@ const SYLVAN_DATA = {
       category: "Fitness",
       title: "Tennis Resistance Band Conditioning",
       location: "High-Performance Gym",
-      image: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=900&q=80",
+      image: "https://live.staticflickr.com/65535/55616513871_4e303ca379_b.jpg",
       description: "Rotator cuff strengthening and core rotational power for increased racket head speed."
     },
     {
@@ -779,7 +787,7 @@ const SYLVAN_DATA = {
       category: "Tournaments",
       title: "Championship Trophy Presentation",
       location: "Center Court Podium",
-      image: "https://images.unsplash.com/photo-1589487391730-58f20eb2c308?auto=format&fit=crop&w=900&q=80",
+      image: "https://live.staticflickr.com/65535/53829032985_d7af428c56_b.jpg",
       description: "Celebrating hard work and sportsmanship at the annual Vantage Academy Grand Prix."
     },
     {
@@ -787,7 +795,7 @@ const SYLVAN_DATA = {
       category: "Coaching",
       title: "Slow-Motion High-Speed Stroke Review",
       location: "Innovation Wing Lab",
-      image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=900&q=80",
+      image: "https://live.staticflickr.com/65535/53828835343_9bd0c2a7aa_b.jpg",
       description: "Instant video telemetry showing exact shoulder angle at impact point."
     },
     {
@@ -795,7 +803,7 @@ const SYLVAN_DATA = {
       category: "Match Play",
       title: "Backhand Slide on Red Clay",
       location: "Clay Court 1",
-      image: "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=900&q=80",
+      image: "https://live.staticflickr.com/65535/53828804868_4f0a587b57_b.jpg",
       description: "Controlled open-stance sliding backhand counterpunching from 4 feet behind the baseline."
     },
     {
@@ -803,7 +811,7 @@ const SYLVAN_DATA = {
       category: "Fitness",
       title: "Footwork Agility Ladder Repetitions",
       location: "Sprint Track Lanes",
-      image: "https://images.unsplash.com/photo-1434725039720-aaad6dd32dfe?auto=format&fit=crop&w=900&q=80",
+      image: "https://live.staticflickr.com/65535/53827650482_a1bf0e0b2f_b.jpg",
       description: "Micro-step precision drills sharpening the first-step split reaction to opponent serves."
     },
     {
@@ -811,7 +819,7 @@ const SYLVAN_DATA = {
       category: "Tournaments",
       title: "College Scout Showcase Matches",
       location: "North Courts 1-4",
-      image: "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=900&q=80",
+      image: "https://live.staticflickr.com/65535/55615505692_cbd5943582_b.jpg",
       description: "Top regional juniors competing under the eyes of university head coaches."
     },
     {
@@ -819,7 +827,7 @@ const SYLVAN_DATA = {
       category: "Courts",
       title: "Indoor Plexicushion Arena Panorama",
       location: "Indoor Sports Dome",
-      image: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=900&q=80",
+      image: "https://live.staticflickr.com/65535/55638943585_198a4bb25c_b.jpg",
       description: "Spacious multi-court indoor dome keeping athletes sharp throughout rainy winter months."
     },
     {
@@ -827,7 +835,7 @@ const SYLVAN_DATA = {
       category: "Match Play",
       title: "Overhead Smash at the Net",
       location: "Stadium Center Court",
-      image: "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=900&q=80",
+      image: "https://live.staticflickr.com/65535/55305466774_581944db2e_b.jpg",
       description: "Decisive aerial put-away closing out a 24-shot baseline rally."
     }
   ],
@@ -837,7 +845,7 @@ const SYLVAN_DATA = {
       id: "VAN-84921",
       stayId: "syl-01",
       stayName: "Roland Garros Red Clay Court (Court 2)",
-      stayImage: "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=600&q=80",
+      stayImage: "https://live.staticflickr.com/65535/55310576728_1a21725bab_b.jpg",
       location: "East Campus · Red Clay Pavilion",
       checkIn: "2026-11-20",
       checkOut: "2026-11-20",
@@ -859,7 +867,7 @@ const SYLVAN_DATA = {
       id: "VAN-84922",
       stayId: "syl-02",
       stayName: "US Open DecoTurf Hard Court (Court 1)",
-      stayImage: "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=600&q=80",
+      stayImage: "https://live.staticflickr.com/65535/55503391906_7f9b62e72e_b.jpg",
       location: "North Complex · Championship Row",
       checkIn: "2026-11-23",
       checkOut: "2026-11-23",
@@ -881,7 +889,7 @@ const SYLVAN_DATA = {
       id: "VAN-84923",
       stayId: "syl-06",
       stayName: "Smart Video Biomechanics Analysis Court",
-      stayImage: "https://images.unsplash.com/photo-1560012057-4372e14c5085?auto=format&fit=crop&w=600&q=80",
+      stayImage: "https://live.staticflickr.com/65535/53828784243_a9cf6bd0f7_b.jpg",
       location: "Innovation Wing · Sports Science Lab",
       checkIn: "2026-11-27",
       checkOut: "2026-11-27",
@@ -903,7 +911,7 @@ const SYLVAN_DATA = {
       id: "VAN-84918",
       stayId: "syl-05",
       stayName: "Climate-Controlled Indoor Tennis Arena",
-      stayImage: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=600&q=80",
+      stayImage: "https://live.staticflickr.com/65535/53828568206_d099e483b7_b.jpg",
       location: "West Wing · Indoor Sports Dome",
       checkIn: "2026-11-05",
       checkOut: "2026-11-05",
