@@ -90,7 +90,7 @@
         <a href="courts.html" class="hover:text-forest dark:hover:text-emerald-400 transition-colors whitespace-nowrap">Courts</a>
         <a href="tournaments.html" class="hover:text-forest dark:hover:text-emerald-400 transition-colors whitespace-nowrap">Tournaments</a>
         <a href="training.html" class="hover:text-forest dark:hover:text-emerald-400 transition-colors whitespace-nowrap">Training</a>
-        <a href="admissions.html" class="hover:text-forest dark:hover:text-emerald-400 transition-colors whitespace-nowrap">Admissions</a>
+        <a href="contact.html" class="hover:text-forest dark:hover:text-emerald-400 transition-colors whitespace-nowrap">Contact</a>
         <a href="dashboard.html" class="hover:text-forest dark:hover:text-emerald-400 transition-colors whitespace-nowrap">Dashboard</a>
       </nav>
 
@@ -114,17 +114,9 @@
         </button>
 
         <!-- Login Link -->
-        <a href="login.html" class="hidden xl:inline-flex text-xs font-semibold px-3 py-2 text-stone-700 dark:text-stone-200 hover:text-forest dark:hover:text-emerald-400 transition-colors">
+        <a href="login.html" class="hidden xl:inline-flex items-center justify-center px-4 py-2 rounded-full text-xs font-semibold border border-stone-300 dark:border-stone-600 text-stone-800 dark:text-stone-100 hover:border-forest dark:hover:border-amberAccent hover:bg-forest hover:text-white dark:hover:bg-emerald-800/40 dark:hover:text-amber-300 transition-all whitespace-nowrap">
           Login
         </a>
-
-        <!-- Primary Auth CTA -->
-        <div class="hidden xl:flex items-center">
-          <a href="booking.html" class="btn-primary text-xs px-5 py-2.5 shadow-sm inline-flex items-center gap-2 whitespace-nowrap">
-            <i data-lucide="calendar" class="w-3.5 h-3.5 text-amberAccent"></i>
-            <span>Book Slot</span>
-          </a>
-        </div>
 
         <!-- Mobile Menu Trigger -->
         <button id="mobile-menu-toggle"
@@ -175,7 +167,7 @@
           <a href="courts.html" class="py-1.5 hover:text-forest dark:hover:text-emerald-400 transition-colors">Courts</a>
           <a href="tournaments.html" class="py-1.5 hover:text-forest dark:hover:text-emerald-400 transition-colors">Tournaments</a>
           <a href="training.html" class="py-1.5 hover:text-forest dark:hover:text-emerald-400 transition-colors">Training</a>
-          <a href="admissions.html" class="py-1.5 hover:text-forest dark:hover:text-emerald-400 transition-colors">Admissions</a>
+          <a href="contact.html" class="py-1.5 hover:text-forest dark:hover:text-emerald-400 transition-colors">Contact</a>
           <a href="dashboard.html" class="py-1.5 hover:text-forest dark:hover:text-emerald-400 transition-colors">Dashboard</a>
         </nav>
       </div>
@@ -201,10 +193,6 @@
         </div>
 
         <a href="login.html" class="btn-secondary text-xs text-center py-2 sm:py-2.5 rounded-full font-semibold">Login</a>
-        <a href="booking.html" class="btn-primary text-xs text-center py-2 sm:py-2.5 rounded-full font-semibold inline-flex items-center justify-center gap-1.5">
-          <i data-lucide="calendar" class="w-3.5 h-3.5 text-amberAccent"></i>
-          <span>Book Slot</span>
-        </a>
       </div>
     </div>
   </div>
@@ -267,7 +255,7 @@
                 class="block text-[11px] font-bold uppercase tracking-wider text-forest dark:text-emerald-400 mb-1">Program / Level</label>
               <div class="flex items-center gap-2">
                 <i data-lucide="award" class="w-4 h-4 text-earth shrink-0"></i>
-                <select name="category" class="w-full bg-transparent text-xs font-semibold focus:outline-hidden cursor-pointer">
+                <select name="category" class="w-full bg-transparent text-xs font-semibold text-stone-800 dark:text-stone-100 focus:outline-hidden cursor-pointer">
                   <option value="All">All Levels & Clinics</option>
                   <option value="Clay Courts">Clay Court Training</option>
                   <option value="Hard Courts">Hard Court Squads</option>
@@ -285,7 +273,7 @@
               <div class="flex items-center gap-2">
                 <i data-lucide="calendar" class="w-4 h-4 text-earth shrink-0"></i>
                 <input type="date" name="date" value="2026-11-20"
-                  class="w-full bg-transparent text-xs font-semibold focus:outline-hidden text-stone-700 dark:text-stone-300">
+                  class="w-full bg-transparent text-xs font-semibold focus:outline-hidden text-stone-800 dark:text-stone-100">
               </div>
             </div>
 
@@ -296,7 +284,7 @@
                 class="block text-[11px] font-bold uppercase tracking-wider text-forest dark:text-emerald-400 mb-1">Preferred Time</label>
               <div class="flex items-center gap-2">
                 <i data-lucide="clock" class="w-4 h-4 text-earth shrink-0"></i>
-                <select name="time" class="w-full bg-transparent text-xs font-semibold focus:outline-hidden cursor-pointer">
+                <select name="time" class="w-full bg-transparent text-xs font-semibold text-stone-800 dark:text-stone-100 focus:outline-hidden cursor-pointer">
                   <option value="morning">Morning (7 AM - 12 PM)</option>
                   <option value="afternoon">Afternoon (1 PM - 5 PM)</option>
                   <option value="evening" selected>Night Floodlit (6 PM - 10 PM)</option>
@@ -313,7 +301,7 @@
                 <div class="flex items-center gap-2">
                   <i data-lucide="users" class="w-4 h-4 text-earth shrink-0"></i>
                   <select name="guests"
-                    class="w-full bg-transparent text-xs font-semibold focus:outline-hidden cursor-pointer">
+                    class="w-full bg-transparent text-xs font-semibold text-stone-800 dark:text-stone-100 focus:outline-hidden cursor-pointer">
                     <option value="1">1 Player (Solo / Lesson)</option>
                     <option value="2" selected>2 Players (Singles)</option>
                     <option value="4">4 Players (Doubles)</option>
@@ -511,28 +499,26 @@
               </div>
             </div>
 
-            <div class="p-6 flex-1 flex flex-col justify-between">
-              <div>
-                <span class="text-xs text-stone-500 flex items-center gap-1 mb-2">
-                  <i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-700"></i> East Campus · Red Clay Pavilion
-                </span>
-                <h3
-                  class="font-serif text-xl font-bold text-stone-900 dark:text-stone-100 mb-2 group-hover:text-forest dark:group-hover:text-emerald-400 transition-colors">
-                  <a href="booking.html?id=syl-01">Roland Garros Red Clay Court (Court 2)</a>
-                </h3>
-                <p class="text-xs text-stone-600 dark:text-stone-400 line-clamp-2 mb-4 leading-relaxed">
-                  Imported European crushed brick with sub-surface irrigation. Perfect for sliding, heavy topspin rallies, and endurance.
-                </p>
-                <div
-                  class="flex items-center gap-4 text-xs text-stone-500 py-3 border-y border-stone-100 dark:border-stone-800 mb-4">
-                  <span>4 Players Max</span> · <span>Pro Clay Spec</span> · <span>1,000 Lux Floodlights</span>
-                </div>
+            <div class="p-6 flex-1 flex flex-col">
+              <span class="card-slot-eyebrow text-xs text-stone-600 dark:text-stone-300 gap-1 mb-2 truncate">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 shrink-0 text-emerald-700 dark:text-emerald-400"></i> East Campus · Red Clay Pavilion
+              </span>
+              <h3
+                class="font-serif text-xl font-bold text-stone-900 dark:text-stone-100 mb-2 card-slot-title group-hover:text-forest dark:group-hover:text-emerald-400 transition-colors">
+                <a href="booking.html?id=syl-01">Roland Garros Red Clay Court (Court 2)</a>
+              </h3>
+              <p class="text-xs text-stone-600 dark:text-stone-300 line-clamp-2 card-slot-desc mb-4">
+                Imported European crushed brick with sub-surface irrigation. Perfect for sliding, heavy topspin rallies, and endurance.
+              </p>
+              <div
+                class="mt-auto min-h-[3.25rem] flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-stone-600 dark:text-stone-300 py-3 border-y border-stone-100 dark:border-stone-800 mb-4">
+                <span>4 Players Max</span> · <span>Pro Clay Spec</span> · <span>1,000 Lux Floodlights</span>
               </div>
 
-              <div class="flex items-center justify-between pt-2">
+              <div class="flex items-center justify-between pt-1">
                 <div>
                   <span class="font-serif text-2xl font-bold text-forest dark:text-emerald-300">$65</span>
-                  <span class="text-xs text-stone-500"> / hour</span>
+                  <span class="text-xs text-stone-500 dark:text-stone-400"> / hour</span>
                 </div>
                 <div class="flex gap-2">
                   <a href="booking.html?id=syl-01" class="btn-primary text-xs px-5 py-2.5 inline-flex items-center gap-1.5 shadow-sm">
@@ -546,8 +532,8 @@
 
           <!-- Card 2: US Open Hard Court -->
           <div
-            class="group bg-white dark:bg-[#162B22] rounded-3xl overflow-hidden border border-stone-200 dark:border-stone-800 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between">
-            <div class="relative aspect-[4/3] overflow-hidden">
+            class="group bg-white dark:bg-[#162B22] rounded-3xl overflow-hidden border border-stone-200 dark:border-stone-800 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col">
+            <div class="relative aspect-[4/3] overflow-hidden shrink-0">
               <img
                 src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=800&q=80"
                 alt="US Open DecoTurf Hard Court"
@@ -567,28 +553,26 @@
               </div>
             </div>
 
-            <div class="p-6 flex-1 flex flex-col justify-between">
-              <div>
-                <span class="text-xs text-stone-500 flex items-center gap-1 mb-2">
-                  <i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-700"></i> North Complex · Championship Row
-                </span>
-                <h3
-                  class="font-serif text-xl font-bold text-stone-900 dark:text-stone-100 mb-2 group-hover:text-forest dark:group-hover:text-emerald-400 transition-colors">
-                  <a href="booking.html?id=syl-02">US Open DecoTurf Hard Court (Court 1)</a>
-                </h3>
-                <p class="text-xs text-stone-600 dark:text-stone-400 line-clamp-2 mb-4 leading-relaxed">
-                  8-layer cushioned acrylic system protecting joints during high-tempo rallies with official US Open court pace and line clarity.
-                </p>
-                <div
-                  class="flex items-center gap-4 text-xs text-stone-500 py-3 border-y border-stone-100 dark:border-stone-800 mb-4">
-                  <span>4 Players Max</span> · <span>DecoTurf Cushioned</span> · <span>Radar Telemetry</span>
-                </div>
+            <div class="p-6 flex-1 flex flex-col">
+              <span class="card-slot-eyebrow text-xs text-stone-600 dark:text-stone-300 gap-1 mb-2 truncate">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 shrink-0 text-emerald-700 dark:text-emerald-400"></i> North Complex · Championship Row
+              </span>
+              <h3
+                class="font-serif text-xl font-bold text-stone-900 dark:text-stone-100 mb-2 card-slot-title group-hover:text-forest dark:group-hover:text-emerald-400 transition-colors">
+                <a href="booking.html?id=syl-02">US Open DecoTurf Hard Court (Court 1)</a>
+              </h3>
+              <p class="text-xs text-stone-600 dark:text-stone-300 line-clamp-2 card-slot-desc mb-4">
+                8-layer cushioned acrylic system protecting joints during high-tempo rallies with official US Open court pace and line clarity.
+              </p>
+              <div
+                class="mt-auto min-h-[3.25rem] flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-stone-600 dark:text-stone-300 py-3 border-y border-stone-100 dark:border-stone-800 mb-4">
+                <span>4 Players Max</span> · <span>DecoTurf Cushioned</span> · <span>Radar Telemetry</span>
               </div>
 
-              <div class="flex items-center justify-between pt-2">
+              <div class="flex items-center justify-between pt-1">
                 <div>
                   <span class="font-serif text-2xl font-bold text-forest dark:text-emerald-300">$50</span>
-                  <span class="text-xs text-stone-500"> / hour</span>
+                  <span class="text-xs text-stone-500 dark:text-stone-400"> / hour</span>
                 </div>
                 <div class="flex gap-2">
                   <a href="booking.html?id=syl-02" class="btn-primary text-xs px-5 py-2.5 inline-flex items-center gap-1.5 shadow-sm">
@@ -602,8 +586,8 @@
 
           <!-- Card 3: Stadium Center Court -->
           <div
-            class="group bg-white dark:bg-[#162B22] rounded-3xl overflow-hidden border border-stone-200 dark:border-stone-800 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between">
-            <div class="relative aspect-[4/3] overflow-hidden">
+            class="group bg-white dark:bg-[#162B22] rounded-3xl overflow-hidden border border-stone-200 dark:border-stone-800 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col">
+            <div class="relative aspect-[4/3] overflow-hidden shrink-0">
               <img
                 src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=800&q=80"
                 alt="Grand Slam Stadium Center Court"
@@ -623,28 +607,26 @@
               </div>
             </div>
 
-            <div class="p-6 flex-1 flex flex-col justify-between">
-              <div>
-                <span class="text-xs text-stone-500 flex items-center gap-1 mb-2">
-                  <i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-700"></i> Central Arena Plaza
-                </span>
-                <h3
-                  class="font-serif text-xl font-bold text-stone-900 dark:text-stone-100 mb-2 group-hover:text-forest dark:group-hover:text-emerald-400 transition-colors">
-                  <a href="booking.html?id=syl-04">Grand Slam Stadium Center Court</a>
-                </h3>
-                <p class="text-xs text-stone-600 dark:text-stone-400 line-clamp-2 mb-4 leading-relaxed">
-                  1,500-seat championship show court equipped with live Hawk-Eye electronic line calls, broadcast lighting, and digital scoreboard.
-                </p>
-                <div
-                  class="flex items-center gap-4 text-xs text-stone-500 py-3 border-y border-stone-100 dark:border-stone-800 mb-4">
-                  <span>1,500 Seats</span> · <span>Hawk-Eye Telemetry</span> · <span>Umpire Chair</span>
-                </div>
+            <div class="p-6 flex-1 flex flex-col">
+              <span class="card-slot-eyebrow text-xs text-stone-600 dark:text-stone-300 gap-1 mb-2 truncate">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 shrink-0 text-emerald-700 dark:text-emerald-400"></i> Central Arena Plaza
+              </span>
+              <h3
+                class="font-serif text-xl font-bold text-stone-900 dark:text-stone-100 mb-2 card-slot-title group-hover:text-forest dark:group-hover:text-emerald-400 transition-colors">
+                <a href="booking.html?id=syl-04">Grand Slam Stadium Center Court</a>
+              </h3>
+              <p class="text-xs text-stone-600 dark:text-stone-300 line-clamp-2 card-slot-desc mb-4">
+                1,500-seat championship show court equipped with live Hawk-Eye electronic line calls, broadcast lighting, and digital scoreboard.
+              </p>
+              <div
+                class="mt-auto min-h-[3.25rem] flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-stone-600 dark:text-stone-300 py-3 border-y border-stone-100 dark:border-stone-800 mb-4">
+                <span>1,500 Seats</span> · <span>Hawk-Eye Telemetry</span> · <span>Umpire Chair</span>
               </div>
 
-              <div class="flex items-center justify-between pt-2">
+              <div class="flex items-center justify-between pt-1">
                 <div>
                   <span class="font-serif text-2xl font-bold text-forest dark:text-emerald-300">$120</span>
-                  <span class="text-xs text-stone-500"> / hour</span>
+                  <span class="text-xs text-stone-500 dark:text-stone-400"> / hour</span>
                 </div>
                 <div class="flex gap-2">
                   <a href="booking.html?id=syl-04" class="btn-primary text-xs px-5 py-2.5 inline-flex items-center gap-1.5 shadow-sm">
@@ -898,75 +880,69 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- Review 1 -->
         <div
-          class="p-8 rounded-3xl bg-white dark:bg-[#10211A] border border-stone-200/80 dark:border-stone-800/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center gap-1 text-amber-400 mb-4">
-              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
-            </div>
-            <p class="text-sm text-stone-700 dark:text-stone-300 italic leading-relaxed mb-6">
-              "Vantage transformed our 14-year-old daughter's entire game. Under Coach Marcus's tactical guidance and clay court training, her UTR jumped from 6.8 to 9.4 and she reached her first national ITF junior final."
-            </p>
+          class="p-6 lg:p-8 rounded-3xl bg-white dark:bg-[#10211A] border border-stone-200/80 dark:border-stone-800/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+          <div class="flex items-center gap-1 text-amber-400 mb-4">
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
           </div>
-          <div class="flex items-center gap-3 pt-4 border-t border-stone-100 dark:border-stone-800">
+          <p class="text-sm text-stone-700 dark:text-stone-200 italic leading-relaxed mb-6 flex-1">
+            "Vantage transformed our 14-year-old daughter's entire game. Under Coach Marcus's tactical guidance and clay court training, her UTR jumped from 6.8 to 9.4 and she reached her first national ITF junior final."
+          </p>
+          <div class="flex items-center gap-3 pt-4 border-t border-stone-100 dark:border-stone-800 min-h-[4.75rem]">
             <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80"
-              alt="Elena Rostova" class="w-10 h-10 rounded-full object-cover">
-            <div>
+              alt="Elena Rostova" class="w-11 h-11 rounded-full object-cover shrink-0">
+            <div class="min-w-0">
               <h4 class="font-bold text-xs text-stone-900 dark:text-stone-100">Elena Rostova</h4>
-              <span class="text-[10px] text-stone-500 dark:text-stone-400">Parent of UTR 9.4 Junior Finalist</span>
+              <span class="text-[11px] leading-snug text-stone-600 dark:text-stone-300 block min-h-[2rem]">Parent of UTR 9.4 Junior Finalist</span>
             </div>
           </div>
         </div>
 
         <!-- Review 2 -->
         <div
-          class="p-8 rounded-3xl bg-white dark:bg-[#10211A] border border-stone-200/80 dark:border-stone-800/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center gap-1 text-amber-400 mb-4">
-              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
-            </div>
-            <p class="text-sm text-stone-700 dark:text-stone-300 italic leading-relaxed mb-6">
-              "The coaching staff here doesn't just teach you how to hit pretty strokes; they teach you how to win ugly, manage match nerves, and compete under pressure. I secured my full NCAA Division I scholarship here."
-            </p>
+          class="p-6 lg:p-8 rounded-3xl bg-white dark:bg-[#10211A] border border-stone-200/80 dark:border-stone-800/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+          <div class="flex items-center gap-1 text-amber-400 mb-4">
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
           </div>
-          <div class="flex items-center gap-3 pt-4 border-t border-stone-100 dark:border-stone-800">
+          <p class="text-sm text-stone-700 dark:text-stone-200 italic leading-relaxed mb-6 flex-1">
+            "The coaching staff here doesn't just teach you how to hit pretty strokes; they teach you how to win ugly, manage match nerves, and compete under pressure. I secured my full NCAA Division I scholarship here."
+          </p>
+          <div class="flex items-center gap-3 pt-4 border-t border-stone-100 dark:border-stone-800 min-h-[4.75rem]">
             <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
-              alt="Marcus Thorne" class="w-10 h-10 rounded-full object-cover">
-            <div>
+              alt="Marcus Thorne" class="w-11 h-11 rounded-full object-cover shrink-0">
+            <div class="min-w-0">
               <h4 class="font-bold text-xs text-stone-900 dark:text-stone-100">Marcus Thorne</h4>
-              <span class="text-[10px] text-stone-500 dark:text-stone-400">NCAA Division I Scholar Athlete</span>
+              <span class="text-[11px] leading-snug text-stone-600 dark:text-stone-300 block min-h-[2rem]">NCAA Division I Scholar Athlete</span>
             </div>
           </div>
         </div>
 
         <!-- Review 3 -->
         <div
-          class="p-8 rounded-3xl bg-white dark:bg-[#10211A] border border-stone-200/80 dark:border-stone-800/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center gap-1 text-amber-400 mb-4">
-              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
-            </div>
-            <p class="text-sm text-stone-700 dark:text-stone-300 italic leading-relaxed mb-6">
-              "The 1-on-1 biomechanics session with Dr. Weiss unlocked my serve. By adjusting my trophy pose and shoulder tilt, I added 12 mph to my first serve without elbow soreness. Truly professional grade."
-            </p>
+          class="p-6 lg:p-8 rounded-3xl bg-white dark:bg-[#10211A] border border-stone-200/80 dark:border-stone-800/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+          <div class="flex items-center gap-1 text-amber-400 mb-4">
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
           </div>
-          <div class="flex items-center gap-3 pt-4 border-t border-stone-100 dark:border-stone-800">
+          <p class="text-sm text-stone-700 dark:text-stone-200 italic leading-relaxed mb-6 flex-1">
+            "The 1-on-1 biomechanics session with Dr. Weiss unlocked my serve. By adjusting my trophy pose and shoulder tilt, I added 12 mph to my first serve without elbow soreness. Truly professional grade."
+          </p>
+          <div class="flex items-center gap-3 pt-4 border-t border-stone-100 dark:border-stone-800 min-h-[4.75rem]">
             <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80"
-              alt="Sophia Chen" class="w-10 h-10 rounded-full object-cover">
-            <div>
+              alt="Sophia Chen" class="w-11 h-11 rounded-full object-cover shrink-0">
+            <div class="min-w-0">
               <h4 class="font-bold text-xs text-stone-900 dark:text-stone-100">Sophia Chen</h4>
-              <span class="text-[10px] text-stone-500 dark:text-stone-400">Adult Club Champion</span>
+              <span class="text-[11px] leading-snug text-stone-600 dark:text-stone-300 block min-h-[2rem]">Adult Club Champion</span>
             </div>
           </div>
         </div>
@@ -1050,6 +1026,13 @@
                   d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
               </svg>
             </a>
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer"
+              class="social-icon-btn social-x" aria-label="Vantage on X" title="X">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </a>
             <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"
               class="social-icon-btn social-youtube" aria-label="Vantage on YouTube" title="YouTube">
               <svg viewBox="0 0 24 24">
@@ -1080,7 +1063,7 @@
             <li><a href="dashboard.html" class="text-emerald-700 dark:text-emerald-400 font-semibold hover:underline">Student Dashboard</a></li>
             <li><a href="booking.html" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Book Court / Coaching Slot</a></li>
             <li><a href="training.html" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Training Photo Gallery</a></li>
-            <li><a href="admissions.html" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Admissions & Skill Trial</a></li>
+            <li><a href="contact.html" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Contact & Skill Trial</a></li>
             <li><a href="login.html" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Student Login</a></li>
             <li><a href="signup.html" class="text-stone-600 dark:text-stone-400 hover:text-forest dark:hover:text-amber-400 transition-colors">Player Registration</a></li>
           </ul>
@@ -1106,8 +1089,8 @@
       <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 dark:text-stone-500 gap-4">
         <p>&copy; 2026 Vantage Tennis Coaching Academy. All rights reserved.</p>
         <div class="flex items-center gap-6">
-          <a href="admissions.html" class="hover:text-stone-800 dark:hover:text-stone-300 transition-colors">Court Rules & Etiquette</a>
-          <a href="admissions.html" class="hover:text-stone-800 dark:hover:text-stone-300 transition-colors">Safety & Medical</a>
+          <a href="contact.html" class="hover:text-stone-800 dark:hover:text-stone-300 transition-colors">Court Rules & Etiquette</a>
+          <a href="contact.html" class="hover:text-stone-800 dark:hover:text-stone-300 transition-colors">Safety & Medical</a>
           <a href="dashboard.html" class="hover:text-stone-800 dark:hover:text-stone-300 transition-colors">Student Portal</a>
         </div>
       </div>

@@ -138,32 +138,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
         <!-- Content -->
         <div class="p-6 flex-1 flex flex-col justify-between">
-          <div>
-            <div class="flex items-center gap-1.5 text-xs text-stone-500 dark:text-stone-400 mb-2">
-              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-700 dark:text-emerald-400"></i>
-              <span>${stay.location}</span>
+          <div class="flex flex-col flex-1">
+            <div class="card-slot-eyebrow flex items-center gap-1.5 text-xs text-stone-600 dark:text-stone-300 mb-2">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-700 dark:text-emerald-400 shrink-0"></i>
+              <span class="truncate">${stay.location}</span>
             </div>
             
-            <h3 class="font-serif text-xl font-bold mb-2 group-hover:text-emerald-800 dark:group-hover:text-emerald-400 transition-colors">
+            <h3 class="card-slot-title font-serif text-xl font-bold mb-2 group-hover:text-emerald-800 dark:group-hover:text-emerald-400 transition-colors">
               <a href="booking.html?id=${stay.id}">${stay.name}</a>
             </h3>
 
-            <p class="text-sm text-stone-600 dark:text-stone-400 line-clamp-2 mb-4 leading-relaxed">
+            <p class="card-slot-desc text-sm text-stone-600 dark:text-stone-300 line-clamp-2 mb-4 leading-relaxed">
               ${stay.tagline}
             </p>
 
             <!-- Specs -->
-            <div class="grid grid-cols-3 gap-2 py-3 border-y border-stone-100 dark:border-stone-800/80 text-xs text-stone-600 dark:text-stone-400 mb-4 text-center">
+            <div class="mt-auto grid grid-cols-3 gap-2 py-3 border-y border-stone-100 dark:border-stone-800/80 text-xs text-stone-600 dark:text-stone-300 mb-4 text-center">
               <div>
-                <span class="font-bold text-stone-800 dark:text-stone-200 block">${stay.capacity} Max</span>
+                <span class="font-bold text-stone-800 dark:text-stone-100 block">${stay.capacity} Max</span>
                 <span>Players</span>
               </div>
               <div>
-                <span class="font-bold text-stone-800 dark:text-stone-200 block">Pro Level</span>
+                <span class="font-bold text-stone-800 dark:text-stone-100 block">Pro Level</span>
                 <span>Surface</span>
               </div>
               <div>
-                <span class="font-bold text-stone-800 dark:text-stone-200 block">1,000 Lux</span>
+                <span class="font-bold text-stone-800 dark:text-stone-100 block">1,000 Lux</span>
                 <span>Lighting</span>
               </div>
             </div>
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div>
               <span class="text-xs text-stone-400 line-through mr-1.5">$${stay.originalPrice}</span>
               <span class="font-serif text-2xl font-bold text-emerald-950 dark:text-emerald-300">$${stay.price}</span>
-              <span class="text-xs text-stone-500 dark:text-stone-400"> / hour</span>
+              <span class="text-xs text-stone-600 dark:text-stone-300"> / hour</span>
             </div>
 
             <div class="flex items-center gap-2">

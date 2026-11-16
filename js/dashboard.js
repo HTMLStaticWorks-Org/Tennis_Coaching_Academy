@@ -257,16 +257,16 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
         <div class="p-5 flex-1 flex flex-col justify-between">
           <div>
-            <span class="text-[11px] text-stone-500 flex items-center gap-1 mb-1">
-              <i data-lucide="map-pin" class="w-3 h-3 text-amber-600"></i> ${court.location}
+            <span class="text-[11px] text-stone-600 dark:text-stone-300 flex items-center gap-1 mb-1">
+              <i data-lucide="map-pin" class="w-3 h-3 text-amber-600 dark:text-amber-400"></i> ${court.location}
             </span>
             <h4 class="font-serif font-bold text-base text-stone-900 dark:text-stone-100 mb-2">${court.name}</h4>
-            <p class="text-xs text-stone-500 line-clamp-2 mb-3">${court.description}</p>
+            <p class="text-xs text-stone-600 dark:text-stone-300 line-clamp-2 mb-3">${court.description}</p>
           </div>
           <div class="flex items-center justify-between pt-3 border-t border-stone-100 dark:border-stone-800">
             <div>
               <span class="font-serif text-lg font-bold text-emerald-950 dark:text-emerald-300">$${court.price}</span>
-              <span class="text-[11px] text-stone-500"> / hour</span>
+              <span class="text-[11px] text-stone-600 dark:text-stone-300"> / hour</span>
             </div>
             <a href="booking.html?id=${court.id}" class="px-4 py-2 rounded-full text-xs font-semibold bg-emerald-800 hover:bg-emerald-900 text-white transition-all shadow-xs flex items-center gap-1.5">
               <i data-lucide="calendar" class="w-3.5 h-3.5 text-amberAccent"></i>
@@ -443,7 +443,7 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         </div>
         <div class="flex items-center gap-3">
-          <span class="text-xs font-bold text-emerald-700 bg-emerald-50 dark:bg-emerald-950 px-3 py-1 rounded-full">+0.08 UTR Rating</span>
+          <span class="text-xs font-bold text-emerald-800 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950 px-3 py-1 rounded-full">+0.08 UTR Rating</span>
           <button class="btn-secondary text-xs px-4 py-2" onclick="window.showInvoiceModal('${b.id}')">Receipt</button>
         </div>
       </div>
@@ -499,7 +499,6 @@ document.addEventListener('DOMContentLoaded', () => {
   window.removeSavedCourt = function(id) {
     SylvanStore.toggleSaveStay(id);
     renderSavedCourts();
-    SylvanToast.show('Court Removed', 'Removed court from your saved list.', 'info');
   };
 
   // ==========================================
@@ -558,18 +557,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     SylvanStore.saveUser({ name, email, phone });
     document.getElementById('dash-user-name').textContent = name;
-    SylvanToast.show('Profile Updated', 'Player details and equipment specifications saved successfully.', 'success');
+    const navName = document.querySelector('#dash-navbar-avatar + span');
+    if (navName) navName.textContent = name;
   });
 
   document.getElementById('dash-password-form')?.addEventListener('submit', (e) => {
     e.preventDefault();
-    SylvanToast.show('Password Changed', 'Your security password has been updated.', 'success');
     e.target.reset();
   });
 
   document.getElementById('dash-support-form')?.addEventListener('submit', (e) => {
     e.preventDefault();
-    SylvanToast.show('Message Dispatched', 'Coach desk received your inquiry. We will reply within 2 hours.', 'success');
     e.target.reset();
   });
 
@@ -684,11 +682,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalSpentEl = document.getElementById('stat-total-spent');
     if (totalSpentEl) totalSpentEl.textContent = '$2,595.00';
 
-    SylvanToast.show('Tuition Fee Paid', 'Payment of $450.00 processed successfully. Official receipt issued.', 'success');
-
-    setTimeout(() => {
-      window.showFeeReceipt('INV-2026-11', 'November Squad Training Tuition', 450.00);
-    }, 600);
+    window.showFeeReceipt('INV-2026-11', 'November Squad Training Tuition', 450.00);
   });
 
   window.cancelBookingAction = function(bookingId) {
@@ -696,7 +690,6 @@ document.addEventListener('DOMContentLoaded', () => {
       SylvanStore.cancelBooking(bookingId);
       renderOverview();
       renderBookingsTable('all');
-      SylvanToast.show('Session Cancelled', `Court booking #${bookingId} has been cancelled.`, 'info');
     }
   };
 

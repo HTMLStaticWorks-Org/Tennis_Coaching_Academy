@@ -5,6 +5,7 @@ World-Class Tennis Training Sanctuary & Athletic Academy.
 ## Overview
 - **Brand:** Vantage Tennis Academy
 - **Theme Palette:** Championship Wimbledon Green (`#0B3323`), Optic Tennis Lime (`#B8EB18`), Roland Garros Terracotta (`#B8532F`), Trophy Gold (`#CCA73A`), Crisp Court Off-White (`#F7FAF7`), Night Tournament Dark (`#0A1410`).
+- **Live Site:** https://htmlstaticworks-org.github.io/Tennis_Coaching_Academy/
 - **Core Pages:**
   - `index.html` - Home 1: Championship Hero, Master Coaches Spotlight, Surface Explorer, Training Pillars, Testimonials.
   - `home-2.html` - Home 2: Split Athletic Showcase, Indoor Dome & Telemetry Lab, High-Performance Squads.

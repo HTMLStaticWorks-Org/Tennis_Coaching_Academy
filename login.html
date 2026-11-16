@@ -51,33 +51,30 @@
 <body
   class="bg-[#F7FAF7] dark:bg-[#0A1410] text-[#1C2420] dark:text-[#F3F7F5] min-h-screen flex flex-col items-center justify-center py-12 sm:py-16 px-4 sm:px-6 transition-colors duration-300 relative overflow-x-hidden overflow-y-auto">
 
-  <!-- Background Ambience -->
-  <div class="fixed inset-0 pointer-events-none opacity-30 dark:opacity-20 z-0">
-    <img src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=1800&q=80"
-      alt="Vantage Tennis Stadium Court" class="w-full h-full object-cover filter blur-sm">
+  
+
+  <!-- Top-Right Corner Fixed Utilities Bar -->
+  <div class="fixed top-4 right-4 sm:top-6 sm:right-6 rtl:right-auto rtl:left-4 sm:rtl:left-6 z-50 flex items-center gap-2">
+    <!-- Theme Toggle -->
+    <button
+      class="theme-toggle-btn w-10 h-10 rounded-full bg-white/90 dark:bg-stone-900/90 border border-stone-200 dark:border-stone-700 backdrop-blur-md text-stone-700 dark:text-stone-200 flex items-center justify-center shadow-md hover:scale-105 transition-transform"
+      title="Toggle Light/Dark Theme" aria-label="Toggle Light/Dark Theme">
+      <i data-lucide="moon" class="theme-icon-moon w-4 h-4"></i>
+      <i data-lucide="sun" class="theme-icon-sun w-4 h-4 hidden"></i>
+    </button>
+
+    <!-- RTL Toggle -->
+    <button
+      class="rtl-toggle-btn w-10 h-10 rounded-full bg-white/90 dark:bg-stone-900/90 border border-stone-200 dark:border-stone-700 backdrop-blur-md text-stone-700 dark:text-stone-200 flex items-center justify-center shadow-md hover:scale-105 transition-transform"
+      title="Toggle RTL / LTR Reading Direction" aria-label="Toggle RTL / LTR Reading Direction">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+      </svg>
+    </button>
   </div>
 
-  <!-- Card & Utilities Container -->
-  <div class="relative z-10 w-full max-w-md my-auto flex flex-col">
-    <!-- Top Utilities Bar -->
-    <div class="flex items-center justify-end gap-2 mb-3 px-1">
-      <!-- Theme Toggle -->
-      <button
-        class="theme-toggle-btn w-9 h-9 rounded-full bg-white/80 dark:bg-stone-900/80 backdrop-blur-md text-stone-700 dark:text-stone-300 flex items-center justify-center shadow-xs hover:scale-105 transition-transform"
-        title="Toggle Light/Dark Theme">
-        <i data-lucide="moon" class="theme-icon-moon w-4 h-4"></i>
-        <i data-lucide="sun" class="theme-icon-sun w-4 h-4 hidden"></i>
-      </button>
-
-      <!-- RTL Toggle -->
-      <button
-        class="rtl-toggle-btn w-9 h-9 rounded-full bg-white/80 dark:bg-stone-900/80 backdrop-blur-md text-stone-700 dark:text-stone-300 flex items-center justify-center shadow-xs hover:scale-105 transition-transform"
-        title="Toggle RTL / LTR Reading Direction" aria-label="Toggle RTL / LTR Reading Direction">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-        </svg>
-      </button>
-    </div>
+  <!-- Card Container -->
+  <div class="relative z-10 w-full max-w-md my-auto flex flex-col pt-10 sm:pt-0">
 
     <!-- Centered Login Card -->
     <div
@@ -114,13 +111,16 @@
         </div>
 
         <div>
-          <div class="flex items-center justify-between mb-1">
-            <label
-              class="text-[11px] font-bold uppercase tracking-wider text-stone-600 dark:text-stone-400">Password</label>
-            <a href="#" onclick="alert('Password reset instructions sent to your registered student email.')"
-              class="text-[11px] text-emerald-800 dark:text-emerald-400 hover:underline font-semibold">Forgot
+          <div class="flex items-baseline justify-between gap-2 mb-1.5 px-1">
+            <label for="login-password"
+              class="text-[11px] font-bold uppercase tracking-wider text-stone-600 dark:text-stone-300 leading-none">Password</label>
+            <a href="#" id="forgot-pwd-link"
+              class="text-[11px] text-emerald-800 dark:text-emerald-400 hover:underline font-semibold leading-none whitespace-nowrap shrink-0">Forgot
               Password?</a>
           </div>
+          <p id="forgot-pwd-msg" class="hidden text-[11px] text-emerald-700 dark:text-emerald-400 mb-1.5 px-1">
+            Password reset link sent to your registered student email.
+          </p>
           <div class="relative">
             <i data-lucide="lock" class="w-4 h-4 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
             <input type="password" id="login-password" required value="tennispro2026" placeholder="••••••••"
@@ -214,20 +214,20 @@
       });
     }
 
+    // Forgot Password Inline Message
+    document.getElementById('forgot-pwd-link')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.getElementById('forgot-pwd-msg')?.classList.remove('hidden');
+    });
+
     // Login Form Submit
     document.getElementById('login-form')?.addEventListener('submit', (e) => {
       e.preventDefault();
-      SylvanToast.show('Welcome Back, Alex', 'Signing you into the student dashboard...', 'success');
-      setTimeout(() => {
-        window.location.href = 'dashboard.html';
-      }, 600);
+      window.location.href = 'dashboard.html';
     });
 
-    window.handleSocialLogin = function (provider) {
-      SylvanToast.show(`${provider} Connected`, `Signing in through verified ${provider} credentials...`, 'info');
-      setTimeout(() => {
-        window.location.href = 'dashboard.html';
-      }, 600);
+    window.handleSocialLogin = function () {
+      window.location.href = 'dashboard.html';
     };
   </script>
 </body>

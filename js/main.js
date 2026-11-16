@@ -3,51 +3,9 @@
  * Core Framework & Shared Interactivity
  */
 
-// Toast notification helper
+// Toast notification helper (silenced per UX preference to avoid intrusive popup banners)
 const SylvanToast = {
-  show: function(title, message, type = 'success') {
-    let container = document.getElementById('sylvan-toast-container');
-    if (!container) {
-      container = document.createElement('div');
-      container.id = 'sylvan-toast-container';
-      document.body.appendChild(container);
-    }
-
-    const toast = document.createElement('div');
-    toast.className = 'sylvan-toast';
-    
-    let iconName = 'check-circle';
-    let iconColor = 'text-emerald-500';
-    if (type === 'error') {
-      iconName = 'alert-triangle';
-      iconColor = 'text-rose-500';
-    } else if (type === 'info') {
-      iconName = 'info';
-      iconColor = 'text-amber-500';
-    }
-
-    toast.innerHTML = `
-      <div class="mt-0.5 ${iconColor}">
-        <i data-lucide="${iconName}" class="w-5 h-5"></i>
-      </div>
-      <div class="flex-1">
-        <h4 class="font-semibold text-sm">${title}</h4>
-        <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">${message}</p>
-      </div>
-      <button class="text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200 transition-colors" onclick="this.parentElement.remove()">
-        <i data-lucide="x" class="w-4 h-4"></i>
-      </button>
-    `;
-
-    container.appendChild(toast);
-    if (window.lucide) lucide.createIcons();
-
-    setTimeout(() => {
-      toast.style.opacity = '0';
-      toast.style.transform = 'translateY(12px)';
-      setTimeout(() => toast.remove(), 300);
-    }, 4000);
-  }
+  show: function() {}
 };
 
 // Theme Toggle (Light / Dark)
@@ -62,11 +20,6 @@ const SylvanTheme = {
         const isDark = document.documentElement.classList.contains('dark');
         const newTheme = isDark ? 'light' : 'dark';
         this.apply(newTheme);
-        SylvanToast.show(
-          newTheme === 'dark' ? 'Dark Mode Activated' : 'Light Mode Activated',
-          `Interface set to ${newTheme} nature palette.`,
-          'info'
-        );
       });
     });
   },
@@ -104,11 +57,6 @@ const SylvanRTL = {
         const isRTL = document.documentElement.getAttribute('dir') === 'rtl';
         const newRTL = !isRTL;
         this.apply(newRTL);
-        SylvanToast.show(
-          newRTL ? 'RTL Mode Enabled' : 'LTR Mode Enabled',
-          `Layout adjusted to ${newRTL ? 'Right-to-Left' : 'Left-to-Right'} reading.`,
-          'info'
-        );
       });
     });
   },
@@ -262,14 +210,8 @@ function setupFavoriteButtons() {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
-      const updated = SylvanStore.toggleSaveStay(stayId);
-      const isNowSaved = updated.includes(stayId);
+      SylvanStore.toggleSaveStay(stayId);
       updateState();
-      SylvanToast.show(
-        isNowSaved ? 'Saved to Favorites' : 'Removed from Favorites',
-        isNowSaved ? 'You can view this property anytime in your Guest Dashboard.' : 'Property removed from your saved list.',
-        isNowSaved ? 'success' : 'info'
-      );
     });
   });
 }
@@ -281,11 +223,6 @@ function setupNewsletterForms() {
       e.preventDefault();
       const input = form.querySelector('input[type="email"]');
       if (input && input.value) {
-        SylvanToast.show(
-          'Welcome to the Countryside Journal',
-          `We've sent a confirmation to ${input.value}. Enjoy seasonal getaway guides and exclusive host perks.`,
-          'success'
-        );
         input.value = '';
       }
     });

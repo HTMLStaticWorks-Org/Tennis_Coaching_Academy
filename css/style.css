@@ -49,16 +49,17 @@
 
 /* Dark Mode Overrides (Night Tournament Athletic Aesthetic) */
 html.dark {
+  color-scheme: dark;
   --bg-primary: #0A1410;
   --bg-surface: #10211A;
   --bg-surface-elevated: #162B22;
   --bg-subtle: #13241D;
-  --border-color: #1E3B2F;
-  --border-subtle: #162E24;
+  --border-color: #264A3B;
+  --border-subtle: #1B362A;
 
-  --text-primary: #F2F7F4;
-  --text-secondary: #A0B5AA;
-  --text-muted: #6E8579;
+  --text-primary: #F4F9F6;
+  --text-secondary: #C8D6CE;
+  --text-muted: #98B0A3;
 
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.45);
   --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.55);
@@ -258,6 +259,23 @@ html.dark .glass-card {
   border-color: var(--color-forest);
   color: var(--color-forest);
   transform: translateY(-2px);
+}
+
+html.dark .btn-secondary {
+  background-color: rgba(255, 255, 255, 0.04);
+  border-color: #35634F;
+  color: #F4F9F6;
+}
+
+html.dark .btn-secondary:hover {
+  background-color: #1F4E3B;
+  border-color: #CCA73A;
+  color: #FFFFFF;
+}
+
+html.dark .btn-secondary:hover i,
+html.dark .btn-secondary:hover svg {
+  color: #FFFFFF;
 }
 
 .btn-amber {
@@ -948,5 +966,133 @@ input[type="date"]::-webkit-inner-spin-button {
   display: none;
   -webkit-appearance: none;
 }
+
+/* ==============================================================
+   SELECT DROPDOWN & OPTION CONTRAST (LIGHT & DARK MODE)
+   ============================================================== */
+select {
+  color-scheme: light;
+}
+select option,
+select optgroup {
+  background-color: #FFFFFF;
+  color: #14221B;
+}
+html.dark select {
+  color-scheme: dark;
+  color: #F4F9F6;
+}
+html.dark select option,
+html.dark select optgroup {
+  background-color: #162B22;
+  color: #F4F9F6;
+}
+html.dark select option:checked,
+html.dark select option:hover {
+  background-color: #0B3323;
+  color: #FFFFFF;
+}
+
+/* ==============================================================
+   STANDARDIZED INNER-PAGE HERO HEIGHT (All pages except Home 1 & 2)
+   ============================================================== */
+.academy-inner-hero {
+  min-height: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+@media (min-width: 768px) {
+  .academy-inner-hero {
+    height: 500px;
+    min-height: 500px;
+  }
+}
+
+/* ==============================================================
+   UNIFIED CARD HORIZONTAL ALIGNMENT SYSTEM
+   ============================================================== */
+.card-slot-eyebrow {
+  min-height: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+.card-slot-title {
+  min-height: 3.5rem;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-slot-desc {
+  min-height: 3.75rem;
+  line-height: 1.6;
+}
+.card-slot-desc-tall {
+  min-height: 4.875rem;
+  line-height: 1.625;
+}
+.card-slot-bullets {
+  min-height: 4.75rem;
+}
+
+/* ==============================================================
+   GLOBAL DARK MODE CONTRAST & LIGHT MODE FOOTER HOVER POLISH
+   ============================================================== */
+html.dark .text-stone-400:not([class*="dark:text-"]),
+html.dark .text-stone-500:not([class*="dark:text-"]),
+html.dark .text-stone-600:not([class*="dark:text-"]) {
+  color: #C7D6CE !important;
+}
+html.dark .text-emerald-700:not([class*="dark:text-"]),
+html.dark .text-emerald-800:not([class*="dark:text-"]) {
+  color: #4ADE80 !important;
+}
+html.dark footer .dark\:text-stone-400,
+html.dark footer .dark\:text-stone-500,
+html.dark .dark\:text-stone-400,
+html.dark .dark\:text-stone-500 {
+  color: #CBD8D1 !important;
+}
+
+/* Social icon contrast when placed inside dark banners in Light or Dark mode */
+.bg-stone-900 .social-icon-btn {
+  background-color: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.28);
+  color: #F5F5F4;
+}
+
+/* Unmistakable Footer Link Hover in Light Mode (and crisp Dark Mode hover) */
+footer ul a {
+  display: inline-block;
+  transition: color 0.2s ease, transform 0.2s ease, text-decoration-color 0.2s ease;
+}
+footer ul a:hover,
+footer .pt-8 a:hover {
+  color: #0B3323 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
+}
+footer ul a:hover {
+  transform: translateX(3px);
+}
+html[dir="rtl"] footer ul a:hover {
+  transform: translateX(-3px);
+}
+html.dark footer ul a:hover,
+html.dark footer .pt-8 a:hover {
+  color: #FACC15 !important;
+}
+
+/* Step progress indicators on Booking page: readable in both Light & Dark mode */
+.wizard-step-indicator.step-inactive {
+  opacity: 0.85;
+}
+
 
 

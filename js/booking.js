@@ -143,23 +143,24 @@ document.addEventListener('DOMContentLoaded', () => {
       const label = ind.querySelector('.step-label');
 
       if (s < currentStep) {
-        ind.classList.remove('opacity-40');
-        circle.classList.remove('bg-amber-500', 'text-stone-950', 'ring-4', 'ring-amber-500/20', 'bg-stone-200', 'dark:bg-stone-700', 'text-stone-600', 'dark:text-stone-300');
+        ind.classList.remove('step-inactive', 'opacity-40');
+        circle.classList.remove('bg-amber-500', 'text-stone-950', 'ring-4', 'ring-amber-500/20', 'bg-stone-200', 'dark:bg-stone-700', 'text-stone-600', 'text-stone-800', 'dark:text-stone-300', 'dark:text-stone-100', 'border', 'border-stone-300', 'dark:border-stone-500');
         circle.classList.add('bg-emerald-800', 'text-white');
         circle.innerHTML = '&#10003;';
         if (label) label.className = 'step-label text-[11px] font-bold text-emerald-800 dark:text-emerald-400';
       } else if (s === currentStep) {
-        ind.classList.remove('opacity-40');
-        circle.classList.remove('bg-emerald-800', 'text-white', 'bg-stone-200', 'dark:bg-stone-700', 'text-stone-600', 'dark:text-stone-300');
+        ind.classList.remove('step-inactive', 'opacity-40');
+        circle.classList.remove('bg-emerald-800', 'text-white', 'bg-stone-200', 'dark:bg-stone-700', 'text-stone-600', 'text-stone-800', 'dark:text-stone-300', 'dark:text-stone-100', 'border', 'border-stone-300', 'dark:border-stone-500');
         circle.classList.add('bg-amber-500', 'text-stone-950', 'ring-4', 'ring-amber-500/20');
         circle.textContent = s;
         if (label) label.className = 'step-label text-[11px] font-bold text-stone-900 dark:text-stone-100';
       } else {
-        ind.classList.add('opacity-40');
+        ind.classList.remove('opacity-40');
+        ind.classList.add('step-inactive');
         circle.classList.remove('bg-emerald-800', 'text-white', 'bg-amber-500', 'text-stone-950', 'ring-4', 'ring-amber-500/20');
-        circle.classList.add('bg-stone-200', 'dark:bg-stone-700', 'text-stone-600', 'dark:text-stone-300');
+        circle.classList.add('bg-stone-200', 'dark:bg-stone-700', 'text-stone-800', 'dark:text-stone-100', 'border', 'border-stone-300', 'dark:border-stone-500');
         circle.textContent = s;
-        if (label) label.className = 'step-label text-[11px] font-bold text-stone-500';
+        if (label) label.className = 'step-label text-[11px] font-bold text-stone-700 dark:text-stone-200';
       }
     });
 
@@ -185,10 +186,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const email = document.getElementById('guest-email').value.trim();
         const phone = document.getElementById('guest-phone').value.trim();
 
+        let step2Err = document.getElementById('booking-step2-error');
         if (!fname || !lname || !email) {
-          SylvanToast.show('Incomplete Fields', 'Please provide player name and valid email.', 'warning');
+          if (!step2Err) {
+            step2Err = document.createElement('p');
+            step2Err.id = 'booking-step2-error';
+            step2Err.className = 'text-xs font-semibold text-rose-600 dark:text-rose-400 mt-2';
+            document.getElementById('guest-email')?.closest('form, .space-y-4, #step-2')?.appendChild(step2Err);
+          }
+          step2Err.textContent = 'Please provide player name and valid email.';
+          step2Err.classList.remove('hidden');
           return;
         }
+        if (step2Err) step2Err.classList.add('hidden');
 
         bookingState.guestInfo.firstName = fname;
         bookingState.guestInfo.lastName = lname;
@@ -227,16 +237,26 @@ document.addEventListener('DOMContentLoaded', () => {
   // Step 3 Voucher Code
   document.getElementById('coupon-form')?.addEventListener('submit', (e) => {
     e.preventDefault();
+    const form = e.target;
     const input = document.getElementById('coupon-input');
     const code = input ? input.value.trim().toUpperCase() : '';
+    let statusEl = document.getElementById('coupon-status-msg');
+    if (!statusEl) {
+      statusEl = document.createElement('p');
+      statusEl.id = 'coupon-status-msg';
+      statusEl.className = 'text-xs font-semibold mt-2 w-full';
+      form.insertAdjacentElement('afterend', statusEl);
+    }
 
     if (code === 'ACE10' || code === 'NATURE10' || code === 'VANTAGE10') {
       bookingState.discountPercent = 10;
       bookingState.discountCode = code;
       calculateTotals();
-      SylvanToast.show('Voucher Applied', '10% discount applied to your court slot!', 'success');
+      statusEl.className = 'text-xs font-semibold mt-2 text-emerald-700 dark:text-emerald-400';
+      statusEl.textContent = '10% voucher discount applied to your court slot.';
     } else {
-      SylvanToast.show('Invalid Code', 'Try voucher code ACE10 for 10% off.', 'warning');
+      statusEl.className = 'text-xs font-semibold mt-2 text-amber-700 dark:text-amber-400';
+      statusEl.textContent = 'Invalid voucher code. Try ACE10 for 10% off.';
     }
   });
 
@@ -307,7 +327,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (confGuestEmailEl) confGuestEmailEl.textContent = bookingState.guestInfo.email;
 
     goToStep(5);
-    SylvanToast.show('Court Slot Confirmed', `Booking #${newId} is confirmed. Added to your student dashboard!`, 'success');
   }
 
   // Print receipt trigger
